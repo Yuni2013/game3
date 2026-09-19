@@ -1,1908 +1,321 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1,
-maximum-scale=1,
-user-scalable=no">
-
-<title>Mini FPS - Target Range</title>
-
-<style>
-
-*{
-    box-sizing:border-box;
-    user-select:none;
-    -webkit-user-select:none;
-}
-
-html,body{
-    margin:0;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    background:#8fc7ed;
-    font-family:Arial,sans-serif;
-    touch-action:none;
-}
-
-canvas{
-    position:fixed;
-    inset:0;
-    width:100%;
-    height:100%;
-}
-
-#hud{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    color:white;
-}
-
-#stats{
-    position:absolute;
-    left:18px;
-    top:16px;
-
-    font-size:20px;
-    font-weight:bold;
-
-    text-shadow:
-        2px 2px 4px #333;
-}
-
-#ammo{
-    position:absolute;
-    right:20px;
-    bottom:20px;
-
-    font-size:28px;
-    font-weight:bold;
-
-    text-shadow:
-        2px 2px 4px #333;
-}
-
-#crosshair{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:24px;
-    height:24px;
-
-    transform:translate(-50%,-50%);
-}
-
-#crosshair::before{
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    top:11px;
-
-    width:24px;
-    height:2px;
-
-    background:white;
-
-    box-shadow:
-        0 0 3px black;
-}
-
-#crosshair::after{
-    content:"";
-
-    position:absolute;
-
-    left:11px;
-    top:0;
-
-    width:2px;
-    height:24px;
-
-    background:white;
-
-    box-shadow:
-        0 0 3px black;
-}
-
-#message{
-    position:absolute;
-
-    left:50%;
-    top:15%;
-
-    transform:translateX(-50%);
-
-    font-size:30px;
-    font-weight:bold;
-
-    text-shadow:
-        2px 2px 5px #333;
-
-    text-align:center;
-
-    white-space:nowrap;
-}
-
-#help{
-    position:absolute;
-
-    bottom:14px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    font-size:14px;
-
-    text-shadow:
-        1px 1px 3px #333;
-
-    opacity:.9;
-}
-
-
-/* MOBILE */
-
-#mobileControls{
-    display:none;
-
-    position:fixed;
-    inset:0;
-
-    pointer-events:none;
-}
-
-#joystick{
-    position:absolute;
-
-    left:25px;
-    bottom:30px;
-
-    width:140px;
-    height:140px;
-
-    border-radius:50%;
-
-    border:
-        2px solid
-        rgba(255,255,255,.7);
-
-    background:
-        rgba(0,0,0,.12);
-
-    pointer-events:auto;
-}
-
-#joystickKnob{
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    width:60px;
-    height:60px;
-
-    transform:
-        translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.45);
-}
-
-.mobileButton{
-    position:absolute;
-
-    pointer-events:auto;
-
-    color:white;
-
-    font-weight:bold;
-
-    border:
-        2px solid
-        rgba(255,255,255,.8);
-
-    box-shadow:
-        0 3px 8px #333;
-}
-
-#fireButton{
-    right:25px;
-    bottom:35px;
-
-    width:90px;
-    height:90px;
-
-    border-radius:50%;
-
-    background:
-        rgba(210,45,45,.8);
-}
-
-#reloadButton{
-    right:30px;
-    bottom:145px;
-
-    width:80px;
-    height:45px;
-
-    border-radius:12px;
-
-    background:
-        rgba(40,40,40,.8);
-}
-
-@media(pointer:coarse){
-
-    #mobileControls{
-        display:block;
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260918-05-13efa67","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Void Deck</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#070913; --panel:#11172a; --panel2:#18213a; --line:#34415f;
+      --text:#eef4ff; --muted:#9aa9c5; --violet:#a78bfa; --cyan:#48d9ff;
+      --red:#ff6278; --gold:#f6c85f; --green:#5ee6a8; --blue:#67a9ff;
     }
+    *{box-sizing:border-box} html,body{margin:0;min-height:100%;background:#03050c;color:var(--text);font-family:"Fira Sans",sans-serif}
+    button{font:inherit} button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
+    #game{width:100%;min-height:calc(100 * min(var(--vh, 1vh), 1vh));position:relative;overflow:hidden;background:
+      radial-gradient(circle at 18% 10%,#26305e66 0,transparent 30%),
+      radial-gradient(circle at 85% 75%,#3d1e5966 0,transparent 35%),var(--ink)}
+    #game:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.26;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:28px 28px}
+    .app-shell{width:100%;max-width:480px;margin:auto;min-height:calc(100 * min(var(--vh, 1vh), 1vh));position:relative;padding:16px 14px 28px;z-index:1}
+    .screen{animation:enter .28s ease both}.hidden{display:none!important}
+    @keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+    .logo{font-family:"Space Mono",monospace;letter-spacing:.15em;text-transform:uppercase;text-shadow:0 0 22px #8d72ff88}
+    .title{font-size:1.8rem;font-weight:800;margin:5px 0}.sub{color:var(--muted);line-height:1.55;margin:0}
+    .panel{background:linear-gradient(145deg,#18213aee,#0d1222ee);border:1px solid var(--line);box-shadow:0 12px 32px #0007;border-radius:18px}
+    .topbar{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .stat{background:#10182bd9;border:1px solid #33415f;border-radius:11px;padding:7px 9px;font-size:.78rem;display:flex;gap:5px;align-items:center;white-space:nowrap}
+    .hp{color:#ff8594}.gold{color:var(--gold)}.energy{color:var(--cyan)}.block{color:var(--blue)}
+    .btn{border:1px solid #4b5d87;background:#202b49;color:var(--text);border-radius:13px;padding:13px 14px;font-weight:700;min-height:48px;transition:.16s transform,.16s filter;cursor:pointer}
+    .btn:active{transform:scale(.97)}.btn:hover{filter:brightness(1.13)}.btn.primary{background:linear-gradient(135deg,#7865d7,#9b74f2);border-color:#bdabff}.btn.danger{background:#712d45;border-color:#ad4867}.btn.gold-btn{background:#674f1d;border-color:#aa8534}.btn:disabled{opacity:.38;cursor:not-allowed;filter:grayscale(1)}
+    .menu-actions{display:grid;gap:10px;margin-top:30px}.menu-actions .btn{font-size:1rem}
+    .hero-rune{height:180px;margin:22px 0;border-radius:26px;display:grid;place-items:center;background:radial-gradient(circle,#9a74ff33,transparent 58%),linear-gradient(135deg,#131a35,#070a18);border:1px solid #43517c;position:relative;overflow:hidden}
+    .hero-rune:before,.hero-rune:after{content:"";position:absolute;border:1px solid #9f8aff88;border-radius:50%;width:130px;height:130px;transform:rotate(45deg)}.hero-rune:after{width:84px;height:84px;border-color:#43d6ff}
+    .hero-rune span{font-size:4rem;z-index:1;text-shadow:0 0 24px #ad8aff}
+    .character-grid,.reward-grid{display:grid;gap:12px}.character{padding:16px;text-align:left;position:relative}.character.selected{border-color:var(--cyan);box-shadow:0 0 0 2px #46d9ff33}.character.locked{opacity:.56}
+    .character h2{margin:0 0 5px;font-size:1.25rem}.badge{font-size:.7rem;padding:3px 7px;border-radius:99px;background:#27395e;color:#bcd5ff;display:inline-block}.badge.rare{background:#503375;color:#e4bdff}.badge.elite{background:#653c28;color:#ffd084}
+    .map{display:grid;gap:12px;padding:12px 0}.map-row{display:flex;gap:10px;justify-content:center}.node{width:74px;min-height:66px;border-radius:16px;border:1px solid #435172;background:#111a30;color:#dfeaff;font-weight:700;display:grid;place-items:center;gap:2px;padding:8px;font-size:.73rem;cursor:pointer}.node.available{border-color:#82dbff;background:#17324c;box-shadow:0 0 18px #39c8ff33}.node.done{opacity:.38}.node:disabled{cursor:not-allowed}.node .ico{font-size:1.35rem}
+    .combat-area{text-align:center;padding-top:5px}.enemy{padding:15px;margin:10px 0 14px;position:relative}.enemy.hit{animation:hit .28s}@keyframes hit{50%{transform:translateX(8px);filter:brightness(1.8)}}.avatar{font-size:3.6rem;filter:drop-shadow(0 0 16px #8c6bff88)}
+    .bar{height:11px;background:#080c18;border-radius:9px;overflow:hidden;border:1px solid #38425f}.bar > div{height:100%;transition:width .32s ease}.hpbar{background:linear-gradient(90deg,#e94561,#ff8192)}.enemybar{background:linear-gradient(90deg,#a85bce,#e493ff)}
+    .intent{display:inline-flex;gap:6px;align-items:center;margin-top:10px;border:1px solid #6b5d92;background:#28203d;padding:7px 11px;border-radius:99px;font-size:.83rem}
+    .status-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:9px 0}.status{font-size:.7rem;padding:4px 7px;border-radius:8px;background:#25314c;color:#d9ecff}
+    .battle-bottom{position:sticky;bottom:0;padding:8px 0 0;background:linear-gradient(transparent,#070913 20%)}.hand{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 12px;scrollbar-width:none}.hand::-webkit-scrollbar{display:none}
+    .card{flex:0 0 126px;min-height:177px;border:1px solid #53658d;background:linear-gradient(160deg,#293553,#151c31);border-radius:14px;padding:10px;text-align:left;color:var(--text);cursor:pointer;position:relative;overflow:hidden;transition:.16s transform,.16s border-color}.card:hover{transform:translateY(-5px);border-color:#b2ceff}.card:disabled{opacity:.42;transform:none;cursor:not-allowed}.card.attack{border-top:4px solid #e95e72}.card.skill{border-top:4px solid #65a9ff}.card.power{border-top:4px solid #d087ff}.card.rare-card{box-shadow:inset 0 0 24px #a353c333}.cost{position:absolute;top:8px;right:8px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#1b9dc1;border:1px solid #85eaff;font-weight:800}.card h3{font-size:.9rem;margin:4px 30px 10px 0}.card p{font-size:.76rem;line-height:1.35;color:#c3d0e8;margin:0}.card small{position:absolute;bottom:8px;color:#8ca2ca;text-transform:uppercase;font-size:.61rem}
+    .end-row{display:flex;align-items:center;gap:9px}.end-row .btn{flex:1}.pile{font-size:.72rem;color:var(--muted)}
+    .choice{padding:15px;margin:10px 0;text-align:left;width:100%}.choice h3{margin:0 0 6px}.choice p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.4}
+    .shop-item{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;margin-bottom:9px}.shop-item h3{margin:0;font-size:.98rem}.shop-item p{margin:4px 0 0;color:var(--muted);font-size:.78rem}
+    .toast{position:fixed;z-index:10;left:50%;top:15px;transform:translateX(-50%);background:#243254;border:1px solid #6d91ca;border-radius:11px;padding:10px 14px;max-width:90%;text-align:center;box-shadow:0 8px 20px #0008;animation:toast .2s ease}.toast.bad{background:#612b42;border-color:#d35c7d}@keyframes toast{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}
+    .float{position:fixed;z-index:9;color:#fff;font-weight:800;font-size:1.35rem;text-shadow:0 2px 4px #000;pointer-events:none;animation:float .8s ease forwards}@keyframes float{to{opacity:0;transform:translateY(-52px) scale(1.12)}}
+    .codex-tabs{display:flex;gap:7px;margin:14px 0}.codex-tabs .btn{padding:8px 10px;min-height:auto;font-size:.78rem}.codex-list{display:grid;gap:8px}.codex-entry{padding:11px 13px;display:flex;justify-content:space-between;border-radius:11px;background:#141c31;border:1px solid #303d5e}.unknown{color:#707c94}
+    .result{text-align:center;padding-top:8vh}.result h1{font-family:"Space Mono";font-size:2.2rem;letter-spacing:.06em;margin:12px 0}.result.fail h1{color:#ff7188}.result.win h1{color:#9fecff}.summary{text-align:left;padding:14px;margin:20px 0;color:#c6d2e9;line-height:1.75}
+    @media(min-width:600px){#game{padding:16px}.app-shell{border-left:1px solid #253354;border-right:1px solid #253354;box-shadow:0 0 50px #000}}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
+  <script src="/_sdk/0ddbbee1c66b1212.editing_sdk.js" type="text/javascript" integrity="sha512-HQn5LM1yruQSbY78ATUril6QeOJ9xj7KqO64ltLtb4vBwI5Qv3/tloFFOndBPZTNZoeV5xKzuth5y6FTi9crsg=="></script>
+  <script src="/_sdk/765e1fea0cec97ce.resizing_sdk.js" type="text/javascript" integrity="sha512-IRTJnqww0+HQ5V/LlWEQrlD5SrYHaVvaeVoNe8HYQXoaguzUGheSd9+n9s6WOgaTcEH0g37DuINHZ9aqfzWjlw=="></script>
+ </head>
+ <body data-template-id="__page-root">
+  <div id="game">
+   <main class="app-shell" id="app" aria-live="polite"></main>
+  </div>
+  <script>
+  (() => {
+    "use strict";
+    const SAVE_KEY="void_deck_save_v1", RUN_KEY="void_deck_run_v1", VERSION=1;
+    const $=s=>document.querySelector(s), app=$("#app");
+    const rng=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
+    const pick=a=>a[Math.floor(Math.random()*a.length)];
+    const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=rng(0,i);[b[i],b[j]]=[b[j],b[i]]}return b};
+    const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
+    const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-    #help{
-        display:none;
+    const CARD_LIST=[
+      ["slash","베기","attack",1,6,0,"적에게 6 피해.","common"],["guard","방어","skill",1,0,8,"방어도 8 획득.","common"],["strike","강타","attack",2,12,0,"적에게 12 피해.","common"],["focus","집중","skill",1,0,0,"집중 2 획득. 다음 공격 피해 증가.","common"],
+      ["jab","찌르기","attack",0,3,0,"적에게 3 피해. 콤보 +1.","common"],["ironwall","철벽","skill",2,0,16,"방어도 16 획득.","common"],["bleedcut","출혈 베기","attack",1,5,0,"5 피해와 출혈 3.","common"],["poisonneedle","독침","attack",1,4,0,"4 피해와 독 4.","common"],
+      ["bash","방패 강타","attack",1,7,0,"7 피해. 적 취약 1.","common"],["recover","호흡","skill",1,0,0,"HP 5 회복.","common"],["quickguard","재빠른 방어","skill",0,0,4,"방어도 4, 카드 1장 드로우.","common"],["feint","기만","skill",1,0,0,"적 약화 2.","common"],
+      ["riposte","반격","attack",1,0,0,"현재 방어도의 120%만큼 피해.","uncommon"],["fortify","요새화","power",1,0,0,"매 턴 시작 방어도 3.","uncommon"],["bloodletting","혈투","attack",1,9,0,"9 피해. 출혈 대상이면 6 추가 피해.","uncommon"],["toxicburst","독 폭발","skill",1,0,0,"적 독의 2배만큼 피해 후 독 제거.","uncommon"],
+      ["flurry","난무","attack",1,3,0,"3 피해를 3회. 콤보 +3.","uncommon"],["adrenaline","아드레날린","skill",0,0,0,"에너지 1, 카드 2장 드로우.","uncommon"],["overpower","압도","attack",2,18,0,"18 피해. 적이 취약이면 8 추가 피해.","uncommon"],["barrier","장벽","skill",2,0,12,"방어도 12. 다음 턴에도 방어도 유지.","uncommon"],
+      ["execute","처형","attack",2,10,0,"10 피해. 적 HP가 절반 이하라면 18 추가.","uncommon"],["siphon","흡수","attack",1,7,0,"7 피해. 준 피해의 절반만큼 회복.","uncommon"],["shivstorm","단검 폭풍","attack",1,2,0,"2 피해를 5회.","uncommon"],["meditate","명상","skill",1,0,0,"카드 3장 드로우. 다음 턴 에너지 -1.","uncommon"],
+      ["voidslash","공허 절단","attack",2,24,0,"24 피해. 자신에게 약화 1.","rare"],["immortal","불멸의 갑옷","power",2,0,0,"전투 시작 시 방어도 12.","rare"],["hemorrhage","대출혈","attack",2,8,0,"8 피해와 출혈 8.","rare"],["venomrain","독의 비","skill",2,0,0,"적 독 12, 카드 1장 드로우.","rare"],
+      ["perfectguard","완전 방어","skill",1,0,20,"방어도 20. 손패에 공격 카드가 있으면 에너지 -1.","rare"],["finale","피날레","attack",3,38,0,"38 피해. 소멸.","rare"],["echo","메아리","power",1,0,0,"매 턴 첫 공격을 한 번 더 적용.","rare"],["laststand","최후의 저항","skill",0,0,0,"HP 10을 잃고 에너지 3, 카드 3장 드로우.","rare"],
+      ["assassinate","암살","attack",2,16,0,"16 피해. 독 또는 출혈 적에게 16 추가.","rare"],["momentum","가속","power",1,0,0,"콤보가 4 이상이면 공격 +4.","rare"],["drain","공허 흡수","skill",1,0,0,"적에게 약화 2, 취약 2.","uncommon"],["shieldbash","방패 분쇄","attack",1,0,0,"방어도의 80% 피해, 방어도 절반 소모.","uncommon"],
+      ["cleanse","정화","skill",1,0,0,"HP 7 회복, 자신 약화 제거.","common"],["pierce","관통","attack",1,8,0,"8 피해. 적 방어도 무시.","common"],["rage","분노","power",1,0,0,"받을 때마다 공격력 +1.","uncommon"],["sacrifice","희생","skill",0,0,0,"HP 6을 잃고 카드 3장 드로우.","common"]
+    ];
+    const CARDS=Object.fromEntries(CARD_LIST.map(([id,name,type,cost,damage,block,description,rarity])=>[id,{id,name,type,cost,damage,block,description,rarity}]));
+    const RELICS=[
+      ["rusted_sword","녹슨 검","전투 시작 시 공격력 +2."],["hourglass","시간의 모래","3번째 턴마다 카드 1장 추가 드로우."],["bloody_ring","피 묻은 반지","HP 30% 이하일 때 공격력 +4."],["iron_heart","철의 심장","최대 HP +10."],["lucky_coin","행운의 동전","전투 승리 골드 +8."],["void_lens","공허 렌즈","보스전에서 공격력 +3."],["thorn_crown","가시 왕관","적에게 받은 피해의 15% 반사."],["amber","호박","전투 시작 방어도 6."],["quill","공허의 깃펜","첫 스킬 비용 -1."],["serpent_eye","뱀의 눈","턴 시작 카드 +1, 최대 에너지 -1."],["vampire_fang","흡혈 송곳니","전투 승리 시 HP 3 회복."],["old_map","낡은 지도","휴식 회복량 +8."],["war_drum","전쟁의 북","전투 첫 턴 에너지 +1."],["cursed_dice","저주받은 주사위","전투 시작 적 취약 1."],["mirror","검은 거울","첫 공격 카드 피해 +50%."],["orb","차가운 구체","적의 독 피해 +2."],["anvil","별의 모루","강화 카드의 추가 효과 +1."],["phoenix","불사조 깃털","런 중 한 번 HP 1로 생존."],["chain","균열 사슬","출혈 대상 공격 +2."],["star_chart","별의 도표","이벤트에서 골드 보상 +15."]
+    ].map(([id,name,desc])=>({id,name,desc}));
+    const RELIC=Object.fromEntries(RELICS.map(x=>[x.id,x]));
+
+    const ENEMIES={
+      slime:{name:"공허 슬라임",hp:34,icon:"🫧",patterns:[["attack",7],["block",7],["attack",10]]},
+      goblin:{name:"고블린 약탈자",hp:39,icon:"👺",patterns:[["attack",8],["debuff","weak",1],["attack",12]]},
+      berserker:{name:"광전사",hp:47,icon:"🪓",patterns:[["attack",11],["buff","str",2],["attack",14]]},
+      skeleton:{name:"해골 병사",hp:42,icon:"💀",patterns:[["block",8],["attack",10],["attack",13]]},
+      bug:{name:"독충",hp:36,icon:"🪲",patterns:[["debuff","poison",4],["attack",7],["debuff","poison",6]]},
+      mage:{name:"균열 마법사",hp:40,icon:"🔮",patterns:[["debuff","vuln",1],["attack",12],["block",10]]},
+      knight:{name:"암흑 기사",hp:58,icon:"🛡️",patterns:[["block",10],["attack",14],["attack",16]]},
+      wolf:{name:"공허 늑대",hp:38,icon:"🐺",patterns:[["attack",6],["attack",6],["attack",15]]},
+      thorn:{name:"가시 괴물",hp:52,icon:"🌵",patterns:[["attack",9],["buff","thorn",3],["attack",11]]},
+      minion:{name:"공허의 하수인",hp:46,icon:"👁️",patterns:[["debuff","weak",1],["attack",11],["debuff","poison",3]]},
+      elite_ogre:{name:"균열 오우거",hp:92,icon:"👹",elite:true,patterns:[["attack",15],["block",14],["attack",23]]},
+      elite_hydra:{name:"독의 히드라",hp:84,icon:"🐉",elite:true,patterns:[["debuff","poison",7],["attack",8],["attack",8],["attack",17]]},
+      elite_judge:{name:"공허 심판관",hp:98,icon:"⚖️",elite:true,patterns:[["debuff","vuln",2],["attack",18],["block",18],["attack",25]]},
+      elite_reaper:{name:"영혼 수확자",hp:88,icon:"☠️",elite:true,patterns:[["attack",14],["debuff","weak",2],["attack",22]]},
+      elite_sentinel:{name:"별의 파수꾼",hp:105,icon:"🗿",elite:true,patterns:[["block",20],["attack",18],["buff","str",3],["attack",24]]},
+      iron_guardian:{name:"철의 수호자",hp:155,icon:"🤖",boss:true,patterns:[["block",16],["attack",16],["attack",22],["debuff","weak",2]]},
+      abyss_witch:{name:"심연의 마녀",hp:185,icon:"🧙",boss:true,patterns:[["debuff","poison",8],["debuff","vuln",2],["attack",22],["attack",30]]},
+      void:{name:"VOID",hp:230,icon:"🕳️",boss:true,patterns:[["debuff","weak",2],["attack",24],["block",22],["attack",34],["debuff","poison",9]]}
+    };
+    const CHARACTERS={
+      gladiator:{name:"검투사",hp:80,energy:3,icon:"⚔️",desc:"높은 체력과 안정적인 방어. 모든 빌드의 기반이 됩니다.",deck:["slash","slash","slash","slash","guard","guard","guard","guard","strike","focus"]},
+      assassin:{name:"암살자",hp:65,energy:3,icon:"🗡️",desc:"출혈과 연속 공격에 특화된 빠른 전투가.",deck:["jab","jab","jab","jab","guard","guard","guard","bleedcut","bleedcut","flurry"]}
+    };
+    const EVENTS=[
+      ["수상한 상인","낡은 상인이 빛나는 병을 내민다.","골드 25를 내고 유물 획득",s=>{if(s.gold<25)return false;s.gold-=25;gainRelic(s);return true},"HP 10을 잃고 희귀 카드 획득",s=>{s.player.hp-=10;addCard(s,randomCard("rare"));return true},"거절한다",()=>true],
+      ["고대 제단","검은 제단이 심장 박동처럼 울린다.","HP 12를 잃고 최대 HP +8",s=>{s.player.hp-=12;s.player.maxHp+=8;return true},"카드 1장 제거",s=>{removeRandomCard(s);return true},"떠난다",()=>true],
+      ["잊힌 도서관","공허의 언어로 쓰인 책들이 떠다닌다.","카드 2장 획득",s=>{addCard(s,randomCard());addCard(s,randomCard());return true},"골드 30 획득",s=>{s.gold+=30;return true},"책을 덮는다",()=>true],
+      ["부서진 성소","희미한 치유의 빛이 샌다.","HP 18 회복",s=>{heal(s,18);return true},"최대 HP +5, HP 5 손실",s=>{s.player.maxHp+=5;s.player.hp-=5;return true},"기도하지 않는다",()=>true],
+      ["유령 도박꾼","주사위가 허공에서 회전한다.","50%로 골드 70 획득",s=>{s.gold+=Math.random()<.5?70:0;return true},"카드 1장 강화",s=>{upgradeRandom(s);return true},"떠난다",()=>true],
+      ["피의 우물","우물이 붉은 안개를 뿜는다.","HP 15를 잃고 유물 획득",s=>{s.player.hp-=15;gainRelic(s);return true},"HP 10 회복",s=>{heal(s,10);return true},"지나친다",()=>true],
+      ["길 잃은 영혼","희미한 영혼이 도움을 청한다.","골드 20을 주고 카드 제거",s=>{if(s.gold<20)return false;s.gold-=20;removeRandomCard(s);return true},"영혼 조각 2 획득",s=>{s.tempShards=(s.tempShards||0)+2;return true},"무시한다",()=>true],
+      ["별 조각","손바닥 크기 별이 어둠 속에서 맥동한다.","희귀 카드 획득",s=>{addCard(s,randomCard("rare"));return true},"골드 40 획득",s=>{s.gold+=40;return true},"관찰만 한다",()=>true],
+      ["침묵의 문","문 너머에서 낮은 속삭임이 들린다.","카드 1장 소멸",s=>{removeRandomCard(s);return true},"최대 HP +7",s=>{s.player.maxHp+=7;s.player.hp+=7;return true},"문을 닫는다",()=>true],
+      ["검은 대장간","유령 대장장이가 망치를 든다.","카드 2장 강화",s=>{upgradeRandom(s);upgradeRandom(s);return true},"골드 35 획득",s=>{s.gold+=35;return true},"떠난다",()=>true],
+      ["균열의 샘","파란 물결이 현실을 찢는다.","무작위 유물 획득",s=>{gainRelic(s);return true},"HP 20 회복",s=>{heal(s,20);return true},"피한다",()=>true],
+      ["도둑 까마귀","검은 깃털들이 금화를 물고 있다.","골드 45 획득",s=>{s.gold+=45;return true},"카드 1장 획득",s=>{addCard(s,randomCard());return true},"쫓아낸다",()=>true],
+      ["추방자의 갑옷","버려진 갑옷이 당신을 부른다.","방어 카드 2장 획득",s=>{addCard(s,"ironwall");addCard(s,"quickguard");return true},"방어도 유물 획득",s=>{const r=pick(["amber","iron_heart","thorn_crown"]);if(!s.relics.includes(r))s.relics.push(r);return true},"지나간다",()=>true],
+      ["시계탑","멈춘 시계가 마지막으로 울린다.","시간의 모래 획득",s=>{if(!s.relics.includes("hourglass"))s.relics.push("hourglass");else s.gold+=30;return true},"카드 1장 강화",s=>{upgradeRandom(s);return true},"계단을 내려간다",()=>true],
+      ["공허의 균열","당신의 그림자가 다른 선택을 제안한다.","HP 8을 잃고 카드 3장 획득",s=>{s.player.hp-=8;for(let i=0;i<3;i++)addCard(s,randomCard());return true},"골드 55 획득",s=>{s.gold+=55;return true},"균열을 봉인한다",()=>true]
+    ];
+
+    let state=null, profile=null, codexTab="cards";
+    function defaultProfile(){return {version:VERSION,unlocked:["gladiator"],shards:0,bestRegion:0,plays:0,wins:0,kills:0,discovered:{cards:["slash","guard","strike","focus"],relics:[],enemies:[]}}}
+    function loadProfile(){try{const x=JSON.parse(localStorage.getItem(SAVE_KEY));profile=x&&x.version===VERSION?{...defaultProfile(),...x,discovered:{...defaultProfile().discovered,...x.discovered}}:defaultProfile()}catch{profile=defaultProfile();saveProfile()}}
+    function saveProfile(){localStorage.setItem(SAVE_KEY,JSON.stringify(profile))}
+    function saveRun(){if(state&&state.runActive)localStorage.setItem(RUN_KEY,JSON.stringify(state));else localStorage.removeItem(RUN_KEY);saveProfile()}
+    function loadRun(){try{const x=JSON.parse(localStorage.getItem(RUN_KEY));return x&&x.runActive&&x.version===VERSION?x:null}catch{return null}}
+    function hasRun(){return !!loadRun()}
+    function toast(text,bad=false){const old=$(".toast");if(old)old.remove();const e=document.createElement("div");e.className="toast"+(bad?" bad":"");e.textContent=text;document.body.appendChild(e);setTimeout(()=>e.remove(),2200)}
+    function float(text,color="#fff"){const e=document.createElement("div");e.className="float";e.textContent=text;e.style.color=color;e.style.left="50%";e.style.top="43%";document.body.appendChild(e);setTimeout(()=>e.remove(),850)}
+    function discovered(type,id){if(!profile.discovered[type].includes(id))profile.discovered[type].push(id);saveProfile()}
+
+    function topbar(){return `<header class="topbar"><button class="btn" style="min-height:auto;padding:7px 9px" onclick="goMenu()" aria-label="메뉴">☰</button><div class="stat hp">♥ ${state.player.hp}/${state.player.maxHp}</div><div class="stat gold">◈ ${state.gold}</div><div class="stat">지역 ${state.region}/3</div></header>`}
+    function renderMenu(){
+      app.innerHTML=`<section class="screen"><p class="logo" data-template-id="game-logo">VOID DECK</p><div class="hero-rune"><span>◈</span></div><h1 class="title" data-template-id="menu-title">공허의 덱</h1><p class="sub" data-template-id="menu-subtitle">매번 달라지는 공허의 길. 살아남아 VOID의 심장에 도달하세요.</p>
+      <div class="menu-actions">
+        <button class="btn primary" onclick="renderCharacterSelect()" data-template-id="new-game-button">새 게임</button>
+        <button class="btn" onclick="continueRun()" ${hasRun()?"":"disabled"} data-template-id="continue-button">이어하기</button>
+        <button class="btn" onclick="renderCodex()" data-template-id="codex-button">도감</button>
+        <button class="btn" onclick="renderUnlocks()" data-template-id="unlock-button">해금 · 영혼 조각 ${profile.shards}</button>
+        <button class="btn" onclick="renderSettings()" data-template-id="settings-button">설정</button>
+      </div><p class="sub" style="margin-top:18px;font-size:.78rem">플레이 ${profile.plays}회 · 승리 ${profile.wins}회 · 최고 지역 ${profile.bestRegion}</p></section>`;
     }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<canvas id="game"></canvas>
-
-<div id="hud">
-
-    <div id="stats">
-        🎯 SCORE:
-        <span id="score">0</span>
-        &nbsp;&nbsp;
-        🎯 TARGET:
-        <span id="targets">5</span>
-    </div>
-
-    <div id="ammo">
-        🔫
-        <span id="magazine">12</span>
-        /
-        <span id="reserve">60</span>
-    </div>
-
-    <div id="crosshair"></div>
-
-    <div id="message"></div>
-
-    <div id="help">
-        WASD 이동 · 마우스 조준 · 클릭 발사 · R 재장전
-    </div>
-
-</div>
-
-
-<div id="mobileControls">
-
-    <div id="joystick">
-        <div id="joystickKnob"></div>
-    </div>
-
-    <button
-        id="fireButton"
-        class="mobileButton">
-        FIRE
-    </button>
-
-    <button
-        id="reloadButton"
-        class="mobileButton">
-        RELOAD
-    </button>
-
-</div>
-
-
-<script>
-
-const canvas =
-    document.getElementById("game");
-
-const ctx =
-    canvas.getContext("2d");
-
-
-/* =========================
-   화면
-========================= */
-
-let width =
-    window.innerWidth;
-
-let height =
-    window.innerHeight;
-
-
-function resize(){
-
-    width =
-        window.innerWidth;
-
-    height =
-        window.innerHeight;
-
-    canvas.width =
-        width;
-
-    canvas.height =
-        height;
-
-}
-
-window.addEventListener(
-    "resize",
-    resize
-);
-
-resize();
-
-
-/* =========================
-   맵
-========================= */
-
-const map = [
-
-"1111111111111111",
-"1000000000000001",
-"1000011111000001",
-"1000010001000001",
-"1000010001000001",
-"1000000001000001",
-"1011110001011101",
-"1000000001000001",
-"1000011111000001",
-"1000000000000001",
-"1000110000110001",
-"1000000000000001",
-"1111111111111111"
-
-];
-
-const MAP_WIDTH = 16;
-const MAP_HEIGHT = 13;
-
-
-/* =========================
-   플레이어
-========================= */
-
-const player = {
-
-    x:2.5,
-    y:2.5,
-
-    angle:0,
-
-    magazine:12,
-
-    reserve:60,
-
-    score:0
-
-};
-
-
-/* =========================
-   과녁
-========================= */
-
-const targetPositions = [
-
-    {x:11.5,y:2.5},
-    {x:13.2,y:5.5},
-    {x:4.5,y:7.5},
-    {x:11.5,y:9.5},
-    {x:7.5,y:11}
-
-];
-
-
-const targets =
-    targetPositions.map(
-        position => ({
-
-            x:position.x,
-            y:position.y,
-
-            alive:true,
-
-            hit:false
-
-        })
-    );
-
-
-/* =========================
-   입력
-========================= */
-
-const keys = {};
-
-let firing=false;
-
-
-document.addEventListener(
-    "keydown",
-    event=>{
-
-        keys[
-            event.key.toLowerCase()
-        ]=true;
-
-        if(
-            event.key.toLowerCase()==="r"
-        ){
-
-            reload();
-
-        }
-
-        if(
-            event.key==="Enter" &&
-            gameFinished
-        ){
-
-            restart();
-
-        }
-
+    window.goMenu=()=>{state=null;renderMenu()};
+    window.continueRun=()=>{const run=loadRun();if(!run){toast("이어갈 런이 없습니다.",true);renderMenu();return}state=run;renderCurrent()};
+
+    function renderCharacterSelect(){
+      app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">전사를 선택하세요</h1><p class="sub">각 런은 새로운 덱과 새로운 길로 시작됩니다.</p><div class="character-grid" style="margin-top:18px">${Object.entries(CHARACTERS).map(([id,c])=>{const ok=profile.unlocked.includes(id);return `<button class="panel character ${ok?"":"locked"}" ${ok?`onclick="startRun('${id}')"`:"disabled"}><span class="badge">${ok?"선택 가능":"첫 보스 처치 시 해금"}</span><div style="font-size:2rem;margin-top:7px">${c.icon}</div><h2>${c.name}</h2><p class="sub">${c.desc}</p><p style="margin:10px 0 0;font-size:.85rem">HP ${c.hp} · 에너지 ${c.energy}</p></button>`}).join("")}</div></section>`;
     }
-);
-
-
-document.addEventListener(
-    "keyup",
-    event=>{
-
-        keys[
-            event.key.toLowerCase()
-        ]=false;
-
+    window.startRun=id=>{
+      const c=CHARACTERS[id];profile.plays++;saveProfile();
+      state={version:VERSION,runActive:true,screen:"map",character:id,player:{hp:c.hp,maxHp:c.hp,energy:c.energy,maxEnergy:c.energy,block:0,str:0,draw:5,status:{}},deck:c.deck.map(x=>({id:x,up:false})),relics:[],gold:45,region:1,map:generateMap(1),row:0,currentNode:null,kills:0,start:Date.now(),removeCost:45,tempShards:0};
+      saveRun();renderMap();
+    };
+    function generateMap(region){
+      const types=region===1?["battle","battle","event","rest","battle","shop","elite"]:region===2?["battle","event","battle","elite","shop","rest","battle"]:["battle","elite","event","battle","rest","shop","elite"];
+      const rows=[];for(let i=0;i<7;i++){const count=(i===0||i===6)?1:(Math.random()<.52?2:1);rows.push(Array.from({length:count},(_,j)=>({id:`${region}-${i}-${j}`,type:types[i],done:false})))}
+      rows.push([{id:`${region}-boss`,type:"boss",done:false}]);return rows;
     }
-);
-
-
-/* =========================
-   벽
-========================= */
-
-function isWall(x,y){
-
-    if(
-        x<0 ||
-        y<0 ||
-        x>=MAP_WIDTH ||
-        y>=MAP_HEIGHT
-    ){
-
-        return true;
-
+    const NODE={battle:["⚔","전투"],elite:["☠","엘리트"],event:["✧","이벤트"],shop:["◈","상점"],rest:["♨","휴식"],boss:["♛","보스"]};
+    function renderMap(){
+      if(!state)return renderMenu();state.screen="map";saveRun();
+      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">공허의 길</h1><p class="sub">빛나는 노드 중 하나를 선택하세요.</p><div class="map">${state.map.map((row,i)=>`<div class="map-row">${row.map(n=>{const available=i===state.row;const [icon,label]=NODE[n.type];return `<button class="node ${available?"available":""} ${n.done?"done":""}" ${available&&!n.done?`onclick="enterNode('${n.id}')"`:"disabled"}><span class="ico">${icon}</span><span>${label}</span></button>`}).join("")}</div>`).join("")}</div><div class="panel" style="padding:12px;margin-top:10px"><b>유물 ${state.relics.length}</b><p class="sub" style="font-size:.78rem;margin-top:5px">${state.relics.length?state.relics.map(x=>RELIC[x]?.name).join(" · "):"아직 획득한 유물이 없습니다."}</p></div></section>`;
     }
+    window.enterNode=id=>{const row=state.map[state.row];const node=row?.find(n=>n.id===id);if(!node){toast("갈 수 없는 길입니다.",true);return}node.done=true;state.currentNode=node;if(node.type==="battle"||node.type==="elite"||node.type==="boss")startCombat(node.type);else if(node.type==="event")renderEvent();else if(node.type==="shop")renderShop();else renderRest();};
+    function advance(){state.row++;state.currentNode=null;if(state.row>=state.map.length){if(state.region>=3)return victory();state.region++;profile.bestRegion=Math.max(profile.bestRegion,state.region);state.map=generateMap(state.region);state.row=0;toast(`지역 ${state.region}: 더 깊은 공허`)}saveRun();renderMap()}
 
-    return (
-        map[
-            Math.floor(y)
-        ][
-            Math.floor(x)
-        ]==="1"
-    );
-
-}
-
-
-/* =========================
-   각도
-========================= */
-
-function normalizeAngle(angle){
-
-    return Math.atan2(
-        Math.sin(angle),
-        Math.cos(angle)
-    );
-
-}
-
-
-/* =========================
-   이동
-========================= */
-
-function movePlayer(dx,dy){
-
-    const radius=.18;
-
-    const newX =
-        player.x+dx;
-
-    const newY =
-        player.y+dy;
-
-
-    if(
-        !isWall(
-            newX+radius,
-            player.y
-        ) &&
-        !isWall(
-            newX-radius,
-            player.y
-        )
-    ){
-
-        player.x=newX;
-
+    function enemyChoices(kind){
+      if(kind==="boss")return [state.region===1?"iron_guardian":state.region===2?"abyss_witch":"void"];
+      const ids=kind==="elite"?["elite_ogre","elite_hydra","elite_judge","elite_reaper","elite_sentinel"]:state.region===1?["slime","goblin","skeleton","bug","wolf"]:state.region===2?["berserker","mage","knight","thorn","minion"]:["knight","thorn","minion","mage","berserker"];
+      return [pick(ids)];
     }
-
-
-    if(
-        !isWall(
-            player.x,
-            newY+radius
-        ) &&
-        !isWall(
-            player.x,
-            newY-radius
-        )
-    ){
-
-        player.y=newY;
-
+    function startCombat(kind){
+      const id=enemyChoices(kind)[0], base=ENEMIES[id], mult=1+(state.region-1)*.16;
+      state.screen="combat";state.combat={kind,enemy:{id,name:base.name,icon:base.icon,maxHp:Math.round(base.hp*mult),hp:Math.round(base.hp*mult),block:0,status:{},pattern:0,base},draw:shuffle(state.deck.map(x=>({...x}))),hand:[],discard:[],exhaust:[],turn:0,firstAttack:true,firstSkill:true,powers:{},keepBlock:false};
+      discovered("enemies",id);startPlayerTurn();saveRun();
     }
-
-}
-
-
-/* =========================
-   시야 체크
-========================= */
-
-function blocked(
-    x1,
-    y1,
-    x2,
-    y2
-){
-
-    const distance =
-        Math.hypot(
-            x2-x1,
-            y2-y1
-        );
-
-    const steps =
-        Math.ceil(
-            distance*8
-        );
-
-
-    for(
-        let i=1;
-        i<steps;
-        i++
-    ){
-
-        const t=i/steps;
-
-        const x =
-            x1+(x2-x1)*t;
-
-        const y =
-            y1+(y2-y1)*t;
-
-
-        if(
-            isWall(x,y)
-        ){
-
-            return true;
-
-        }
-
+    function startPlayerTurn(){
+      const c=state.combat;if(!c||state.screen!=="combat")return;c.turn++;state.player.block=c.keepBlock?state.player.block:0;c.keepBlock=false;state.player.energy=state.player.maxEnergy+(c.turn===1&&state.relics.includes("war_drum")?1:0)-(state.player.status.energyLoss||0);state.player.status.energyLoss=0;
+      if(state.player.status.poison){damagePlayer(state.player.status.poison,"독");state.player.status.poison=Math.max(0,state.player.status.poison-1);if(checkDeath())return}
+      if(c.powers.fortify)state.player.block+=3;if(state.relics.includes("amber"))state.player.block+=(c.turn===1?6:0);
+      const draw=state.player.draw+(state.relics.includes("serpent_eye")?1:0)+(state.relics.includes("hourglass")&&c.turn%3===0?1:0);drawCards(draw);renderCombat();
     }
-
-    return false;
-
-}
-
-
-/* =========================
-   발사
-========================= */
-
-function shoot(){
-
-    if(gameFinished)
-        return;
-
-
-    if(
-        player.magazine<=0
-    ){
-
-        reload();
-
-        return;
-
+    function drawCards(n){const c=state.combat;for(let i=0;i<n&&c.hand.length<10;i++){if(!c.draw.length){if(!c.discard.length)break;c.draw=shuffle(c.discard);c.discard=[]}const x=c.draw.pop();if(x)c.hand.push(x)}}
+    function damageEnemy(amount,ignoreBlock=false){
+      const e=state.combat.enemy, p=state.player;let mod=1+(p.str||0)/100;if(e.status.vuln)mod*=1.5;if(p.status.weak)mod*=.75;if(state.relics.includes("bloody_ring")&&p.hp<=p.maxHp*.3)mod+=.4;if(state.relics.includes("chain")&&e.status.bleed)amount+=2;if(state.relics.includes("mirror")&&state.combat.firstAttack){mod*=1.5}if(state.combat.powers.momentum&&(p.status.combo||0)>=4)amount+=4;
+      amount=Math.max(0,Math.round(amount*mod));state.combat.firstAttack=false;if(!ignoreBlock){const absorbed=Math.min(e.block,amount);e.block-=absorbed;amount-=absorbed}e.hp-=amount;float(`-${amount}`,"#ff8797");const enemyEl=$(".enemy");if(enemyEl){enemyEl.classList.remove("hit");void enemyEl.offsetWidth;enemyEl.classList.add("hit")}if(e.hp<=0)winCombat();return amount;
     }
-
-
-    player.magazine--;
-
-    updateHUD();
-
-
-    let target=null;
-
-    let closest=Infinity;
-
-
-    for(
-        const targetObject
-        of targets
-    ){
-
-        if(
-            !targetObject.alive
-        )
-            continue;
-
-
-        const dx =
-            targetObject.x-
-            player.x;
-
-        const dy =
-            targetObject.y-
-            player.y;
-
-
-        const distance =
-            Math.hypot(
-                dx,
-                dy
-            );
-
-
-        const targetAngle =
-            Math.atan2(
-                dy,
-                dx
-            );
-
-
-        const difference =
-            Math.abs(
-                normalizeAngle(
-                    targetAngle-
-                    player.angle
-                )
-            );
-
-
-        /*
-            과녁 판정 범위
-        */
-
-        if(
-            difference<0.09 &&
-            distance<closest &&
-            !blocked(
-                player.x,
-                player.y,
-                targetObject.x,
-                targetObject.y
-            )
-        ){
-
-            target =
-                targetObject;
-
-            closest =
-                distance;
-
-        }
-
+    function damagePlayer(amount,source="피해"){
+      let val=amount;if(state.player.status.vuln)val=Math.round(val*1.5);const absorbed=Math.min(state.player.block,val);state.player.block-=absorbed;val-=absorbed;state.player.hp-=val;if(val)float(`-${val}`,"#ff7188");if(state.relics.includes("thorn_crown")&&val&&state.combat)damageEnemy(Math.ceil(val*.15));if(state.combat?.powers.rage&&val)state.player.str++;return val;
     }
-
-
-    if(target){
-
-        target.alive=false;
-
-        target.hit=true;
-
-        player.score+=100;
-
-        showMessage(
-            "+100  HIT!"
-        );
-
-
-        if(
-            targets.every(
-                target =>
-                !target.alive
-            )
-        ){
-
-            gameFinished=true;
-
-            document.getElementById(
-                "message"
-            ).textContent =
-                "🎯 ALL TARGETS HIT!<br>Enter로 다시 시작";
-
-        }
-
+    function heal(s,n){s.player.hp=clamp(s.player.hp+n,0,s.player.maxHp);float(`+${n}`,"#60e7a8")}
+    function checkDeath(){if(state.player.hp>0)return false;if(state.relics.includes("phoenix")&&!state.phoenixUsed){state.phoenixUsed=true;state.player.hp=1;toast("불사조 깃털이 당신을 살렸습니다!");return false}fail();return true}
+    function statusHtml(obj){return Object.entries(obj).filter(([,v])=>v>0).map(([k,v])=>`<span class="status">${({poison:"☠ 독",bleed:"🩸 출혈",weak:"⇣ 약화",vuln:"✹ 취약",combo:"✦ 콤보",energyLoss:"⚡ 기력"})[k]||k} ${v}</span>`).join("")}
+    function intent(){
+      const e=state.combat.enemy, p=e.base.patterns[e.pattern%e.base.patterns.length], map={attack:"⚔ 공격",block:"🛡 방어",debuff:p[1]==="poison"?"☠ 독":p[1]==="weak"?"⇣ 약화":"✹ 취약",buff:"✦ 강화"};return `${map[p[0]]||"?"} ${p[2]??p[1]}`;
     }
-
-}
-
-
-/* =========================
-   재장전
-========================= */
-
-function reload(){
-
-    if(
-        player.magazine>=12
-    )
-        return;
-
-
-    if(
-        player.reserve<=0
-    )
-        return;
-
-
-    const amount =
-        Math.min(
-            12-player.magazine,
-            player.reserve
-        );
-
-
-    player.magazine+=amount;
-
-    player.reserve-=amount;
-
-    updateHUD();
-
-}
-
-
-/* =========================
-   마우스 조준
-========================= */
-
-canvas.addEventListener(
-    "click",
-    ()=>{
-
-        if(
-            matchMedia(
-                "(pointer:fine)"
-            ).matches
-        ){
-
-            if(
-                document.pointerLockElement
-                !==canvas
-            ){
-
-                canvas.requestPointerLock();
-
-            }
-            else{
-
-                shoot();
-
-            }
-
-        }
-
+    function renderCombat(){
+      const c=state.combat;if(!c)return;const e=c.enemy;
+      app.innerHTML=`<section class="screen">${topbar()}<div class="combat-area"><div class="panel enemy"><div class="avatar">${e.icon}</div><h1 style="font-size:1.2rem;margin:2px">${e.name}</h1><div class="bar"><div class="enemybar" style="width:${clamp(e.hp/e.maxHp*100,0,100)}%"></div></div><small>${Math.max(0,e.hp)} / ${e.maxHp} ${e.block?`· 🛡${e.block}`:""}</small><div class="intent">${intent()}</div><div class="status-row">${statusHtml(e.status)}</div></div>
+      <div class="panel" style="padding:10px"><div style="display:flex;justify-content:space-between;font-size:.85rem"><b class="hp">♥ ${state.player.hp}/${state.player.maxHp}</b><b class="block">🛡 ${state.player.block}</b><b class="energy">⚡ ${state.player.energy}/${state.player.maxEnergy}</b></div><div class="status-row">${statusHtml(state.player.status)}</div></div></div>
+      <div class="battle-bottom"><div class="hand">${c.hand.map((x,i)=>cardHtml(x,i)).join("")||`<p class="sub" style="padding:20px">손패가 없습니다.</p>`}</div><div class="end-row"><span class="pile">덱 ${c.draw.length} · 버림 ${c.discard.length}</span><button class="btn danger" onclick="endTurn()">턴 종료 →</button></div></div></section>`;
     }
-);
-
-
-document.addEventListener(
-    "mousemove",
-    event=>{
-
-        if(
-            document.pointerLockElement
-            ===canvas
-        ){
-
-            player.angle =
-                normalizeAngle(
-                    player.angle+
-                    event.movementX*
-                    .0027
-                );
-
-        }
-
+    function cardHtml(inst,i){const d=CARDS[inst.id];if(!d)return "";const cost=Math.max(0,d.cost-(state.combat.firstSkill&&d.type==="skill"&&state.relics.includes("quill")?1:0));return `<button class="card ${d.type} ${d.rarity==="rare"?"rare-card":""}" onclick="playCard(${i})" ${state.player.energy<cost?"disabled":""}><span class="cost">${cost}</span><h3>${d.name}${inst.up?" +":""}</h3><p>${cardDesc(d,inst.up)}</p><small>${d.type} · ${d.rarity}</small></button>`}
+    function cardDesc(d,up){let text=d.description;if(up){if(d.damage)text=text.replace(String(d.damage),String(d.damage+3));if(d.block)text=text.replace(String(d.block),String(d.block+4))}return text}
+    window.playCard=i=>{
+      const c=state.combat, inst=c?.hand[i], d=inst&&CARDS[inst.id];if(!d||!c||state.screen!=="combat")return;let cost=Math.max(0,d.cost-(c.firstSkill&&d.type==="skill"&&state.relics.includes("quill")?1:0));if(state.player.energy<cost){toast("에너지가 부족합니다.",true);return}state.player.energy-=cost;c.firstSkill=false;const plus=inst.up?3:0,e=c.enemy;
+      switch(d.id){
+        case"slash":case"strike":case"bash":case"overpower":case"voidslash":case"assassinate":case"pierce":case"finale": damageEnemy(d.damage+plus,d.id==="pierce");break;
+        case"guard":case"ironwall":case"quickguard":case"barrier":case"perfectguard":state.player.block+=d.block+plus;if(d.id==="quickguard")drawCards(1);if(d.id==="barrier")c.keepBlock=true;if(d.id==="perfectguard"&&c.hand.some(z=>CARDS[z.id]?.type==="attack"))state.player.energy++;break;
+        case"focus":state.player.str=(state.player.str||0)+2+Math.floor(plus/2);break;
+        case"jab":damageEnemy(d.damage+plus);state.player.status.combo=(state.player.status.combo||0)+1;break;
+        case"bleedcut":damageEnemy(d.damage+plus);e.status.bleed=(e.status.bleed||0)+3+plus;break;
+        case"poisonneedle":damageEnemy(d.damage+plus);e.status.poison=(e.status.poison||0)+4+plus;break;
+        case"recover":heal(state,5+plus);break;case"feint":e.status.weak=(e.status.weak||0)+2;break;
+        case"riposte":damageEnemy(Math.floor(state.player.block*1.2)+plus);break;
+        case"fortify":c.powers.fortify=true;break;
+        case"bloodletting":damageEnemy(9+plus+(e.status.bleed?6:0));break;
+        case"toxicburst":damageEnemy((e.status.poison||0)*2+plus);e.status.poison=0;break;
+        case"flurry":for(let k=0;k<3;k++)damageEnemy(3+plus);state.player.status.combo=(state.player.status.combo||0)+3;break;
+        case"adrenaline":state.player.energy++;drawCards(2);break;
+        case"execute":damageEnemy(10+plus+(e.hp<=e.maxHp/2?18:0));break;
+        case"siphon":heal(state,Math.ceil(damageEnemy(7+plus)/2));break;
+        case"shivstorm":for(let k=0;k<5;k++)damageEnemy(2+plus);break;
+        case"meditate":drawCards(3);state.player.status.energyLoss=1;break;
+        case"immortal":state.player.block+=12+plus;break;
+        case"hemorrhage":damageEnemy(8+plus);e.status.bleed=(e.status.bleed||0)+8+plus;break;
+        case"venomrain":e.status.poison=(e.status.poison||0)+12+plus;drawCards(1);break;
+        case"echo":c.powers.echo=true;break;
+        case"laststand":damagePlayer(10);state.player.energy+=3;drawCards(3);break;
+        case"momentum":c.powers.momentum=true;break;
+        case"drain":e.status.weak=(e.status.weak||0)+2;e.status.vuln=(e.status.vuln||0)+2;break;
+        case"shieldbash":damageEnemy(Math.floor(state.player.block*.8)+plus);state.player.block=Math.floor(state.player.block/2);break;
+        case"cleanse":heal(state,7+plus);state.player.status.weak=0;break;
+        case"rage":c.powers.rage=true;break;
+        case"sacrifice":damagePlayer(6);drawCards(3);break;
+      }
+      if(c.powers.echo&&d.type==="attack")damageEnemy(Math.max(1,Math.floor((d.damage||3)/2)));
+      if(d.id==="finale")c.exhaust.push(inst);else c.discard.push(inst);c.hand.splice(i,1);discovered("cards",d.id);if(e.hp<=0)return;saveRun();renderCombat();
+    };
+    window.endTurn=()=>{
+      const c=state.combat;if(!c||state.screen!=="combat")return;c.discard.push(...c.hand);c.hand=[];const e=c.enemy;
+      if(e.status.bleed){e.hp-=e.status.bleed;float(`출혈 -${e.status.bleed}`,"#ff8190");e.status.bleed=Math.max(0,e.status.bleed-1)}
+      if(e.hp<=0)return winCombat();
+      const a=e.base.patterns[e.pattern%e.base.patterns.length];if(a[0]==="attack")damagePlayer(a[1]+(e.status.str||0));if(a[0]==="block")e.block+=a[1];if(a[0]==="buff")e.status[a[1]]=(e.status[a[1]]||0)+a[2];if(a[0]==="debuff"){const k=a[1],v=a[2];state.player.status[k]=(state.player.status[k]||0)+v;toast(`${e.name}: ${k==="poison"?"독":k==="weak"?"약화":"취약"} ${v}`)}
+      e.pattern++;if(checkDeath())return;setTimeout(startPlayerTurn,220);
+    };
+    function winCombat(){
+      if(!state.combat||state.screen!=="combat")return;const kind=state.combat.kind;state.kills++;profile.kills++;state.gold+=(kind==="boss"?55:kind==="elite"?42:22)+(state.relics.includes("lucky_coin")?8:0);if(state.relics.includes("vampire_fang"))heal(state,3);
+      if(kind==="boss"){if(state.region===1&&!profile.unlocked.includes("assassin")){profile.unlocked.push("assassin");toast("암살자가 영구 해금되었습니다!")}state.combat=null;saveProfile();advance();return}
+      const elite=kind==="elite";state.combat=null;renderReward(elite);
     }
-);
-
-
-document.addEventListener(
-    "mousedown",
-    event=>{
-
-        if(
-            event.button===0 &&
-            document.pointerLockElement
-            ===canvas
-        ){
-
-            firing=true;
-
-        }
-
+    function randomCard(force){const r=force|| (Math.random()<.1?"rare":Math.random()<.4?"uncommon":"common");const arr=Object.values(CARDS).filter(c=>c.rarity===r);return pick(arr).id}
+    function addCard(s,id){if(CARDS[id]){s.deck.push({id,up:false});discovered("cards",id)}}
+    function gainRelic(s){const avail=RELICS.map(x=>x.id).filter(x=>!s.relics.includes(x));if(!avail.length){s.gold+=25;return}const id=pick(avail);s.relics.push(id);discovered("relics",id);toast(`유물 획득: ${RELIC[id].name}`)}
+    function renderReward(elite){
+      state.screen="reward";const opts=[randomCard(),randomCard(),randomCard()];
+      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">${elite?"엘리트 격파":"전투 승리"}</h1><p class="sub">골드 획득! 덱에 추가할 카드 하나를 선택하세요.</p>${elite?`<button class="panel choice" onclick="claimEliteRelic()"><h3>✦ 유물 획득</h3><p>강한 적이 남긴 공허의 유물입니다.</p></button>`:""}<div class="reward-grid" style="margin-top:13px">${opts.map(id=>{const d=CARDS[id];return `<button class="card ${d.type}" style="width:100%;flex:auto" onclick="chooseReward('${id}')"><span class="cost">${d.cost}</span><h3>${d.name}</h3><p>${d.description}</p><small>${d.rarity}</small></button>`}).join("")}</div><button class="btn" style="width:100%;margin-top:14px" onclick="skipReward()">건너뛰기</button></section>`;
     }
-);
+    window.claimEliteRelic=()=>{gainRelic(state);saveRun();renderReward(false)};window.chooseReward=id=>{addCard(state,id);saveRun();advance()};window.skipReward=()=>{saveRun();advance()};
 
-
-document.addEventListener(
-    "mouseup",
-    event=>{
-
-        if(
-            event.button===0
-        ){
-
-            firing=false;
-
-        }
-
+    function renderEvent(){
+      state.screen="event";const ev=pick(EVENTS);state.event=ev;
+      app.innerHTML=`<section class="screen">${topbar()}<div class="panel" style="padding:19px;margin-top:25px"><div style="font-size:2.5rem">✧</div><h1 class="title">${ev[0]}</h1><p class="sub">${ev[1]}</p></div><div style="margin-top:18px">${[2,4,6].map(i=>`<button class="panel choice" onclick="eventChoice(${i})"><h3>${ev[i]}</h3></button>`).join("")}</div></section>`;
     }
-);
+    window.eventChoice=i=>{const ok=state.event[i+1](state);if(!ok){toast("골드가 부족합니다.",true);return}if(checkDeath())return;saveRun();advance()};
 
-
-/* =========================
-   모바일 조이스틱
-========================= */
-
-const joystick =
-    document.getElementById(
-        "joystick"
-    );
-
-const joystickKnob =
-    document.getElementById(
-        "joystickKnob"
-    );
-
-
-let joystickX=0;
-let joystickY=0;
-let joystickActive=false;
-
-
-function updateJoystick(event){
-
-    const rect =
-        joystick.getBoundingClientRect();
-
-
-    const centerX =
-        rect.left+
-        rect.width/2;
-
-    const centerY =
-        rect.top+
-        rect.height/2;
-
-
-    let x =
-        event.clientX-centerX;
-
-    let y =
-        event.clientY-centerY;
-
-
-    const max =
-        rect.width*.38;
-
-
-    const distance =
-        Math.hypot(x,y);
-
-
-    if(distance>max){
-
-        x=
-            x/distance*max;
-
-        y=
-            y/distance*max;
-
+    function renderShop(){
+      state.screen="shop";state.shopCards=[randomCard(),randomCard("uncommon"),randomCard()];state.shopRelic=pick(RELICS.filter(r=>!state.relics.includes(r)).map(r=>r.id));
+      const item=(title,desc,cost,fn)=>`<div class="panel shop-item"><div><h3>${title}</h3><p>${desc}</p></div><button class="btn gold-btn" onclick="${fn}" ${state.gold<cost?"disabled":""}>${cost} ◈</button></div>`;
+      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">공허 상점</h1><p class="sub" style="margin-bottom:14px">당신의 골드는 여기서만 빛납니다.</p>${state.shopCards.map((id,i)=>{const d=CARDS[id],cost=d.rarity==="rare"?95:d.rarity==="uncommon"?62:38;return item(d.name,d.description,cost,`buyCard(${i},${cost})`)}).join("")}${item(RELIC[state.shopRelic].name,RELIC[state.shopRelic].desc,115,`buyRelic(115)`)}${item("치유의 병","HP를 18 회복합니다.",28,"buyHeal(28)")}${item("카드 제거","무작위 기본 카드를 덱에서 제거합니다.",state.removeCost,`removeShopCard(${state.removeCost})`)}<button class="btn" style="width:100%;margin-top:10px" onclick="advance()">상점 나가기</button></section>`;
     }
+    window.buyCard=(i,c)=>{if(state.gold<c)return;state.gold-=c;addCard(state,state.shopCards[i]);state.shopCards.splice(i,1);toast("카드를 구입했습니다.");saveRun();renderShop()};
+    window.buyRelic=c=>{if(state.gold<c)return;state.gold-=c;gainRelic(state);state.shopRelic=null;saveRun();renderShop()};
+    window.buyHeal=c=>{if(state.gold<c)return;state.gold-=c;heal(state,18);saveRun();renderShop()};
+    function removeRandomCard(s){const idx=s.deck.findIndex(x=>["slash","guard","jab"].includes(x.id));if(idx>=0)s.deck.splice(idx,1);else if(s.deck.length)s.deck.splice(rng(0,s.deck.length-1),1)}
+    window.removeShopCard=c=>{if(state.gold<c)return;state.gold-=c;removeRandomCard(state);state.removeCost+=20;toast("카드가 제거되었습니다.");saveRun();renderShop()};
 
+    function renderRest(){
+      state.screen="rest";app.innerHTML=`<section class="screen">${topbar()}<div class="panel" style="padding:20px;margin-top:28px"><div style="font-size:2.8rem">♨</div><h1 class="title">잿빛 휴식처</h1><p class="sub">불꽃이 잠시 공허를 밀어냅니다.</p></div><button class="panel choice" style="margin-top:15px" onclick="restHeal()"><h3>♥ 회복</h3><p>HP를 ${22+(state.relics.includes("old_map")?8:0)} 회복합니다.</p></button><button class="panel choice" onclick="renderUpgrade()"><h3>✦ 카드 강화</h3><p>덱의 카드 하나를 강화합니다.</p></button></section>`}
+    window.restHeal=()=>{heal(state,22+(state.relics.includes("old_map")?8:0));saveRun();advance()};
+    function upgradeRandom(s){const x=pick(s.deck);if(x)x.up=true}
+    function renderUpgrade(){app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">강화할 카드</h1><p class="sub">강화된 카드는 피해 또는 방어도가 증가합니다.</p><div class="reward-grid" style="margin-top:15px">${state.deck.map((x,i)=>{const d=CARDS[x.id];return `<button class="card ${d.type}" ${x.up?"disabled":""} onclick="upgradeCard(${i})"><span class="cost">${d.cost}</span><h3>${d.name}${x.up?" +":""}</h3><p>${cardDesc(d,true)}</p></button>`}).join("")}</div></section>`}
+    window.upgradeCard=i=>{if(!state.deck[i]||state.deck[i].up)return;state.deck[i].up=true;toast("카드가 강화되었습니다!");saveRun();advance()};
 
-    joystickX=
-        x/max;
+    function renderCodex(){
+      const data=codexTab==="cards"?Object.values(CARDS):codexTab==="relics"?RELICS:Object.entries(ENEMIES).map(([id,x])=>({id,name:x.name,desc:x.boss?"보스":"공허의 적"}));
+      const key=codexTab;app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">도감</h1><div class="codex-tabs">${["cards","relics","enemies"].map(x=>`<button class="btn ${x===codexTab?"primary":""}" onclick="setCodex('${x}')">${({cards:"카드",relics:"유물",enemies:"적"})[x]}</button>`).join("")}</div><div class="codex-list">${data.map(x=>{const known=profile.discovered[key].includes(x.id);return `<div class="codex-entry ${known?"":"unknown"}"><div><b>${known?x.name:"???"}</b><p style="margin:3px 0 0;font-size:.76rem">${known?(x.description||x.desc||"발견한 기록"):"아직 발견하지 못했습니다."}</p></div><span>${known?"✓":"?"}</span></div>`}).join("")}</div></section>`}
+    window.setCodex=x=>{codexTab=x;renderCodex()};
+    function renderUnlocks(){app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">영혼 해금</h1><div class="panel" style="padding:18px;margin:14px 0"><span class="logo" style="color:#f6c85f">SOUL SHARDS</span><div style="font-size:2.3rem;font-weight:800;color:var(--gold)">${profile.shards}</div><p class="sub">런의 실패와 승리에서 얻은 조각입니다.</p></div><div class="panel" style="padding:14px"><h2 style="margin:0">암살자</h2><p class="sub">첫 번째 보스를 처치하면 영구 해금됩니다.</p><span class="badge">${profile.unlocked.includes("assassin")?"해금 완료":"잠김"}</span></div></section>`}
+    function renderSettings(){app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">설정</h1><div class="panel" style="padding:17px;margin-top:15px"><h2 style="margin-top:0">저장 관리</h2><p class="sub">게임은 주요 행동마다 현재 런과 영구 진행도를 이 브라우저에 자동 저장합니다.</p><button class="btn danger" style="margin-top:15px;width:100%" onclick="clearAll()">모든 저장 데이터 초기화</button></div></section>`}
+    window.clearAll=()=>{localStorage.removeItem(SAVE_KEY);localStorage.removeItem(RUN_KEY);loadProfile();toast("저장 데이터를 초기화했습니다.");renderMenu()};
 
-    joystickY=
-        y/max;
-
-
-    joystickKnob.style.transform=
-        `translate(
-            calc(-50% + ${x}px),
-            calc(-50% + ${y}px)
-        )`;
-
-}
-
-
-joystick.addEventListener(
-    "pointerdown",
-    event=>{
-
-        joystickActive=true;
-
-        joystick.setPointerCapture(
-            event.pointerId
-        );
-
-        updateJoystick(event);
-
+    function fail(){
+      const seconds=Math.floor((Date.now()-state.start)/1000), shards=3+state.region+(state.tempShards||0);profile.shards+=shards;profile.bestRegion=Math.max(profile.bestRegion,state.region);saveProfile();localStorage.removeItem(RUN_KEY);
+      const summary={region:state.region,kills:state.kills,gold:state.gold,relics:state.relics.length,time:formatTime(seconds),shards};state.runActive=false;
+      app.innerHTML=`<section class="screen result fail"><p class="logo">VOID DECK</p><h1>RUN FAILED</h1><p class="sub">공허가 당신의 발자국을 삼켰습니다.</p><div class="panel summary">도달 지역 <b>${summary.region}</b><br>처치한 적 <b>${summary.kills}</b><br>획득 골드 <b>${summary.gold}</b><br>유물 <b>${summary.relics}</b><br>플레이 시간 <b>${summary.time}</b><br>영혼 조각 <b class="gold">+${summary.shards}</b></div><div class="menu-actions"><button class="btn primary" onclick="renderCharacterSelect()">다시 시작</button><button class="btn" onclick="renderMenu()">메인 메뉴</button></div></section>`;
     }
-);
-
-
-joystick.addEventListener(
-    "pointermove",
-    event=>{
-
-        if(
-            joystickActive
-        ){
-
-            updateJoystick(event);
-
-        }
-
+    function victory(){
+      const seconds=Math.floor((Date.now()-state.start)/1000), shards=15+(state.tempShards||0);profile.shards+=shards;profile.wins++;profile.bestRegion=3;if(!profile.unlocked.includes("assassin"))profile.unlocked.push("assassin");saveProfile();localStorage.removeItem(RUN_KEY);const deck=state.deck.map(x=>CARDS[x.id]?.name+(x.up?"+":"")).join(" · ");
+      state.runActive=false;app.innerHTML=`<section class="screen result win"><p class="logo">VOID DECK</p><h1>VICTORY</h1><p class="sub">VOID의 심장이 마침내 침묵합니다.</p><div class="panel summary">클리어 시간 <b>${formatTime(seconds)}</b><br>사용 캐릭터 <b>${CHARACTERS[state.character].name}</b><br>처치한 적 <b>${state.kills}</b><br>유물 <b>${state.relics.map(x=>RELIC[x]?.name).join(" · ")||"없음"}</b><br>영혼 조각 <b class="gold">+${shards}</b><hr style="border-color:#34415f">덱<br><small>${esc(deck)}</small></div><div class="menu-actions"><button class="btn primary" onclick="renderCharacterSelect()">새 런 시작</button><button class="btn" onclick="renderMenu()">메인 메뉴</button></div></section>`;
     }
-);
-
-
-joystick.addEventListener(
-    "pointerup",
-    ()=>{
-
-        joystickActive=false;
-
-        joystickX=0;
-        joystickY=0;
-
-        joystickKnob.style.transform=
-            "translate(-50%,-50%)";
-
-    }
-);
-
-
-/* =========================
-   모바일 발사
-========================= */
-
-const fireButton =
-    document.getElementById(
-        "fireButton"
-    );
-
-
-fireButton.addEventListener(
-    "pointerdown",
-    ()=>{
-
-        firing=true;
-
-        shoot();
-
-    }
-);
-
-
-fireButton.addEventListener(
-    "pointerup",
-    ()=>{
-
-        firing=false;
-
-    }
-);
-
-
-/* =========================
-   모바일 재장전
-========================= */
-
-document
-.getElementById(
-    "reloadButton"
-)
-.addEventListener(
-    "pointerdown",
-    reload
-);
-
-
-/* =========================
-   모바일 조준
-========================= */
-
-let lookX=null;
-
-
-canvas.addEventListener(
-    "touchstart",
-    event=>{
-
-        for(
-            const touch
-            of event.changedTouches
-        ){
-
-            if(
-                touch.clientX>
-                width*.35 &&
-                touch.clientX<
-                width*.9
-            ){
-
-                lookX=
-                    touch.clientX;
-
-            }
-
-        }
-
-    },
-    {passive:false}
-);
-
-
-canvas.addEventListener(
-    "touchmove",
-    event=>{
-
-        for(
-            const touch
-            of event.changedTouches
-        ){
-
-            if(
-                lookX!==null
-            ){
-
-                const difference =
-                    touch.clientX-
-                    lookX;
-
-
-                player.angle =
-                    normalizeAngle(
-                        player.angle+
-                        difference*.012
-                    );
-
-
-                lookX=
-                    touch.clientX;
-
-            }
-
-        }
-
-    },
-    {passive:false}
-);
-
-
-canvas.addEventListener(
-    "touchend",
-    ()=>{
-        lookX=null;
-    },
-    {passive:false}
-);
-
-
-/* =========================
-   HUD
-========================= */
-
-function updateHUD(){
-
-    document.getElementById(
-        "score"
-    ).textContent=
-        player.score;
-
-
-    document.getElementById(
-        "magazine"
-    ).textContent=
-        player.magazine;
-
-
-    document.getElementById(
-        "reserve"
-    ).textContent=
-        player.reserve;
-
-
-    document.getElementById(
-        "targets"
-    ).textContent=
-        targets.filter(
-            target =>
-            target.alive
-        ).length;
-
-}
-
-
-function showMessage(text){
-
-    const message =
-        document.getElementById(
-            "message"
-        );
-
-
-    message.textContent=text;
-
-
-    setTimeout(
-        ()=>{
-
-            if(!gameFinished){
-
-                message.textContent="";
-
-            }
-
-        },
-        450
-    );
-
-}
-
-
-/* =========================
-   레이캐스팅
-========================= */
-
-function castRay(angle){
-
-    const sin =
-        Math.sin(angle);
-
-    const cos =
-        Math.cos(angle);
-
-
-    let distance=0;
-
-    const step=.025;
-
-
-    while(
-        distance<30
-    ){
-
-        distance+=step;
-
-
-        const x =
-            player.x+
-            cos*distance;
-
-        const y =
-            player.y+
-            sin*distance;
-
-
-        if(
-            isWall(x,y)
-        ){
-
-            return distance;
-
-        }
-
-    }
-
-
-    return 30;
-
-}
-
-
-/* =========================
-   화면 그리기
-========================= */
-
-function render(){
-
-    /*
-        밝은 하늘
-    */
-
-    const sky =
-        ctx.createLinearGradient(
-            0,
-            0,
-            0,
-            height/2
-        );
-
-
-    sky.addColorStop(
-        0,
-        "#74bce8"
-    );
-
-    sky.addColorStop(
-        1,
-        "#d7f0ff"
-    );
-
-
-    ctx.fillStyle=sky;
-
-
-    ctx.fillRect(
-        0,
-        0,
-        width,
-        height/2
-    );
-
-
-    /*
-        밝은 바닥
-    */
-
-    const floor =
-        ctx.createLinearGradient(
-            0,
-            height/2,
-            0,
-            height
-        );
-
-
-    floor.addColorStop(
-        0,
-        "#a9a9a9"
-    );
-
-    floor.addColorStop(
-        1,
-        "#686868"
-    );
-
-
-    ctx.fillStyle=floor;
-
-
-    ctx.fillRect(
-        0,
-        height/2,
-        width,
-        height/2
-    );
-
-
-    /*
-        벽
-    */
-
-    const FOV =
-        Math.PI/3;
-
-
-    const columns =
-        Math.max(
-            180,
-            Math.floor(width/3)
-        );
-
-
-    const columnWidth =
-        width/columns;
-
-
-    for(
-        let i=0;
-        i<columns;
-        i++
-    ){
-
-        const rayAngle =
-            player.angle-
-            FOV/2+
-            i/(columns-1)*FOV;
-
-
-        const distance =
-            castRay(rayAngle);
-
-
-        const correctedDistance =
-            distance*
-            Math.cos(
-                rayAngle-
-                player.angle
-            );
-
-
-        const wallHeight =
-            Math.min(
-                height*2,
-                height/
-                (
-                    correctedDistance*
-                    .72
-                )
-            );
-
-
-        const top =
-            (height-wallHeight)/2;
-
-
-        /*
-            기존보다 훨씬 밝게
-        */
-
-        const brightness =
-            Math.max(
-                90,
-                235-
-                correctedDistance*10
-            );
-
-
-        ctx.fillStyle=
-            `rgb(
-                ${brightness*.68},
-                ${brightness*.78},
-                ${brightness*.90}
-            )`;
-
-
-        ctx.fillRect(
-            i*columnWidth,
-            top,
-            columnWidth+1,
-            wallHeight
-        );
-
-    }
-
-
-    /*
-        과녁
-    */
-
-    const visibleTargets =
-        targets
-        .filter(
-            target =>
-            target.alive
-        )
-        .map(
-            target=>{
-
-                const dx =
-                    target.x-
-                    player.x;
-
-                const dy =
-                    target.y-
-                    player.y;
-
-
-                const distance =
-                    Math.hypot(
-                        dx,
-                        dy
-                    );
-
-
-                const angle =
-                    normalizeAngle(
-                        Math.atan2(
-                            dy,
-                            dx
-                        )-
-                        player.angle
-                    );
-
-
-                return {
-                    target,
-                    distance,
-                    angle
-                };
-
-            }
-        )
-        .filter(
-            data=>{
-
-                return (
-                    Math.abs(
-                        data.angle
-                    )<
-                    FOV*.65
-                    &&
-                    !blocked(
-                        player.x,
-                        player.y,
-                        data.target.x,
-                        data.target.y
-                    )
-                );
-
-            }
-        )
-        .sort(
-            (a,b)=>
-                b.distance-
-                a.distance
-        );
-
-
-    for(
-        const data
-        of visibleTargets
-    ){
-
-        const target =
-            data.target;
-
-
-        const screenX =
-            width/2+
-            Math.tan(
-                data.angle
-            )*
-            (
-                width/
-                (
-                    2*
-                    Math.tan(
-                        FOV/2
-                    )
-                )
-            );
-
-
-        const size =
-            Math.min(
-                height*.9,
-                height/
-                (
-                    data.distance*.72
-                )
-            );
-
-
-        const centerY =
-            height/2;
-
-
-        /*
-            과녁 기둥
-        */
-
-        ctx.fillStyle=
-            "#5b4634";
-
-
-        ctx.fillRect(
-            screenX-
-            size*.035,
-
-            centerY-
-            size*.1,
-
-            size*.07,
-
-            size*.75
-        );
-
-
-        /*
-            과녁 원판
-        */
-
-        const radius =
-            size*.27;
-
-
-        ctx.fillStyle=
-            "#eeeeee";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            screenX,
-            centerY-
-            size*.12,
-            radius,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
-        /*
-            바깥 링
-        */
-
-        ctx.fillStyle=
-            "#d82f2f";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            screenX,
-            centerY-
-            size*.12,
-            radius*.78,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
-        /*
-            흰색 링
-        */
-
-        ctx.fillStyle=
-            "#ffffff";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            screenX,
-            centerY-
-            size*.12,
-            radius*.57,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
-        /*
-            빨간 중앙
-        */
-
-        ctx.fillStyle=
-            "#d82f2f";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            screenX,
-            centerY-
-            size*.12,
-            radius*.32,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-
-        /*
-            검은 중심점
-        */
-
-        ctx.fillStyle=
-            "#111";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            screenX,
-            centerY-
-            size*.12,
-            radius*.13,
-            0,
-            Math.PI*2
-        );
-
-        ctx.fill();
-
-    }
-
-
-    /*
-        총
-    */
-
-    ctx.save();
-
-
-    ctx.translate(
-        width*.73,
-        height*.79
-    );
-
-
-    ctx.rotate(
-        -.05
-    );
-
-
-    ctx.fillStyle=
-        "#252525";
-
-
-    ctx.fillRect(
-        -25,
-        -10,
-        95,
-        75
-    );
-
-
-    ctx.fillStyle=
-        "#555";
-
-
-    ctx.fillRect(
-        5,
-        -28,
-        38,
-        30
-    );
-
-
-    ctx.fillStyle=
-        "#111";
-
-
-    ctx.fillRect(
-        65,
-        5,
-        45,
-        20
-    );
-
-
-    ctx.restore();
-
-}
-
-
-/* =========================
-   업데이트
-========================= */
-
-let gameFinished=false;
-
-let lastTime=
-    performance.now();
-
-
-function update(delta){
-
-    if(gameFinished)
-        return;
-
-
-    let moveX=0;
-    let moveY=0;
-
-
-    if(keys["w"])
-        moveY+=1;
-
-    if(keys["s"])
-        moveY-=1;
-
-    if(keys["a"])
-        moveX-=1;
-
-    if(keys["d"])
-        moveX+=1;
-
-
-    moveX+=joystickX;
-    moveY-=joystickY;
-
-
-    const length =
-        Math.hypot(
-            moveX,
-            moveY
-        )||1;
-
-
-    const speed =
-        delta*2.7;
-
-
-    const cos =
-        Math.cos(
-            player.angle
-        );
-
-
-    const sin =
-        Math.sin(
-            player.angle
-        );
-
-
-    const forward =
-        moveY/length;
-
-
-    const side =
-        moveX/length;
-
-
-    const dx =
-        (
-            forward*cos-
-            side*sin
-        )*speed;
-
-
-    const dy =
-        (
-            forward*sin+
-            side*cos
-        )*speed;
-
-
-    movePlayer(
-        dx,
-        dy
-    );
-
-
-    /*
-        자동 연사
-    */
-
-    if(
-        firing &&
-        player.magazine>0
-    ){
-
-        if(
-            performance.now()%230<
-            delta*100
-        ){
-
-            shoot();
-
-        }
-
-    }
-
-}
-
-
-/* =========================
-   다시 시작
-========================= */
-
-function restart(){
-
-    player.x=2.5;
-    player.y=2.5;
-    player.angle=0;
-
-    player.magazine=12;
-    player.reserve=60;
-
-    player.score=0;
-
-
-    targets.forEach(
-        target=>{
-
-            target.alive=true;
-            target.hit=false;
-
-        }
-    );
-
-
-    gameFinished=false;
-
-
-    document.getElementById(
-        "message"
-    ).textContent="";
-
-
-    updateHUD();
-
-}
-
-
-/* =========================
-   게임 루프
-========================= */
-
-function gameLoop(time){
-
-    const delta =
-        Math.min(
-            .05,
-            (time-lastTime)/1000
-        );
-
-
-    lastTime=time;
-
-
-    update(delta);
-
-    render();
-
-
-    requestAnimationFrame(
-        gameLoop
-    );
-
-}
-
-
-updateHUD();
-
-requestAnimationFrame(
-    gameLoop
-);
-
-</script>
-
-</body>
+    const formatTime=s=>`${Math.floor(s/60)}분 ${s%60}초`;
+    function renderCurrent(){if(!state)return renderMenu();if(state.screen==="combat")renderCombat();else if(state.screen==="map")renderMap();else renderMap()}
+    loadProfile();renderMenu();window.lucide?.createIcons();
+  })();
+  </script>
+ </body>
 </html>
