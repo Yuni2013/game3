@@ -1,773 +1,348 @@
 <!doctype html>
 <html lang="ko">
- <head>
+ <head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260918-05-13efa67","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VOID DECK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>에테르의 탑</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&amp;family=Fraunces:opsz,wght@9..144,700&amp;display=swap" rel="stylesheet">
   <style>
-    :root{--ink:#070913;--panel:#11172a;--panel2:#18213a;--line:#34415f;--text:#eef4ff;--muted:#9aa9c5;--violet:#a78bfa;--cyan:#48d9ff;--red:#ff6278;--gold:#f6c85f;--green:#5ee6a8;--blue:#67a9ff}
-    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#03050c;color:var(--text);font-family:"Fira Sans",sans-serif}
-    button{font:inherit}button:focus-visible{outline:3px solid var(--cyan);outline-offset:2px}
-    #game{width:100%;min-height:calc(100 * min(var(--vh, 1vh), 1vh));position:relative;overflow:hidden;background:radial-gradient(circle at 18% 10%,#26305e66 0,transparent 30%),radial-gradient(circle at 85% 75%,#3d1e5966 0,transparent 35%),var(--ink)}
-    #game:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.26;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:28px 28px}
-    .app-shell{width:100%;max-width:500px;margin:auto;min-height:calc(100 * min(var(--vh, 1vh), 1vh));padding:16px 14px 28px;position:relative;z-index:1}
-    .screen{animation:enter .25s ease both}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .hidden{display:none!important}.logo{font-family:"Space Mono",monospace;letter-spacing:.15em;text-transform:uppercase;text-shadow:0 0 22px #8d72ff88}.title{font-size:1.8rem;font-weight:800;margin:7px 0}.sub{color:var(--muted);line-height:1.55;margin:0}
-    .panel{background:linear-gradient(145deg,#18213aee,#0d1222ee);border:1px solid var(--line);box-shadow:0 12px 32px #0007;border-radius:18px}button.panel,button.choice{color:var(--text);font-family:inherit}button.panel h1,button.panel h2,button.panel h3,button.choice h1,button.choice h2,button.choice h3{color:var(--text)}button.panel p,button.choice p{color:inherit}button.panel:disabled,button.choice:disabled{color:var(--muted);opacity:.65}.topbar{display:flex;gap:7px;align-items:center;justify-content:space-between;margin-bottom:14px}.stat{background:#10182bd9;border:1px solid #33415f;border-radius:11px;padding:7px 9px;font-size:.76rem;white-space:nowrap}.hp{color:#ff8594}.gold{color:var(--gold)}.energy{color:var(--cyan)}.block{color:var(--blue)}
-    .btn{border:1px solid #4b5d87;background:#202b49;color:var(--text);border-radius:13px;padding:12px 13px;font-weight:700;min-height:47px;transition:.16s transform,.16s filter;cursor:pointer}.btn:hover{filter:brightness(1.13)}.btn:active{transform:scale(.97)}.btn.primary{background:linear-gradient(135deg,#7865d7,#9b74f2);border-color:#bdabff}.btn.danger{background:#712d45;border-color:#ad4867}.btn.gold-btn{background:#674f1d;border-color:#aa8534}.btn:disabled{opacity:.38;cursor:not-allowed;filter:grayscale(1)}
-    .menu-actions,.character-grid,.reward-grid,.list-grid{display:grid;gap:10px}.hero-rune{height:170px;margin:21px 0;border-radius:26px;display:grid;place-items:center;background:radial-gradient(circle,#9a74ff33,transparent 58%),linear-gradient(135deg,#131a35,#070a18);border:1px solid #43517c;position:relative;overflow:hidden}.hero-rune:before,.hero-rune:after{content:"";position:absolute;border:1px solid #9f8aff88;border-radius:50%;width:130px;height:130px;transform:rotate(45deg)}.hero-rune:after{width:84px;height:84px;border-color:#43d6ff}.hero-rune span{font-size:4rem;z-index:1;text-shadow:0 0 24px #ad8aff}
-    .character,.choice{padding:15px;text-align:left;width:100%;position:relative}.character.selected{border-color:var(--cyan);box-shadow:0 0 0 2px #46d9ff33}.character.locked{opacity:.56}.character h2,.choice h3{margin:0 0 5px}.badge{font-size:.68rem;padding:3px 7px;border-radius:99px;background:#27395e;color:#bcd5ff;display:inline-block}.badge.rare{background:#503375;color:#e4bdff}.badge.legendary{background:#6d5422;color:#ffe5a0}
-    .map{display:grid;gap:11px;padding:12px 0}.map-row{display:flex;justify-content:center;gap:10px}.node{width:74px;min-height:65px;border-radius:16px;border:1px solid #435172;background:#111a30;color:#dfeaff;font-weight:700;display:grid;place-items:center;gap:2px;padding:8px;font-size:.73rem;cursor:pointer}.node.available{border-color:#82dbff;background:#17324c;box-shadow:0 0 18px #39c8ff33}.node.done{opacity:.35}.node:disabled{cursor:not-allowed}.node .ico{font-size:1.35rem}
-    .combat-area{text-align:center}.enemy{padding:14px;margin:8px 0 12px}.enemy.hit{animation:hit .28s}@keyframes hit{50%{transform:translateX(7px);filter:brightness(1.8)}}.avatar{font-size:3.45rem;filter:drop-shadow(0 0 16px #8c6bff88)}.bar{height:11px;background:#080c18;border-radius:9px;overflow:hidden;border:1px solid #38425f}.bar>div{height:100%;transition:width .3s ease}.hpbar{background:linear-gradient(90deg,#e94561,#ff8192)}.enemybar{background:linear-gradient(90deg,#a85bce,#e493ff)}.intent{display:inline-flex;gap:6px;margin-top:9px;border:1px solid #6b5d92;background:#28203d;padding:7px 11px;border-radius:99px;font-size:.83rem}.status-row{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin:8px 0}.status{font-size:.69rem;padding:4px 7px;border-radius:8px;background:#25314c;color:#d9ecff}
-    .battle-bottom{position:sticky;bottom:0;padding:8px 0 0;background:linear-gradient(transparent,#070913 20%)}.hand{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 12px;scrollbar-width:none}.hand::-webkit-scrollbar{display:none}.card{flex:0 0 132px;min-height:181px;border:1px solid #53658d;background:linear-gradient(160deg,#293553,#151c31);border-radius:14px;padding:10px;text-align:left;color:var(--text);cursor:pointer;position:relative;overflow:hidden;transition:.16s transform,.16s border-color}.card:hover{transform:translateY(-5px);border-color:#b2ceff}.card:disabled{opacity:.42;transform:none;cursor:not-allowed}.card.attack{border-top:4px solid #e95e72}.card.skill{border-top:4px solid #65a9ff}.card.power{border-top:4px solid #d087ff}.card.legendary{box-shadow:inset 0 0 24px #c98d3333}.cost{position:absolute;top:8px;right:8px;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#1b9dc1;border:1px solid #85eaff;font-weight:800}.card h3{font-size:.9rem;margin:4px 30px 10px 0}.card p{font-size:.74rem;line-height:1.36;color:#c3d0e8;margin:0}.card small{position:absolute;bottom:8px;color:#8ca2ca;text-transform:uppercase;font-size:.59rem}.end-row{display:flex;align-items:center;gap:9px}.end-row .btn{flex:1}.pile{font-size:.7rem;color:var(--muted)}
-    .shop-item,.codex-entry,.achievement{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px;margin-bottom:8px}.shop-item h3,.achievement h3{margin:0;font-size:.96rem}.shop-item p,.achievement p{margin:4px 0 0;color:var(--muted);font-size:.77rem}.toast{position:fixed;z-index:30;left:50%;top:15px;transform:translateX(-50%);background:#243254;border:1px solid #6d91ca;border-radius:11px;padding:10px 14px;max-width:92%;text-align:center;box-shadow:0 8px 20px #0008;animation:toast .2s ease}.toast.bad{background:#612b42;border-color:#d35c7d}.toast.achievement-toast{background:linear-gradient(135deg,#40305e,#243254);border-color:#f6c85f}@keyframes toast{from{opacity:0;transform:translate(-50%,-12px)}to{opacity:1;transform:translate(-50%,0)}}.float{position:fixed;z-index:25;color:#fff;font-weight:800;font-size:1.3rem;text-shadow:0 2px 4px #000;pointer-events:none;animation:float .75s ease forwards}@keyframes float{to{opacity:0;transform:translateY(-52px) scale(1.12)}}
-    .tabs{display:flex;gap:7px;margin:14px 0;overflow-x:auto}.tabs .btn{padding:8px 10px;min-height:auto;font-size:.77rem;white-space:nowrap}.codex-entry{border-radius:11px;background:#141c31;border:1px solid #303d5e}.unknown{color:#707c94}.progress{height:7px;background:#080c18;border-radius:7px;overflow:hidden;margin-top:8px}.progress>i{display:block;height:100%;background:linear-gradient(90deg,#48d9ff,#a78bfa)}.result{text-align:center;padding-top:36px}.result h1{font-family:"Space Mono";font-size:2.1rem;letter-spacing:.06em;margin:12px 0}.result.fail h1{color:#ff7188}.result.win h1{color:#9fecff}.summary{text-align:left;padding:14px;margin:20px 0;color:#c6d2e9;line-height:1.75}.relic-chip{padding:9px;border-radius:12px;background:#141c31;border:1px solid #37476d;font-size:.78rem}.relic-chip b{display:block;color:#f2d487;margin-bottom:2px}.resource{color:#d2a8ff;font-size:.78rem}
-    @media(min-width:600px){#game{padding:16px}.app-shell{border-left:1px solid #253354;border-right:1px solid #253354;box-shadow:0 0 50px #000}}
-  button.character{color:var(--text);font-family:inherit;text-align:left}button.character h2{color:var(--text)}
-  
-    .choice, .character, .panel.choice, .panel.character { color: var(--text); }
-    .choice h2, .choice h3, .choice p, .character h2, .character h3, .character p { color: inherit; }
-    button.panel.choice:disabled, button.panel.character:disabled { color: var(--muted); }
-</style>
+    :root{--ink:#090d1c;--panel:#141b33;--panel2:#1c2645;--gold:#f2c66d;--text:#f6f1df;--muted:#aab3ce;--red:#e95a63;--blue:#5ca9f5;--green:#72c98d;--purple:#a984ec;--line:rgba(242,198,109,.22)}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    html,body{margin:0;min-height:100%;background:var(--ink);color:var(--text);font-family:"DM Sans",sans-serif;overscroll-behavior:none}
+    body{width:100%;min-height:calc(100 * min(var(--vh,1vh),1vh));background:radial-gradient(circle at 50% -10%,#263969 0,transparent 36%),linear-gradient(180deg,#101832 0%,#090d1c 58%,#060811 100%)}
+    button,input,select{font:inherit}button{touch-action:manipulation;cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .app{width:100%;max-width:480px;margin:auto;min-height:calc(100 * min(var(--vh,1vh),1vh));padding:env(safe-area-inset-top) 14px env(safe-area-inset-bottom);position:relative;overflow:hidden}
+    .screen{display:none;min-height:calc(100 * min(var(--vh,1vh),1vh));padding:18px 0 112px}.screen.active{display:block;animation:rise .28s ease both}@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+    .brand{letter-spacing:.13em;text-transform:uppercase;color:var(--gold);font-size:12px;font-weight:800}.title{font-family:Fraunces,Georgia,serif;font-size:clamp(38px,11vw,54px);line-height:1.05;margin:8px 0 14px;color:#fff4d3;text-shadow:0 3px 20px rgba(242,198,109,.28)}.subtitle{color:var(--muted);line-height:1.65;margin:0}
+    .panel{background:linear-gradient(145deg,rgba(31,43,78,.94),rgba(14,20,39,.95));border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.24)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.status-strip{display:flex;gap:7px;flex-wrap:wrap}.chip{background:#101830;border:1px solid rgba(255,255,255,.09);border-radius:999px;padding:6px 9px;font-weight:800;font-size:12px;white-space:nowrap}.gold{color:var(--gold)}.hp{color:#ff9ea4}.energy{color:#99c9ff}.block{color:#a9dcff}
+    .main-button,.ghost-button,.node,.choice,.action-button{min-height:48px;border-radius:14px;border:0;font-weight:800}.main-button{width:100%;background:linear-gradient(135deg,#e9b955,#f7d784);color:#1a1320;box-shadow:0 8px 20px rgba(228,173,67,.22)}.ghost-button{background:#222d50;color:var(--text);border:1px solid rgba(255,255,255,.12);padding:0 12px}.small-actions{display:flex;gap:7px}.small-actions button{min-height:39px}
+    .character{width:100%;padding:15px;text-align:left;margin:10px 0;cursor:pointer;border:2px solid transparent;transition:.2s;color:var(--text)}.character.selected{border-color:var(--gold);background:linear-gradient(145deg,#35436e,#18213d)}.character.locked{opacity:.65}.character h2{margin:0 0 4px;font-size:20px}.character p{margin:5px 0;color:var(--muted);line-height:1.45;font-size:14px}.char-icon{font-size:37px;float:right;margin-left:10px}
+    .relic-picker{display:flex;gap:8px;overflow-x:auto;padding:5px 0 10px}.relic-pick{flex:0 0 125px;padding:10px;text-align:left;background:#17213e;color:var(--text);border:1px solid rgba(242,198,109,.25);border-radius:12px}.relic-pick.selected{outline:2px solid var(--gold)}.relic-pick:disabled{opacity:.42}.relic-pick strong{display:block;font-size:13px}.relic-pick small{color:var(--muted);display:block;margin-top:4px}
+    .map-card{padding:18px;margin-top:18px}.nodes{display:grid;gap:11px;margin-top:16px}.node{display:flex;align-items:center;gap:13px;text-align:left;padding:12px 14px;background:#17213e;color:var(--text);border:1px solid rgba(255,255,255,.1)}.node:hover{border-color:var(--gold)}.node-icon{font-size:25px}.node small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
+    .combat-layout{padding-bottom:205px}.player-row,.enemy-box{padding:14px;margin-bottom:12px}.player-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.enemy-box{text-align:center;padding:17px}.enemy-art{font-size:70px;line-height:1;margin:7px 0;filter:drop-shadow(0 8px 11px rgba(0,0,0,.4))}.enemy-name{font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:bold}.bar{height:11px;background:#080b16;border-radius:99px;overflow:hidden;border:1px solid rgba(255,255,255,.1);margin:8px auto}.fill{height:100%;border-radius:inherit;transition:width .3s}.hpfill{background:linear-gradient(90deg,#bc344a,#f16c67)}.enemyfill{background:linear-gradient(90deg,#a63247,#ec5c59)}.intent{display:inline-block;background:#281b35;color:#ffd6df;border:1px solid rgba(255,167,183,.25);padding:8px 12px;border-radius:99px;font-size:13px;font-weight:800;margin-top:5px}.log{color:var(--muted);font-size:13px;line-height:1.5;min-height:42px;padding:11px 13px}
+    .hand-dock{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,480px);padding:8px 14px calc(9px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(9,13,28,.68),#090d1c 28%);z-index:4}.hand{display:flex;gap:9px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none}.hand::-webkit-scrollbar{display:none}.card{flex:0 0 145px;min-height:160px;border-radius:15px;padding:12px;background:linear-gradient(145deg,#253256,#11182f);border:2px solid #8294c2;color:#fff;text-align:left;position:relative;box-shadow:0 7px 15px rgba(0,0,0,.24);transition:.15s}.card.attack{border-color:#e57272}.card.skill{border-color:#63a9e8}.card.power{border-color:#bc8ced}.card:disabled{opacity:.42;filter:grayscale(.35);cursor:not-allowed}.cost{position:absolute;top:8px;left:8px;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#1c71c5;border:2px solid #a9daff;font-weight:900}.card-name{font-weight:900;font-size:15px;padding-left:34px;min-height:34px}.card-desc{color:#d5dcef;font-size:12px;line-height:1.4;margin-top:7px}.card-type{position:absolute;bottom:9px;left:12px;font-size:10px;color:#b9c6df}.end-row{display:flex;gap:9px}.end-row .main-button{background:linear-gradient(135deg,#b64a63,#ee7780);color:white}
+    .overlay{position:fixed;inset:0;background:rgba(2,4,10,.7);z-index:20;display:none;align-items:flex-end;justify-content:center}.overlay.show{display:flex}.sheet{width:min(100%,480px);max-height:84%;overflow:auto;background:#121a31;border-radius:23px 23px 0 0;padding:14px 16px calc(20px + env(safe-area-inset-bottom));border:1px solid var(--line);animation:sheet .25s ease both}@keyframes sheet{from{transform:translateY(100%)}to{transform:translateY(0)}}.handle{width:44px;height:5px;background:#526080;border-radius:99px;margin:0 auto 15px}.sheet h2{font-family:Fraunces,Georgia,serif;margin:0 0 12px}.sheet-item{padding:12px;border-bottom:1px solid rgba(255,255,255,.08)}.sheet-item strong{display:block}.sheet-item span{color:var(--muted);font-size:13px}
+    .reward-grid,.shop-list{display:grid;gap:10px;margin:15px 0}.choice{padding:14px;text-align:left;background:#1b2747;border:1px solid rgba(255,255,255,.1);color:var(--text)}.choice strong{display:block;font-size:16px}.choice span{color:#cbd4eb;font-size:13px;display:block;margin-top:5px}.choice .rare{color:#8fd0ff}.choice .hero{color:#e6a7ff}.choice .common{color:#d5dcef}.center-result{text-align:center;padding-top:12vh}.result-icon{font-size:78px}.result-title{font-family:Fraunces,Georgia,serif;font-size:39px;margin:12px 0}.muted{color:var(--muted)}.notice{min-height:25px;color:#ffd584;text-align:center;font-size:14px;font-weight:bold;margin:9px 0}.relic-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.relic{padding:12px;background:#20223d;border:1px solid rgba(242,198,109,.23);border-radius:12px}.relic b{display:block;color:var(--gold)}
+    .filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}.filters input,.filters select{width:100%;min-height:42px;border-radius:10px;background:#202b4a;color:#fff;border:1px solid rgba(255,255,255,.14);padding:8px}.codex-list{display:grid;gap:7px}.codex-card{width:100%;text-align:left;background:#1a2543;border:1px solid rgba(255,255,255,.1);border-radius:11px;color:#fff;padding:10px}.codex-card.unknown{opacity:.55}.pager{display:flex;justify-content:space-between;align-items:center;margin:12px 0}.tag{display:inline-block;border-radius:999px;background:#27365e;color:#c7d8ff;padding:3px 7px;margin:4px 3px 0 0;font-size:10px}.status-line{font-size:12px;color:#b7c4e2;margin-top:7px}.hidden{display:none!important}
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
+  <script src="/_sdk/0ddbbee1c66b1212.editing_sdk.js" type="text/javascript" integrity="sha512-HQn5LM1yruQSbY78ATUril6QeOJ9xj7KqO64ltLtb4vBwI5Qv3/tloFFOndBPZTNZoeV5xKzuth5y6FTi9crsg=="></script>
+  <script src="/_sdk/765e1fea0cec97ce.resizing_sdk.js" type="text/javascript" integrity="sha512-IRTJnqww0+HQ5V/LlWEQrlD5SrYHaVvaeVoNe8HYQXoaguzUGheSd9+n9s6WOgaTcEH0g37DuINHZ9aqfzWjlw=="></script>
  </head>
  <body data-template-id="__page-root">
-  <div id="game">
-   <main id="app" class="app-shell" aria-live="polite"></main>
+  <div class="app">
+   <section id="start" class="screen active" aria-label="시작 화면">
+    <div style="padding-top:5vh">
+     <div data-template-id="start-brand" class="brand canva-text"></div>
+     <h1 data-template-id="game-title" class="title canva-text"></h1>
+     <p data-template-id="game-description" class="subtitle canva-text"></p>
+    </div>
+    <div class="topbar" style="margin-top:20px">
+     <b>직업 선택</b>
+     <div class="small-actions">
+      <button id="achievementButton" class="ghost-button" type="button">업적</button><button id="codexButton" class="ghost-button" type="button">도감</button>
+     </div>
+    </div>
+    <div id="characters"></div>
+    <div class="panel" style="padding:13px;margin:14px 0"><b>시작 유물 선택</b>
+     <p class="muted" style="font-size:12px;margin:5px 0">해금된 유물 하나를 이번 런에만 장착할 수 있습니다.</p>
+     <div id="startingRelics" class="relic-picker"></div>
+    </div><button id="enterButton" data-template-id="enter-button" class="main-button canva-button" type="button"></button>
+    <p id="bestRecord" class="muted" style="text-align:center;font-size:13px;margin-top:13px"></p>
+   </section>
+   <section id="map" class="screen" aria-label="탑 지도">
+    <div class="topbar">
+     <div>
+      <div class="brand">
+       탑의 길
+      </div>
+      <h1 id="floorTitle" style="font-family:Fraunces,Georgia,serif;margin:3px 0;font-size:28px"></h1>
+     </div>
+     <div class="small-actions">
+      <button id="deckButton" class="ghost-button" type="button">덱</button><button id="relicButton" class="ghost-button" type="button">유물</button>
+     </div>
+    </div>
+    <div id="mapStatus" class="status-strip"></div>
+    <div class="map-card panel">
+     <div data-template-id="map-heading" class="canva-text" style="font-weight:900"></div>
+     <p data-template-id="map-helper" class="canva-text muted" style="margin:7px 0 0"></p>
+     <div id="nodes" class="nodes"></div>
+    </div>
+   </section>
+   <section id="combat" class="screen combat-layout" aria-label="전투 화면">
+    <div class="topbar">
+     <div class="brand">
+      전투
+     </div>
+     <div class="small-actions">
+      <button id="combatDeckButton" class="ghost-button" type="button">덱</button><button id="combatRelicButton" class="ghost-button" type="button">유물</button>
+     </div>
+    </div>
+    <div id="playerStatus" class="player-row panel"></div>
+    <div class="enemy-box panel">
+     <div id="enemyArt" class="enemy-art"></div>
+     <div id="enemyName" class="enemy-name"></div>
+     <div id="enemyHpText" style="font-weight:bold;margin-top:6px"></div>
+     <div class="bar">
+      <div id="enemyHpBar" class="fill enemyfill"></div>
+     </div>
+     <div id="enemyStatus" class="status-strip" style="justify-content:center"></div>
+     <div id="intent" class="intent"></div>
+    </div>
+    <div id="battleLog" class="panel log"></div>
+    <div class="hand-dock">
+     <div id="hand" class="hand" aria-label="손패"></div>
+     <div class="end-row">
+      <button id="endTurn" data-template-id="end-turn-button" class="main-button canva-button" type="button"></button>
+     </div>
+    </div>
+   </section>
+   <section id="choiceScreen" class="screen" aria-label="선택 화면">
+    <div class="brand">
+     탑의 발견
+    </div>
+    <h1 id="choiceTitle" style="font-family:Fraunces,Georgia,serif;font-size:31px;margin:7px 0"></h1>
+    <p id="choiceText" class="subtitle"></p>
+    <div id="choiceContent"></div>
+    <div id="choiceNotice" class="notice"></div>
+   </section>
+   <section id="result" class="screen center-result" aria-label="결과 화면">
+    <div id="resultIcon" class="result-icon"></div>
+    <h1 id="resultTitle" class="result-title"></h1>
+    <p id="resultText" class="subtitle"></p><button id="restartButton" data-template-id="restart-button" class="main-button canva-button" style="margin-top:24px" type="button"></button>
+   </section>
+  </div>
+  <div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-label="정보 패널">
+   <div class="sheet">
+    <div class="handle"></div>
+    <div class="topbar">
+     <h2 id="sheetTitle"></h2><button id="closeSheet" class="ghost-button" type="button">닫기</button>
+    </div>
+    <div id="sheetContent"></div>
+   </div>
   </div>
   <script>
-  (() => {
-    "use strict";
+const $=id=>document.getElementById(id);
+const rand=a=>a[Math.floor(Math.random()*a.length)];
+const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
+const clone=v=>JSON.parse(JSON.stringify(v));
+const META_KEYS={achievements:"aetherAchievements",startingRelics:"aetherStartingRelics",classes:"aetherClasses",cards:"aetherCardCollection",relics:"aetherRelicCollection",enemies:"aetherEnemyCollection",stats:"aetherStats"};
+function loadMeta(){return {achievements:JSON.parse(localStorage.getItem(META_KEYS.achievements)||"[]"),startingRelics:JSON.parse(localStorage.getItem(META_KEYS.startingRelics)||"[]"),classes:JSON.parse(localStorage.getItem(META_KEYS.classes)||'["gladiator","mage"]'),cards:JSON.parse(localStorage.getItem(META_KEYS.cards)||"[]"),relics:JSON.parse(localStorage.getItem(META_KEYS.relics)||"[]"),enemies:JSON.parse(localStorage.getItem(META_KEYS.enemies)||"[]"),stats:JSON.parse(localStorage.getItem(META_KEYS.stats)||'{"best":0,"clears":0,"shopBuys":0,"eliteKills":0}')}}
+let meta=loadMeta();
+function saveMeta(){localStorage.setItem(META_KEYS.achievements,JSON.stringify(meta.achievements));localStorage.setItem(META_KEYS.startingRelics,JSON.stringify(meta.startingRelics));localStorage.setItem(META_KEYS.classes,JSON.stringify(meta.classes));localStorage.setItem(META_KEYS.cards,JSON.stringify(meta.cards));localStorage.setItem(META_KEYS.relics,JSON.stringify(meta.relics));localStorage.setItem(META_KEYS.enemies,JSON.stringify(meta.enemies));localStorage.setItem(META_KEYS.stats,JSON.stringify(meta.stats))}
 
-    const SAVE_KEY="void_deck_save_v2", OLD_SAVE_KEY="void_deck_save_v1", RUN_KEY="void_deck_run_v2", OLD_RUN_KEY="void_deck_run_v1", VERSION=2;
-    const $=s=>document.querySelector(s), app=$("#app");
-    const rng=(a,b)=>Math.floor(Math.random()*(b-a+1))+a;
-    const pick=a=>a[Math.floor(Math.random()*a.length)];
-    const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=rng(0,i);[b[i],b[j]]=[b[j],b[i]]}return b};
-    const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
-    const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const CLASSES={
+ gladiator:{name:"검투사",icon:"⚔️",maxHp:80,desc:"힘, 방어, 연속 공격으로 정면을 돌파합니다.",unlock:"기본 직업",starter:["g_strike","g_guard","g_bash","g_sweep"]},
+ mage:{name:"마도사",icon:"🔮",maxHp:60,desc:"원소 주문과 에너지 조작으로 전장을 지배합니다.",unlock:"기본 직업",starter:["m_spark","m_barrier","m_fireball","m_meditate"]},
+ rogue:{name:"도적",icon:"🗡️",maxHp:68,desc:"저비용 카드, 독, 버리기와 콤보를 엮습니다.",unlock:"상점 카드 5회 구매",starter:["r_dagger","r_evade","r_ambush","r_smoke"]},
+ priest:{name:"사제",icon:"✦",maxHp:72,desc:"치유와 축복, 신성한 방어로 오래 버팁니다.",unlock:"한 런에서 50 이상 회복",starter:["p_smite","p_wall","p_heal","p_prayer"]}
+};
 
-    const card=(id,name,cost,type,rarity,description,effect,owner=null)=>({id,name,cost,type,rarity,description,effect,owner});
-    const CARDS={};
-    const addCards=list=>list.forEach(c=>CARDS[c.id]=c);
+const RELICS=[
+ {id:"shield",name:"낡은 방패",icon:"🛡️",desc:"전투 시작 시 방어도 3.",effect:{startBlock:3}},
+ {id:"ember",name:"불씨",icon:"🔥",desc:"전투 시작 시 적에게 3 피해.",effect:{startDamage:3}},
+ {id:"crystal",name:"푸른 수정",icon:"💎",desc:"최대 에너지 +1.",effect:{energy:1}},
+ {id:"coin",name:"행운의 동전",icon:"🪙",desc:"전투 승리 골드 +8.",effect:{gold:8}},
+ {id:"heart",name:"전사의 심장",icon:"❤️",desc:"최대 HP +12.",effect:{maxHp:12}},
+ {id:"eye",name:"비전의 눈",icon:"👁️",desc:"전투 시작 시 카드 1장 추가 드로우.",effect:{draw:1}},
+ {id:"blood",name:"피의 문장",icon:"🩸",desc:"매 전투 첫 공격 피해 +4.",effect:{firstDamage:4}},
+ {id:"seal",name:"수호자의 인장",icon:"🔰",desc:"턴 종료 시 방어도 2.",effect:{endBlock:2}},
+ {id:"ring",name:"마력의 반지",icon:"💍",desc:"매 전투 첫 스킬 비용 -1.",effect:{firstSkillDiscount:1}},
+ {id:"cup",name:"불멸의 잔",icon:"🏺",desc:"전투 승리 후 HP 5 회복.",effect:{winHeal:5}},
+ {id:"hunter",name:"사냥꾼의 눈",icon:"🎯",desc:"엘리트 보상 골드 +15.",effect:{eliteGold:15}},
+ {id:"sand",name:"시간의 모래",icon:"⌛",desc:"첫 턴 에너지 +1.",effect:{firstEnergy:1}},
+ {id:"goldHeart",name:"금빛 심장",icon:"💛",desc:"골드를 얻을 때 +20%.",effect:{goldRate:.2}},
+ {id:"void",name:"공허의 조각",icon:"◈",desc:"소진 카드 1장마다 피해 +1.",effect:{exhaustDamage:1}}
+];
+const relicById=id=>RELICS.find(r=>r.id===id);
 
-    /* 기존 카드와 신규 공용 카드 60장 이상 */
-    addCards([
-      card("slash","베기",1,"attack","common","적에게 6 피해.",{damage:6}),
-      card("guard","방어",1,"skill","common","방어도 8 획득.",{block:8}),
-      card("strike","강타",2,"attack","common","적에게 12 피해.",{damage:12}),
-      card("focus","집중",1,"skill","common","힘 2 획득.",{strength:2}),
-      card("jab","찌르기",0,"attack","common","적에게 3 피해. 콤보 1 획득.",{damage:3,combo:1}),
-      card("ironwall","철벽",2,"skill","common","방어도 16 획득.",{block:16}),
-      card("bleedcut","출혈 베기",1,"attack","common","5 피해. 출혈 3 부여.",{damage:5,bleed:3}),
-      card("poisonneedle","독침",1,"attack","common","4 피해. 독 4 부여.",{damage:4,poison:4}),
-      card("bash","방패 강타",1,"attack","common","7 피해. 취약 1 부여.",{damage:7,vuln:1}),
-      card("recover","호흡",1,"skill","common","HP 5 회복.",{heal:5}),
-      card("quickguard","재빠른 방어",0,"skill","common","방어도 4. 카드 1장 드로우.",{block:4,draw:1}),
-      card("feint","기만",1,"skill","common","적 약화 2 부여.",{weak:2}),
-      card("riposte","반격",1,"attack","rare","현재 방어도의 120%만큼 피해.",{blockDamage:1.2}),
-      card("fortify","요새화",1,"power","rare","매 턴 시작 방어도 3 획득.",{power:"fortify"}),
-      card("bloodletting","혈투",1,"attack","rare","9 피해. 적이 출혈 상태면 추가 6 피해.",{damage:9,bonusIfBleed:6}),
-      card("toxicburst","독 폭발",1,"skill","rare","독 수치의 2배 피해 후 적 독 제거.",{poisonBurst:2}),
-      card("flurry","난무",1,"attack","rare","3 피해를 3회. 콤보 3 획득.",{damage:3,hits:3,combo:3}),
-      card("adrenaline","아드레날린",0,"skill","rare","에너지 1. 카드 2장 드로우.",{energy:1,draw:2}),
-      card("overpower","압도",2,"attack","rare","18 피해. 적이 취약이면 추가 8 피해.",{damage:18,bonusIfVuln:8}),
-      card("barrier","장벽",2,"skill","rare","방어도 12. 다음 턴에도 방어도를 유지.",{block:12,keepBlock:true}),
-      card("execute","처형",2,"attack","rare","10 피해. 적 HP가 절반 이하라면 추가 18 피해.",{damage:10,execute:18}),
-      card("siphon","흡수",1,"attack","rare","7 피해. 준 피해의 절반만큼 회복.",{damage:7,lifesteal:.5}),
-      card("shivstorm","단검 폭풍",1,"attack","rare","2 피해를 5회.",{damage:2,hits:5}),
-      card("meditate","명상",1,"skill","rare","카드 3장 드로우. 다음 턴 에너지 -1.",{draw:3,energyLoss:1}),
-      card("voidslash","공허 절단",2,"attack","legendary","24 피해. 자신 약화 1.",{damage:24,selfWeak:1}),
-      card("immortal","불멸의 갑옷",2,"power","legendary","전투 시작 방어도 12 획득.",{power:"immortal"}),
-      card("hemorrhage","대출혈",2,"attack","legendary","8 피해. 출혈 8 부여.",{damage:8,bleed:8}),
-      card("venomrain","독의 비",2,"skill","legendary","적 독 12 부여. 카드 1장 드로우.",{poison:12,draw:1}),
-      card("perfectguard","완전 방어",1,"skill","legendary","방어도 20. 손패에 공격 카드가 있으면 에너지 1.",{block:20,energyIfAttack:1}),
-      card("finale","피날레",3,"attack","legendary","38 피해. 소멸.",{damage:38,exhaust:true}),
-      card("echo","메아리",1,"power","legendary","매 턴 첫 공격을 한 번 더 적용.",{power:"echo"}),
-      card("laststand","최후의 저항",0,"skill","legendary","HP 10을 잃고 에너지 3, 카드 3장 드로우.",{selfDamage:10,energy:3,draw:3}),
-      card("assassinate","암살",2,"attack","legendary","16 피해. 독 또는 출혈 적에게 추가 16 피해.",{damage:16,bonusIfStatus:16}),
-      card("momentum","가속",1,"power","legendary","콤보가 4 이상이면 공격 피해 +4.",{power:"momentum"}),
-      card("drain","공허 흡수",1,"skill","rare","적 약화 2, 취약 2 부여.",{weak:2,vuln:2}),
-      card("shieldbash","방패 분쇄",1,"attack","rare","방어도의 80% 피해. 방어도 절반 소모.",{blockDamage:.8,spendBlock:true}),
-      card("cleanse","정화",1,"skill","common","HP 7 회복. 자신의 약화 제거.",{heal:7,cleanseWeak:true}),
-      card("pierce","관통",1,"attack","common","8 피해. 적 방어도 무시.",{damage:8,pierce:true}),
-      card("rage","분노",1,"power","rare","피해를 받을 때마다 힘 1 획득.",{power:"rage"}),
-      card("sacrifice","희생",0,"skill","common","HP 6을 잃고 카드 3장 드로우.",{selfDamage:6,draw:3}),
+const ENEMIES={
+ bat:{name:"동굴 박쥐",art:"🦇",hp:36,pattern:[{type:"attack",value:8,label:"⚔️ 8 피해"},{type:"attack",value:10,label:"⚔️ 10 피해"},{type:"weak",value:7,label:"🌫️ 7 피해 · 약화"}]},
+ crystalBat:{name:"수정 박쥐",art:"🦇",hp:42,pattern:[{type:"block",value:7,label:"🛡️ 방어 7"},{type:"attack",value:11,label:"⚔️ 11 피해"}]},
+ golem:{name:"철골렘",art:"🗿",hp:52,pattern:[{type:"block",value:9,label:"🛡️ 방어 9"},{type:"attack",value:12,label:"⚔️ 12 피해"},{type:"attack",value:15,label:"💥 15 피해"}]},
+ iceGolem:{name:"얼음 골렘",art:"🧊",hp:58,pattern:[{type:"freeze",value:8,label:"❄️ 8 피해 · 빙결"},{type:"block",value:10,label:"🛡️ 방어 10"}]},
+ slime:{name:"독성 슬라임",art:"🟢",hp:44,pattern:[{type:"poison",value:7,label:"☠️ 7 피해 · 독 2"},{type:"attack",value:10,label:"⚔️ 10 피해"}]},
+ spirit:{name:"불꽃 정령",art:"🔥",hp:47,pattern:[{type:"burn",value:8,label:"🔥 8 피해 · 화상"},{type:"attack",value:12,label:"⚔️ 12 피해"}]},
+ priestEnemy:{name:"타락한 성직자",art:"🕯️",hp:64,pattern:[{type:"weak",value:9,label:"🌫️ 9 피해 · 약화"},{type:"heal",value:8,label:"✨ 8 회복"},{type:"attack",value:15,label:"⚔️ 15 피해"}]},
+ mageEnemy:{name:"공허의 마도사",art:"🧙",hp:70,pattern:[{type:"vulnerable",value:8,label:"💠 8 피해 · 취약"},{type:"attack",value:17,label:"💥 17 피해"}]},
+ knight:{name:"공허의 기사",art:"💀",hp:82,pattern:[{type:"attack",value:14,label:"⚔️ 14 피해"},{type:"block",value:12,label:"🛡️ 방어 12"},{type:"attack",value:21,label:"💥 21 피해"}]},
+ boss:{name:"탑의 수호자",art:"🐉",hp:135,pattern:[{type:"attack",value:16,label:"⚔️ 16 피해"},{type:"block",value:12,label:"🛡️ 방어 12"},{type:"attack",value:25,label:"💥 25 피해"}]},
+ flameLord:{name:"화염 군주",art:"👹",hp:150,pattern:[{type:"burn",value:15,label:"🔥 15 피해 · 화상"},{type:"attack",value:22,label:"⚔️ 22 피해"},{type:"block",value:14,label:"🛡️ 방어 14"}]},
+ voidKing:{name:"공허의 왕",art:"👑",hp:175,pattern:[{type:"vulnerable",value:14,label:"💠 14 피해 · 취약"},{type:"attack",value:28,label:"💥 28 피해"},{type:"weak",value:15,label:"🌫️ 15 피해 · 약화"}]}
+};
 
-      card("redline","붉은 선",1,"attack","common","6 피해. 출혈 대상이면 4 추가 피해.",{damage:6,bonusIfBleed:4}),
-      card("bloodmark","혈인",1,"skill","common","출혈 5 부여.",{bleed:5}),
-      card("coagulate","응고",1,"skill","rare","적 출혈을 제거하고 제거한 수치만큼 방어도 획득.",{bleedToBlock:1}),
-      card("bloodfeast","피의 향연",2,"attack","legendary","적 출혈의 3배 피해 후 출혈 제거.",{bleedBurst:3}),
-      card("hemokinesis","혈류 조작",1,"skill","rare","HP 5를 잃고 출혈 8 부여. 카드 1장 드로우.",{selfDamage:5,bleed:8,draw:1}),
-      card("scarletdance","진홍 난무",1,"attack","rare","2 피해를 4회. 명중마다 출혈 1.",{damage:2,hits:4,bleedPerHit:1}),
-      card("woundopen","상처 벌리기",2,"attack","legendary","10 피해. 출혈을 2배로 만듭니다.",{damage:10,doubleBleed:true}),
-      card("spikeguard","가시 방패",1,"skill","common","방어도 9. 이번 턴 공격받으면 4 반격.",{block:9,retaliate:4}),
-      card("bulwark","보루",2,"skill","rare","방어도 18. 다음 턴에도 방어도 유지.",{block:18,keepBlock:true}),
-      card("storedforce","저장된 힘",1,"attack","rare","방어도의 150% 피해.",{blockDamage:1.5}),
-      card("unbreakable","불굴",2,"power","legendary","방어도를 잃지 않습니다.",{power:"keepBlock"}),
-      card("counterstance","반격 자세",1,"power","rare","매 턴 첫 피해를 받으면 6 반격.",{power:"counter"}),
-      card("heavyshield","중방패",1,"skill","common","방어도 13. 카드 1장 버림.",{block:13,discard:1}),
-      card("wallbreaker","벽 파괴",2,"attack","legendary","현재 방어도의 100% 피해 후 방어도 전부 소모.",{blockDamage:1,spendAllBlock:true}),
-      card("needlechain","바늘 사슬",1,"attack","common","2 피해를 4회.",{damage:2,hits:4}),
-      card("twinfang","쌍송곳니",1,"attack","common","4 피해를 2회. 독 대상이면 1회 추가.",{damage:4,hits:2,extraHitIfPoison:true}),
-      card("stormofblades","칼날 폭풍",2,"attack","rare","3 피해를 6회.",{damage:3,hits:6}),
-      card("relentless","무자비",1,"power","rare","매 세 번째 공격은 추가 4 피해.",{power:"thirdStrike"}),
-      card("afterimage","잔상",1,"skill","rare","카드 2장 드로우. 이번 턴 다음 공격 2회 추가 타격.",{draw:2,bonusHits:2}),
-      card("toxiccoat","독성 도포",1,"skill","common","독 6 부여.",{poison:6}),
-      card("corrode","부식",1,"attack","common","5 피해. 독 3 부여.",{damage:5,poison:3}),
-      card("venomshift","독 전환",1,"skill","rare","적 독의 절반만큼 방어도 획득.",{poisonToBlock:.5}),
-      card("pestilence","역병",2,"skill","legendary","독 16 부여. 적 약화 2 부여.",{poison:16,weak:2}),
-      card("toxinspear","독창",2,"attack","rare","11 피해. 적 독 수치만큼 추가 피해.",{damage:11,bonusPoison:true}),
-      card("distill","증류",1,"skill","rare","적 독 6 제거. 제거한 독만큼 HP 회복.",{poisonToHeal:1}),
-      card("neurotoxin","신경독",1,"skill","legendary","독 8 부여. 적 취약 2 부여.",{poison:8,vuln:2}),
-      card("battery","축전",0,"skill","common","에너지 1 획득.",{energy:1}),
-      card("planahead","다음 수",1,"skill","common","카드 2장 드로우. 다음 턴 에너지 1.",{draw:2,nextEnergy:1}),
-      card("overclock","과부하",0,"skill","rare","에너지 2. 이번 턴 종료 시 카드 1장 버림.",{energy:2,endDiscard:1}),
-      card("deepfocus","심층 집중",2,"skill","legendary","카드 4장 드로우. 에너지 1 획득.",{draw:4,energy:1}),
-      card("recycle","재활용",1,"skill","common","버림 더미에서 카드 1장을 손으로 가져옵니다.",{recoverDiscard:1}),
-      card("incinerate","소각",1,"skill","rare","손패의 무작위 카드 1장을 소멸. 에너지 2 획득.",{exhaustHand:1,energy:2}),
-      card("voidfurnace","공허 용광로",2,"attack","legendary","18 피해. 소멸 더미 카드 1장당 추가 2 피해.",{damage:18,bonusExhaust:2}),
-      card("discardblade","버림 칼날",1,"attack","rare","6 피해. 이번 턴 버린 카드당 추가 4 피해.",{damage:6,bonusDiscard:4}),
-      card("purge","정리",0,"skill","common","손패의 카드 1장을 소멸. 방어도 10 획득.",{exhaustHand:1,block:10}),
-      card("allin","올인",0,"attack","legendary","남은 에너지를 모두 소모하고 에너지당 12 피해.",{allEnergyDamage:12}),
-      card("reckless","무모한 돌진",1,"attack","rare","20 피해. HP 8을 잃습니다.",{damage:20,selfDamage:8}),
-      card("glasscannon","유리 대포",2,"attack","legendary","34 피해. 자신의 방어도를 전부 잃습니다.",{damage:34,loseBlock:true}),
-      card("desperation","절박함",0,"skill","rare","HP 9를 잃고 방어도 18과 에너지 1 획득.",{selfDamage:9,block:18,energy:1}),
-      card("gambit","도박수",1,"attack","rare","15 피해. 방어도가 0이면 추가 10 피해.",{damage:15,bonusIfNoBlock:10}),
-      card("lastbreath","마지막 숨",1,"attack","legendary","HP가 최대 HP의 35% 이하라면 32 피해, 아니면 12 피해.",{lowHpDamage:32,damage:12})
-    ]);
+function card(id,name,klass,rarity,type,cost,effect,tags,upgrade={},minFloor=0){
+ return {id,name,class:klass,rarity,type,cost,description:"",effect,upgrade,value:0,tags,target:"enemy",minFloor};
+}
+const CARDS=[];
+function addCard(...args){CARDS.push(card(...args))}
+const named={
+ gladiator:[
+ ["g_strike","베기","attack",1,{damage:8},["공격","저비용"],{damage:3}],["g_guard","방어","skill",1,{block:6},["방어","방패"],{block:3}],["g_bash","강타","attack",2,{damage:14,vulnerable:1},["공격","취약"],{damage:4,vulnerable:1}],["g_sweep","휘둘러치기","attack",1,{damage:6,multiHit:2},["공격","연속"],{damage:2}],["g_heavy","무거운 일격","attack",2,{damage:20},["공격","고비용"],{damage:7}],["g_roar","전투 함성","power",1,{strength:2},["강화","힘"],{strength:1}],["g_counter","반격","skill",1,{block:8,retain:true},["방어","반격"],{block:4}],["g_execution","처형","attack",3,{damage:25,bonusIfEnemyBelow:0.5,bonusDamage:18},["공격","고위험"],{damage:6}],["g_charge","돌진","attack",1,{damage:10,block:4},["공격","방어"],{damage:3,block:2}],["g_ironwill","철의 의지","power",2,{dexterity:2},["방어","강화"],{dexterity:1}]
+ ],
+ mage:[
+ ["m_spark","전격","attack",0,{damage:4},["마법","번개","저비용"],{damage:2}],["m_fireball","화염탄","attack",1,{damage:10,burn:2},["마법","화염"],{damage:3,burn:1}],["m_barrier","마력 장벽","skill",1,{block:8},["마법","방어"],{block:4}],["m_meditate","명상","skill",1,{energy:1,block:3},["마법","에너지"],{block:3,draw:1}],["m_arcane","비전 폭발","attack",2,{damage:22},["마법","비전","고비용"],{damage:7}],["m_focus","집중","power",1,{focus:1},["마법","강화","에너지"],{focus:1}],["m_ice","얼음 창","attack",1,{damage:8,freeze:1},["마법","냉기"],{damage:3,freeze:1}],["m_chain","연쇄 번개","attack",2,{damage:7,multiHit:3},["마법","번개","연속"],{damage:2}],["m_time","시간 왜곡","skill",2,{draw:3,energy:1},["마법","드로우","에너지"],{draw:1}],["m_storm","화염 폭풍","attack",3,{damage:18,burn:5},["마법","화염","고비용"],{damage:6}]
+ ],
+ rogue:[
+ ["r_dagger","단검","attack",0,{damage:5},["공격","저비용","콤보"],{damage:2}],["r_evade","회피","skill",1,{block:7,dexterity:1},["방어","회피"],{block:3}],["r_ambush","기습","attack",1,{damage:11,bonusFirstAttack:7},["공격","첫공격"],{damage:3}],["r_smoke","연막","skill",1,{block:5,weak:2},["방어","회피","약화"],{block:3}],["r_poison","독침","attack",1,{damage:4,poison:5},["공격","독"],{poison:3}],["r_hand","손놀림","skill",0,{draw:2,discard:1},["드로우","버리기"],{draw:1}],["r_assassin","암살","attack",2,{damage:18,bonusIfEnemyBelow:0.5,bonusDamage:20},["공격","고위험"],{damage:6}],["r_feint","페인트","skill",0,{block:4,draw:1},["방어","드로우"],{block:3}]
+ ],
+ priest:[
+ ["p_smite","신성한 일격","attack",1,{damage:9,heal:2},["공격","치유","신성"],{damage:3}],["p_wall","성벽","skill",1,{block:9},["방어","방패"],{block:4}],["p_heal","치유","skill",1,{heal:8},["치유"],{heal:4}],["p_prayer","기도","power",1,{strength:1,dexterity:1},["강화","신성"],{block:4}],["p_bless","축복","skill",1,{draw:1,heal:4},["치유","드로우"],{draw:1}],["p_holy","성스러운 빛","attack",2,{damage:16,weak:2},["공격","신성","약화"],{damage:5}],["p_aegis","신성한 방벽","skill",2,{block:17,retain:true},["방어","신성"],{block:6}],["p_grace","은총","skill",0,{heal:3,energy:1},["치유","에너지"],{heal:2}]
+ ]
+};
+Object.entries(named).forEach(([klass,list])=>list.forEach(([id,name,type,cost,effect,tags,upgrade])=>addCard(id,name,klass,"일반",type,cost,effect,tags,upgrade)));
 
-    /* 신규 직업 전용 카드: 공허술사 10장 */
-    addCards([
-      card("voidbolt","공허 화살",1,"attack","common","7 피해. 공허 1 획득.",{damage:7,void:1},"caster"),
-      card("riftguard","균열 장벽",1,"skill","common","방어도 7. 공허 1 획득.",{block:7,void:1},"caster"),
-      card("consumevoid","공허 소비",1,"attack","rare","공허당 5 피해 후 공허를 모두 소모.",{voidDamage:5},"caster"),
-      card("astralcharge","성운 충전",1,"skill","rare","공허 3 획득. 카드 1장 드로우.",{void:3,draw:1},"caster"),
-      card("singularity","특이점",2,"attack","legendary","15 피해. 공허당 추가 4 피해.",{damage:15,bonusVoid:4},"caster"),
-      card("voidward","공허 수호",1,"power","rare","매 턴 시작 공허의 절반만큼 방어도 획득.",{power:"voidWard"},"caster"),
-      card("collapse","붕괴",2,"skill","legendary","공허를 모두 소모하고 공허당 방어도 7 및 적 약화 1.",{voidBlock:7,weakIfVoid:true},"caster"),
-      card("riftstep","균열 도약",0,"skill","common","공허 1 획득. 카드 1장 드로우.",{void:1,draw:1},"caster"),
-      card("darkmatter","암흑 물질",2,"power","rare","공허가 5 이상이면 공격 피해 +5.",{power:"voidMight"},"caster"),
-      card("eclipse","일식",3,"attack","legendary","28 피해. 공허 6 이상이면 피해를 두 번 적용.",{damage:28,doubleIfVoid:6},"caster"),
+const classPatterns={
+ gladiator:[["참격","attack",{damage:9},["공격"]],["방패격","attack",{damage:7,block:5},["공격","방어"]],["철갑","skill",{block:11},["방어","방패"]],["혈투","attack",{damage:13,loseHp:2},["공격","고위험"]],["난도질","attack",{damage:4,multiHit:3},["공격","연속"]],["전선 돌파","attack",{damage:11,vulnerable:1},["공격","취약"]],["수호 태세","skill",{block:10,weak:1},["방어","약화"]],["분노","power",{strength:1},["강화","힘"]],["철퇴","attack",{damage:16},["공격","고비용"]],["재정비","skill",{block:6,draw:1},["방어","드로우"]]],
+ mage:[["화염 파편","attack",{damage:7,burn:3},["마법","화염"]],["서리 고리","skill",{block:6,freeze:1},["마법","냉기","방어"]],["번개 구체","attack",{damage:5,multiHit:2,energy:1},["마법","번개","에너지"]],["비전 방패","skill",{block:12},["마법","비전","방어"]],["마나 샘","skill",{energy:2,draw:1},["마법","에너지","드로우"]],["별의 화살","attack",{damage:15},["마법","비전"]],["냉기 파열","attack",{damage:9,freeze:2},["마법","냉기"]],["점화","skill",{burn:5},["마법","화염"]],["주문서","skill",{draw:2},["마법","드로우"]],["마력 증폭","power",{focus:1,strength:1},["마법","강화"]]],
+ rogue:[["독칼","attack",{damage:4,poison:4},["공격","독"]],["그림자 걸음","skill",{block:8,draw:1},["방어","회피","드로우"]],["절개","attack",{damage:7,bonusFirstAttack:5},["공격","첫공격"]],["도박수","skill",{draw:3,discard:2},["드로우","버리기","고위험"]],["훔치기","attack",{damage:6,gold:7},["공격","골드"]],["연속 찌르기","attack",{damage:3,multiHit:4},["공격","연속","콤보"]],["독 연무","skill",{poison:7,weak:1},["독","약화"]],["빠른 손","skill",{energy:1,draw:1},["에너지","드로우"]],["급소","attack",{damage:12,vulnerable:1},["공격","취약"]],["사라짐","skill",{block:13,exhaust:true},["방어","소진","회피"]]],
+ priest:[["빛의 창","attack",{damage:11},["공격","신성"]],["보호의 손길","skill",{block:7,heal:3},["방어","치유"]],["정화","skill",{heal:5,cleanse:1},["치유","정화"]],["찬가","power",{dexterity:1,focus:1},["강화","신성"]],["심판","attack",{damage:12,weak:2},["공격","신성","약화"]],["희생","skill",{loseHp:3,energy:2,draw:2},["에너지","고위험","드로우"]],["성수","skill",{heal:10,exhaust:true},["치유","소진"]],["빛의 갑옷","skill",{block:14,retain:true},["방어","신성"]],["구원","attack",{damage:8,heal:6},["공격","치유"]],["계시","skill",{draw:2,upgradeRandom:1},["드로우","강화"]]],
+ common:[["준비","skill",{draw:1},["드로우"]],["단단한 가죽","skill",{block:8},["방어"]],["무모한 일격","attack",{damage:17,loseHp:4},["공격","고위험"]],["전술 교체","skill",{discard:1,draw:2},["버리기","드로우"]],["응급 처치","skill",{heal:4},["치유"]],["에테르 조각","skill",{energy:1,exhaust:true},["에너지","소진"]],["도금된 칼날","attack",{damage:10,gold:5},["공격","골드"]],["노련한 방어","skill",{block:5,draw:1},["방어","드로우"]],["위험한 계약","power",{strength:2,loseHp:5},["강화","고위험"]],["정적","skill",{weak:2},["약화"]],["봉인","skill",{freeze:1},["빙결"]],["정돈","skill",{removeRandom:1,exhaust:true},["덱압축","소진"]],["재활용","skill",{recoverDiscard:1},["드로우","버리기"]],["폭발 물약","attack",{damage:14,exhaust:true},["공격","소진"]],["평정","skill",{block:4,energy:1},["방어","에너지"]],["폭주","attack",{damage:7,multiHit:2,loseHp:2},["공격","연속","고위험"]]]
+};
+function generatePool(klass,targetCount,prefix){
+ let i=0;const patterns=classPatterns[klass];
+ while(CARDS.filter(c=>c.class===klass).length<targetCount){
+  const p=patterns[i%patterns.length],n=Math.floor(i/patterns.length)+1,rarity=i%11===10?"영웅":i%4===3?"희귀":"일반";
+  const effect=clone(p[2]); if(effect.damage)effect.damage+=n%5*2;if(effect.block)effect.block+=n%4*2;if(effect.heal)effect.heal+=n%3;
+  const cost=rarity==="영웅"?Math.min(3,(i%3)+1):i%7===0?0:(i%3)+1;
+  const upgrade=effect.damage?{damage:rarity==="영웅"?7:3}:effect.block?{block:4}:effect.heal?{heal:3}:{draw:1};
+  addCard(`${prefix}_${i}`,`${p[0]} ${n}`,klass,rarity,p[1],cost,effect,[...p[3],rarity==="영웅"?"고비용":""].filter(Boolean),upgrade,rarity==="영웅"?3:0);i++;
+ }
+}
+generatePool("gladiator",60,"g");generatePool("mage",60,"m");generatePool("rogue",50,"r");generatePool("priest",50,"p");generatePool("common",80,"c");
+const cardById=id=>CARDS.find(c=>c.id===id);
 
-      /* 수호자 10장 */
-      card("towerstance","탑의 자세",1,"skill","common","방어도 12 획득. 수호 1 획득.",{block:12,guard:1},"guardian"),
-      card("shieldline","방패선",1,"attack","common","방어도의 70% 피해. 수호 1 획득.",{blockDamage:.7,guard:1},"guardian"),
-      card("protectiveoath","수호의 맹세",1,"power","rare","수호당 매 턴 방어도 2 획득.",{power:"guardOath"},"guardian"),
-      card("bastion","요새",2,"skill","rare","방어도 22. 수호 2 획득.",{block:22,guard:2},"guardian"),
-      card("retaliatoryslam","응징 강타",2,"attack","rare","14 피해. 수호당 추가 3 피해.",{damage:14,bonusGuard:3},"guardian"),
-      card("stoneform","석화",1,"skill","rare","방어도 14. 이번 턴 받는 피해 3 감소.",{block:14,damageReduction:3},"guardian"),
-      card("citadel","성채",3,"power","legendary","방어도를 잃지 않고, 매 턴 수호 1 획득.",{power:"citadel"},"guardian"),
-      card("guardianstrike","수호자의 일격",1,"attack","common","8 피해. 방어도가 20 이상이면 추가 10 피해.",{damage:8,bonusIfHighBlock:10},"guardian"),
-      card("aegis","이지스",2,"skill","legendary","방어도 30. 카드 1장 버림.",{block:30,discard:1},"guardian"),
-      card("returnfire","되돌림",1,"skill","rare","이번 턴 반격 9. 수호 1 획득.",{retaliate:9,guard:1},"guardian"),
+function effectText(e){
+ const a=[];if(e.damage)a.push(`적에게 ${e.damage} 피해`);if(e.multiHit)a.push(`${e.multiHit}회 공격`);if(e.block)a.push(`방어도 ${e.block}`);if(e.draw)a.push(`${e.draw}장 드로우`);if(e.energy)a.push(`에너지 +${e.energy}`);if(e.heal)a.push(`HP ${e.heal} 회복`);if(e.strength)a.push(`힘 +${e.strength}`);if(e.dexterity)a.push(`민첩 +${e.dexterity}`);if(e.focus)a.push(`집중 +${e.focus}`);if(e.vulnerable)a.push(`취약 ${e.vulnerable}`);if(e.weak)a.push(`약화 ${e.weak}`);if(e.poison)a.push(`독 ${e.poison}`);if(e.burn)a.push(`화상 ${e.burn}`);if(e.freeze)a.push(`빙결 ${e.freeze}`);if(e.discard)a.push(`손패 ${e.discard}장 버림`);if(e.recoverDiscard)a.push("버린 카드 1장 회수");if(e.exhaust)a.push("소진");if(e.retain)a.push("보존");if(e.gold)a.push(`골드 +${e.gold}`);if(e.loseHp)a.push(`HP ${e.loseHp} 소모`);if(e.cleanse)a.push("상태이상 정화");if(e.upgradeRandom)a.push("무작위 카드 강화");return a.join(" · ")+".";
+}
+function upgradedEffect(c){
+ const d=cardById(c.id),e=clone(d.effect);if(c.upgraded)Object.entries(d.upgrade||{}).forEach(([k,v])=>e[k]=(e[k]||0)+v);return e;
+}
+function cardDescription(c){return effectText(upgradedEffect(c))}
+function discoverCard(id){if(!meta.cards.includes(id)){meta.cards.push(id);saveMeta();checkAchievements()}}
+function discoverRelic(id){if(!meta.relics.includes(id)){meta.relics.push(id);saveMeta();checkAchievements()}}
+function discoverEnemy(id){if(!meta.enemies.includes(id)){meta.enemies.push(id);saveMeta()}}
 
-      /* 역병 의사 10장 */
-      card("diagnosis","진단",1,"skill","common","독 4 부여. 카드 1장 드로우.",{poison:4,draw:1},"plague"),
-      card("scalpel","해부칼",1,"attack","common","6 피해. 독 대상이면 5 추가 피해.",{damage:6,bonusPoisonDamage:5},"plague"),
-      card("plaguevial","역병 병",1,"skill","rare","독 10 부여.",{poison:10},"plague"),
-      card("contagion","전염",1,"power","rare","매 턴 종료 시 적 독 2 부여.",{power:"contagion"},"plague"),
-      card("antidote","해독제",1,"skill","common","HP 8 회복. 자신 독 제거.",{heal:8,cleansePoison:true},"plague"),
-      card("necrosis","괴사",2,"attack","rare","12 피해. 적 독의 절반만큼 추가 피해.",{damage:12,bonusPoisonHalf:true},"plague"),
-      card("pandemic","대유행",3,"skill","legendary","독 22, 약화 2, 취약 1 부여.",{poison:22,weak:2,vuln:1},"plague"),
-      card("leechjar","거머리 단지",1,"skill","rare","적 독 5 제거. 제거한 수치만큼 HP 회복.",{poisonToHeal:1,poisonRemove:5},"plague"),
-      card("feverdream","열병",2,"attack","legendary","9 피해를 3회. 명중마다 독 2.",{damage:9,hits:3,poisonPerHit:2},"plague"),
-      card("miasma","독기",1,"skill","rare","독 7 부여. 적 공격력 -2.",{poison:7,enemyStrength:-2},"plague")
-    ]);
+const game={player:null,enemy:null,deck:[],hand:[],drawPile:[],discardPile:[],exhaustPile:[],gold:0,relics:[],floor:0,energy:3,block:0,status:{},turnStats:{cards:0,firstAttack:true,firstSkill:true},runHeal:0,pending:null,shopStock:[]};
+function hasRelic(id){return game.relics.includes(id)}
+function relicValue(key){return game.relics.reduce((n,id)=>n+(relicById(id).effect[key]||0),0)}
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id).classList.add("active")}
+function notice(t){$("choiceNotice").textContent=t;setTimeout(()=>{$("choiceNotice").textContent=""},1500)}
+function setLog(t){$("battleLog").textContent=t}
+function makeCard(id){return {id,upgraded:false}}
+function statusText(s){return Object.entries(s).filter(([,v])=>v>0).map(([k,v])=>`<span class="chip">${({strength:"💪 힘",dexterity:"🌀 민첩",focus:"✦ 집중",weak:"🌫️ 약화",vulnerable:"💠 취약",poison:"☠️ 독",burn:"🔥 화상",freeze:"❄️ 빙결"})[k]||k} ${v}</span>`).join("")}
+function starterDeck(klass){const set=CLASSES[klass].starter;return [...set,...set.slice(0,4)].map(makeCard)}
+function renderStart(){
+ meta=loadMeta();const chars=$("characters");chars.innerHTML="";
+ Object.entries(CLASSES).forEach(([id,c])=>{const open=meta.classes.includes(id),b=document.createElement("button");b.type="button";b.className=`character panel ${id==="gladiator"?"selected":""} ${open?"":"locked"}`;b.dataset.character=id;b.disabled=!open;b.innerHTML=`<span class="char-icon">${c.icon}</span><h2>${c.name}${open?"":" 🔒"}</h2><p>HP ${c.maxHp} · ${c.desc}</p><p>${open?"선택 가능":`${c.unlock} (${id==="rogue"?meta.stats.shopBuys+"/5":""})`}</p>`;b.onclick=()=>{document.querySelectorAll(".character").forEach(x=>x.classList.remove("selected"));b.classList.add("selected")};chars.appendChild(b)});
+ renderStartingRelics();$("bestRecord").textContent=`최고 도달 층: ${meta.stats.best||0}층 · 탑 정복: ${meta.stats.clears||0}회 · 카드 발견: ${meta.cards.length} / ${CARDS.length}`;
+}
+function renderStartingRelics(){const root=$("startingRelics");root.innerHTML=`<button class="relic-pick selected" data-relic=""><strong>선택 안 함</strong><small>맨몸으로 도전합니다.</small></button>`;meta.startingRelics.forEach(id=>{const r=relicById(id),b=document.createElement("button");b.className="relic-pick";b.dataset.relic=id;b.innerHTML=`<strong>${r.icon} ${r.name}</strong><small>${r.desc}</small>`;root.appendChild(b)});root.querySelectorAll("button").forEach(b=>b.onclick=()=>{root.querySelectorAll("button").forEach(x=>x.classList.remove("selected"));b.classList.add("selected")})}
+function startGame(){
+ const klass=document.querySelector(".character.selected")?.dataset.character||"gladiator";const c=CLASSES[klass],startRelic=$(".relic-pick.selected").dataset.relic;
+ game.player={class:klass,name:c.name,maxHp:c.maxHp,hp:c.maxHp,status:{strength:0,dexterity:0,focus:0,weak:0,vulnerable:0,poison:0,burn:0,freeze:0}};
+ game.deck=starterDeck(klass);game.hand=[];game.gold=50;game.relics=startRelic?[startRelic]:[];game.floor=0;game.runHeal=0;game.shopStock=[];
+ if(hasRelic("heart")){game.player.maxHp+=12;game.player.hp+=12}showMap();
+}
+function showMap(){
+ show("map");$("floorTitle").textContent=game.floor>=9?"10층 · 탑의 정상":`${game.floor+1}층 · 다음 발걸음`;
+ $("mapStatus").innerHTML=`<span class="chip hp">♥ ${game.player.hp}/${game.player.maxHp}</span><span class="chip gold">✦ ${game.gold}</span><span class="chip">덱 ${game.deck.length}</span><span class="chip">유물 ${game.relics.length}</span>`;
+ const opts=game.floor>=9?[{kind:"boss",icon:"👑",name:"최종 보스",desc:"공허의 왕이 기다립니다."}]:shuffle([{kind:"combat",icon:"⚔️",name:"일반 전투",desc:"골드와 카드 보상"},{kind:"event",icon:"❓",name:"미지의 방",desc:"선택이 운명을 바꿉니다"},{kind:"shop",icon:"🛒",name:"떠돌이 상점",desc:"카드 구매 또는 제거"},{kind:"rest",icon:"🔥",name:"휴식처",desc:"회복 또는 카드 강화"},{kind:"elite",icon:"💀",name:"엘리트",desc:"강한 적 · 유물 보상"}]).slice(0,3);
+ $("nodes").innerHTML="";opts.forEach(o=>{const b=document.createElement("button");b.className="node";b.innerHTML=`<span class="node-icon">${o.icon}</span><span><b>${o.name}</b><small>${o.desc}</small></span>`;b.onclick=()=>chooseNode(o.kind);$("nodes").appendChild(b)});
+}
+function chooseNode(kind){if(kind==="combat")startCombat(rand(["bat","crystalBat","golem","iceGolem","slime","spirit","priestEnemy","mageEnemy"]),"combat");else if(kind==="elite")startCombat("knight","elite");else if(kind==="boss")startCombat(game.floor>=11?"voidKing":game.floor>=9?"flameLord":"boss","boss");else if(kind==="shop")showShop();else if(kind==="event")showEvent();else showRest()}
+function startCombat(key,kind){
+ const base=ENEMIES[key];discoverEnemy(key);game.enemy={...clone(base),maxHp:base.hp,block:0,turn:0,status:{weak:0,vulnerable:0,poison:0,burn:0,freeze:0},kind,key};game.hand=[];game.drawPile=shuffle(game.deck.map(clone));game.discardPile=[];game.exhaustPile=[];game.block=relicValue("startBlock");game.energy=3+relicValue("energy")+relicValue("firstEnergy");game.turnStats={cards:0,firstAttack:true,firstSkill:true};show("combat");if(relicValue("startDamage"))damageEnemy(relicValue("startDamage"),false);drawCards(5+relicValue("draw"));setLog(`${game.enemy.name}이(가) 모습을 드러냈습니다.`);renderCombat();
+}
+function drawCards(n){for(let i=0;i<n;i++){if(!game.drawPile.length){if(!game.discardPile.length)break;game.drawPile=shuffle(game.discardPile.splice(0))}game.hand.push(game.drawPile.pop())}}
+function damageEnemy(amount,useModifiers=true){
+ const e=game.enemy;if(useModifiers){amount+=game.player.status.strength||0;if(e.status.vulnerable)amount=Math.floor(amount*1.5);amount+=relicValue("exhaustDamage")*game.exhaustPile.length;if(game.turnStats.firstAttack){amount+=relicValue("firstDamage");game.turnStats.firstAttack=false}}
+ const absorb=Math.min(e.block,amount);e.block-=absorb;e.hp-=amount-absorb;setLog(`${e.name}에게 ${amount-absorb} 피해를 입혔습니다.`);
+}
+function damagePlayer(amount){
+ const p=game.player;if(p.status.vulnerable)amount=Math.floor(amount*1.5);if(p.status.weak)amount=Math.ceil(amount*.75);const hit=Math.max(0,amount-game.block);game.block=Math.max(0,game.block-amount);p.hp-=hit;return hit;
+}
+function applyEffect(effect){
+ const p=game.player,e=game.enemy;
+ if(effect.damage){const hits=effect.multiHit||1;for(let i=0;i<hits;i++)damageEnemy(effect.damage,true)}
+ if(effect.block)game.block+=effect.block+(p.status.dexterity||0);
+ if(effect.draw)drawCards(effect.draw);
+ if(effect.energy)game.energy+=effect.energy;
+ if(effect.heal){const old=p.hp;p.hp=Math.min(p.maxHp,p.hp+effect.heal);game.runHeal+=p.hp-old}
+ if(effect.strength)p.status.strength+=effect.strength;if(effect.dexterity)p.status.dexterity+=effect.dexterity;if(effect.focus)p.status.focus+=effect.focus;
+ ["vulnerable","weak","poison","burn","freeze"].forEach(k=>{if(effect[k])e.status[k]=(e.status[k]||0)+effect[k]});
+ if(effect.loseHp)p.hp-=effect.loseHp;
+ if(effect.discard){for(let i=0;i<effect.discard&&game.hand.length;i++)game.discardPile.push(game.hand.pop())}
+ if(effect.recoverDiscard&&game.discardPile.length)game.hand.push(game.discardPile.pop());
+ if(effect.cleanse){["weak","vulnerable","poison","burn","freeze"].forEach(k=>p.status[k]=0)}
+ if(effect.gold)addGold(effect.gold);
+ if(effect.upgradeRandom){const a=game.deck.filter(c=>!c.upgraded);if(a.length)rand(a).upgraded=true}
+}
+function playCard(i){
+ const c=game.hand[i],d=cardById(c.id),e=upgradedEffect(c);let cost=d.cost;
+ if(d.type==="skill"&&game.turnStats.firstSkill&&hasRelic("ring"))cost=Math.max(0,cost-1);
+ if(cost>game.energy)return;game.energy-=cost;game.turnStats.cards++;if(d.type==="skill")game.turnStats.firstSkill=false;applyEffect(e);discoverCard(c.id);
+ game.hand.splice(i,1);if(e.exhaust)game.exhaustPile.push(c);else if(e.retain)game.hand.push(c);else game.discardPile.push(c);
+ if(game.enemy.hp<=0){winCombat();return}if(game.player.hp<=0){gameOver();return}renderCombat();
+}
+function tickPlayerStatuses(){
+ const p=game.player;if(p.status.poison){p.hp-=p.status.poison;setLog(`독으로 ${p.status.poison} 피해를 입었습니다.`)}if(p.status.burn){p.hp-=p.status.burn;setLog(`화상으로 ${p.status.burn} 피해를 입었습니다.`)}["weak","vulnerable","freeze"].forEach(k=>{if(p.status[k])p.status[k]--});
+}
+function endTurn(){
+ game.discardPile.push(...game.hand.splice(0));const e=game.enemy,act=e.pattern[e.turn%e.pattern.length];
+ if(e.status.poison){e.hp-=e.status.poison;if(e.hp<=0){winCombat();return}}if(e.status.burn){e.hp-=e.status.burn;if(e.hp<=0){winCombat();return}}
+ if(e.status.freeze){e.status.freeze--;setLog(`${e.name}은(는) 빙결로 행동하지 못했습니다.`)}
+ else if(act.type==="block"){e.block+=act.value;setLog(`${e.name}이(가) 방어도 ${act.value}을 얻었습니다.`)}
+ else if(act.type==="heal"){e.hp=Math.min(e.maxHp,e.hp+act.value);setLog(`${e.name}이(가) HP를 ${act.value} 회복했습니다.`)}
+ else{const hit=damagePlayer(act.value);if(act.type==="weak")game.player.status.weak++;if(act.type==="vulnerable")game.player.status.vulnerable++;if(act.type==="poison")game.player.status.poison+=2;if(act.type==="burn")game.player.status.burn+=2;if(act.type==="freeze")game.player.status.freeze++;setLog(`${e.name}의 공격! ${hit} 피해.`)}
+ e.turn++;game.block=0;game.block+=relicValue("endBlock");tickPlayerStatuses();if(game.player.hp<=0){gameOver();return}
+ ["weak","vulnerable","freeze"].forEach(k=>{if(e.status[k])e.status[k]--});game.energy=3+relicValue("energy")+(game.player.status.focus||0);game.turnStats={cards:0,firstAttack:true,firstSkill:true};drawCards(5);renderCombat();
+}
+function renderCombat(){
+ const p=game.player,e=game.enemy;$("playerStatus").innerHTML=`<div><b>${p.name}</b><div class="status-strip" style="margin-top:7px"><span class="hp">♥ ${p.hp}/${p.maxHp}</span><span class="block">🛡 ${game.block}</span></div><div class="status-strip">${statusText(p.status)}</div></div><div class="energy" style="font-size:20px;font-weight:900">⚡ ${game.energy}</div>`;
+ $("enemyArt").textContent=e.art;$("enemyName").textContent=e.name;$("enemyHpText").textContent=`HP ${Math.max(0,e.hp)} / ${e.maxHp}${e.block?` · 🛡 ${e.block}`:""}`;$("enemyHpBar").style.width=`${Math.max(0,e.hp/e.maxHp*100)}%`;$("enemyStatus").innerHTML=statusText(e.status);$("intent").textContent="다음 행동: "+e.pattern[e.turn%e.pattern.length].label;
+ $("hand").innerHTML="";game.hand.forEach((c,i)=>{const d=cardById(c.id),cost=d.cost-(d.type==="skill"&&game.turnStats.firstSkill&&hasRelic("ring")?1:0),b=document.createElement("button");b.className=`card ${d.type}`;b.disabled=cost>game.energy;b.innerHTML=`<span class="cost">${Math.max(0,cost)}</span><div class="card-name">${d.name}${c.upgraded?" +":""}</div><div class="card-desc">${cardDescription(c)}</div><div class="card-type">${d.type==="attack"?"공격":d.type==="skill"?"스킬":"파워"} · ${d.rarity}</div>`;b.onclick=()=>playCard(i);$("hand").appendChild(b)});
+}
+function addGold(n){game.gold+=Math.floor(n*(1+relicValue("goldRate")))}
+function rewardCandidates(n){const p=game.player.class;const pool=CARDS.filter(c=>(c.class===p||c.class==="common")&&c.minFloor<=game.floor+1);return shuffle(pool.sort((a,b)=>(game.deck.filter(x=>x.id===a.id).length)-(game.deck.filter(x=>x.id===b.id).length))).slice(0,n)}
+function winCombat(){
+ const elite=game.enemy.kind==="elite",boss=game.enemy.kind==="boss";if(boss){victory();return}game.floor++;const gold=(elite?40:20)+relicValue("gold")+(elite?relicValue("eliteGold"):0);addGold(gold);if(hasRelic("cup"))game.player.hp=Math.min(game.player.maxHp,game.player.hp+relicValue("winHeal"));if(elite)meta.stats.eliteKills++;
+ game.pending={elite,gold};show("choiceScreen");$("choiceTitle").textContent="전투 승리!";$("choiceText").textContent=`골드 +${gold}${elite?" · 엘리트 유물 보상":""}`;const picks=rewardCandidates(3);picks.forEach(c=>discoverCard(c.id));$("choiceContent").innerHTML=`<div class="reward-grid">${picks.map(c=>`<button class="choice reward-card" data-card="${c.id}"><strong>${c.name} · ${c.cost}⚡ <span class="${c.rarity==="영웅"?"hero":c.rarity==="희귀"?"rare":"common"}">${c.rarity}</span></strong><span>${effectText(c.effect)}</span></button>`).join("")}</div><button id="skipReward" class="ghost-button" style="width:100%" type="button">건너뛰기</button>`;document.querySelectorAll(".reward-card").forEach(b=>b.onclick=()=>finishReward(b.dataset.card));$("skipReward").onclick=()=>finishReward(null);saveMeta();checkAchievements();
+}
+function finishReward(id){if(id)game.deck.push(makeCard(id));if(game.pending.elite){const choices=RELICS.filter(r=>!game.relics.includes(r.id));if(choices.length){const r=rand(choices);game.relics.push(r.id);discoverRelic(r.id);$("choiceTitle").textContent="엘리트 유물 획득";$("choiceText").textContent=`${r.icon} ${r.name} — ${r.desc}`;$("choiceContent").innerHTML=`<button id="continueMap" class="main-button" type="button">계속 오르기</button>`;$("continueMap").onclick=showMap;return}}showMap()}
+function showShop(){
+ if(!game.shopStock.length)game.shopStock=rewardCandidates(4).map(c=>({id:c.id,price:c.rarity==="영웅"?130:c.rarity==="희귀"?85:50}));
+ show("choiceScreen");$("choiceTitle").textContent="떠돌이 상점";$("choiceText").textContent=`보유 골드: ${game.gold} · 카드 제거 비용: 75 골드`;
+ $("choiceContent").innerHTML=`<div class="shop-list">${game.shopStock.map(x=>{const c=cardById(x.id);return `<button class="choice shop-buy" data-id="${x.id}"><strong>${c.name} · ${x.price} 골드</strong><span>${c.rarity} · ${effectText(c.effect)}</span></button>`}).join("")||"<p class='muted'>카드 상품이 모두 팔렸습니다.</p>"}<button id="removeCard" class="choice"><strong>카드 제거 · 75 골드</strong><span>무작위 카드 1장을 덱에서 제거합니다.</span></button><button id="leaveShop" class="ghost-button" type="button">떠난다</button></div>`;
+ document.querySelectorAll(".shop-buy").forEach(b=>b.onclick=()=>{const item=game.shopStock.find(x=>x.id===b.dataset.id);if(game.gold<item.price)return notice("골드가 부족합니다.");game.gold-=item.price;game.deck.push(makeCard(item.id));game.shopStock=game.shopStock.filter(x=>x!==item);meta.stats.shopBuys++;if(meta.stats.shopBuys>=5&&!meta.classes.includes("rogue"))meta.classes.push("rogue");saveMeta();checkAchievements();showShop()});
+ $("removeCard").onclick=()=>{if(game.gold<75||game.deck.length<=1)return notice(game.gold<75?"골드가 부족합니다.":"덱에 카드가 부족합니다.");game.gold-=75;game.deck.splice(Math.floor(Math.random()*game.deck.length),1);showShop()};$("leaveShop").onclick=()=>{game.shopStock=[];advance()};
+}
+function showRest(){show("choiceScreen");$("choiceTitle").textContent="불꽃의 휴식처";$("choiceText").textContent="잠시 숨을 고르고 다음 여정을 준비합니다.";$("choiceContent").innerHTML=`<div class="reward-grid"><button id="heal" class="choice"><strong>휴식</strong><span>최대 HP의 30%를 회복합니다.</span></button><button id="upgrade" class="choice"><strong>카드 강화</strong><span>무작위 미강화 카드 한 장을 강화합니다.</span></button></div>`;$("heal").onclick=()=>{const old=game.player.hp;game.player.hp=Math.min(game.player.maxHp,game.player.hp+Math.ceil(game.player.maxHp*.3));game.runHeal+=game.player.hp-old;if(game.runHeal>=50&&!meta.classes.includes("priest"))meta.classes.push("priest");saveMeta();advance()};$("upgrade").onclick=()=>{const a=game.deck.filter(c=>!c.upgraded);if(a.length)rand(a).upgraded=true;advance()}}
+function showEvent(){const events=[{title:"빛나는 제단",text:"황금빛 제단이 심장 박동처럼 빛납니다.",a:"힘을 바친다 · HP 8 감소, 영웅 카드 보상",b:"그냥 지나간다",fa:()=>{game.player.hp=Math.max(1,game.player.hp-8);const c=rand(CARDS.filter(x=>x.class===game.player.class&&x.rarity==="영웅"));game.deck.push(makeCard(c.id));discoverCard(c.id);advance()}},{title:"수상한 약초상",text:"이끼 향이 나는 약병을 건넵니다.",a:"약초를 받는다 · HP 18 회복",b:"거절한다",fa:()=>{const old=game.player.hp;game.player.hp=Math.min(game.player.maxHp,game.player.hp+18);game.runHeal+=game.player.hp-old;advance()}},{title:"부서진 상자",text:"먼지가 쌓인 상자가 길을 막고 있습니다.",a:"상자를 연다 · 골드 35",b:"떠난다",fa:()=>{addGold(35);advance()}}];const e=rand(events);show("choiceScreen");$("choiceTitle").textContent=e.title;$("choiceText").textContent=e.text;$("choiceContent").innerHTML=`<div class="reward-grid"><button id="eventA" class="choice"><strong>${e.a}</strong></button><button id="eventB" class="choice"><strong>${e.b}</strong></button></div>`;$("eventA").onclick=e.fa;$("eventB").onclick=advance}
+function advance(){game.floor++;showMap()}
+function achievementDefs(){return [
+ {id:"first_step",name:"첫걸음",desc:"첫 전투에서 승리",test:()=>game.floor>=1,relic:"shield"},{id:"first_relic",name:"첫 유물",desc:"유물을 획득",test:()=>meta.relics.length>=1,relic:"ember"},{id:"collector25",name:"카드 수집가",desc:"카드 25장 발견",test:()=>meta.cards.length>=25,relic:"crystal"},{id:"collector50",name:"탐구자",desc:"카드 50장 발견",test:()=>meta.cards.length>=50},{id:"collector100",name:"백장의 서고",desc:"카드 100장 발견",test:()=>meta.cards.length>=100},{id:"collector150",name:"탑의 기록관",desc:"카드 150장 발견",test:()=>meta.cards.length>=150},{id:"collector200",name:"비전 수집가",desc:"카드 200장 발견",test:()=>meta.cards.length>=200},{id:"collector250",name:"거대한 도감",desc:"카드 250장 발견",test:()=>meta.cards.length>=250},{id:"collector300",name:"모든 가능성",desc:"카드 300장 발견",test:()=>meta.cards.length>=300},{id:"rich",name:"부자가 되다",desc:"150 골드 보유",test:()=>game.gold>=150,relic:"goldHeart"},{id:"elite",name:"엘리트 사냥꾼",desc:"엘리트 1회 처치",test:()=>meta.stats.eliteKills>=1,relic:"coin"},{id:"gladiator",name:"검투사의 길",desc:"검투사로 5층 도달",test:()=>game.player&&game.player.class==="gladiator"&&game.floor>=5,relic:"heart"},{id:"mage",name:"마도사의 길",desc:"마도사로 5층 도달",test:()=>game.player&&game.player.class==="mage"&&game.floor>=5,relic:"eye"},{id:"unbroken",name:"불굴",desc:"HP 10 이하로 전투 승리",test:()=>game.player&&game.player.hp<=10},{id:"deck",name:"거대한 덱",desc:"덱 20장 보유",test:()=>game.deck.length>=20},{id:"compress",name:"덱 압축",desc:"덱 8장 이하로 3층 도달",test:()=>game.deck.length<=8&&game.floor>=3},{id:"upgrade",name:"강화의 시작",desc:"카드 강화",test:()=>game.deck.some(c=>c.upgraded),relic:"ring"},{id:"mid",name:"탑의 중간",desc:"5층 도달",test:()=>game.floor>=5,relic:"sand"},{id:"conquer",name:"정상 정복",desc:"탑 정복",test:()=>meta.stats.clears>=1,relic:"void"},{id:"lucky",name:"행운의 시작",desc:"유물 3개 발견",test:()=>meta.relics.length>=3,relic:"hunter"}]}
+function checkAchievements(){if(!game.player)return;achievementDefs().forEach(a=>{if(!meta.achievements.includes(a.id)&&a.test()){meta.achievements.push(a.id);if(a.relic&&!meta.startingRelics.includes(a.relic))meta.startingRelics.push(a.relic)}});saveMeta()}
+function openSheet(type){
+ $("overlay").classList.add("show");const root=$("sheetContent");
+ if(type==="deck"){$("sheetTitle").textContent="내 덱";root.innerHTML=game.deck.map(c=>{const d=cardById(c.id);return `<div class="sheet-item"><strong>${d.name}${c.upgraded?" +":""} · ${d.cost}⚡</strong><span>${cardDescription(c)}<br>${d.tags.map(t=>`#${t}`).join(" ")}</span></div>`}).join("")}
+ else if(type==="relic"){$("sheetTitle").textContent="보유 유물";root.innerHTML=`<div class="relic-grid">${game.relics.map(id=>{const r=relicById(id);return `<div class="relic"><b>${r.icon} ${r.name}</b><span>${r.desc}</span></div>`}).join("")||"<p class='muted'>아직 유물이 없습니다.</p>"}</div>`}
+ else if(type==="achievements"){ $("sheetTitle").textContent="업적";root.innerHTML=achievementDefs().map(a=>`<div class="sheet-item"><strong>${meta.achievements.includes(a.id)?"🏆":"🔒"} ${a.name}</strong><span>${a.desc}${a.relic?` · 시작 유물: ${relicById(a.relic).name}`:""}</span></div>`).join("")}
+ else showCodex(root);
+}
+let codexPage=0;
+function showCodex(root){
+ $("sheetTitle").textContent="탑의 도감";root.innerHTML=`<div class="filters"><input id="codexSearch" aria-label="카드 검색" placeholder="카드 이름 검색"><select id="codexFilter" aria-label="카드 필터"><option value="all">전체 카드</option><option value="gladiator">검투사</option><option value="mage">마도사</option><option value="rogue">도적</option><option value="priest">사제</option><option value="common">공용</option><option value="일반">일반</option><option value="희귀">희귀</option><option value="영웅">영웅</option><option value="attack">공격</option><option value="skill">스킬</option><option value="power">파워</option></select></div><p class="muted">카드 발견: ${meta.cards.length} / ${CARDS.length} · 유물: ${meta.relics.length}/${RELICS.length} · 적: ${meta.enemies.length}/${Object.keys(ENEMIES).length}</p><div id="codexList" class="codex-list"></div><div class="pager"><button id="prevPage" class="ghost-button" type="button">이전</button><span id="pageLabel"></span><button id="nextPage" class="ghost-button" type="button">다음</button></div><hr style="border-color:rgba(255,255,255,.1)"><h3>유물 도감</h3><div class="relic-grid">${RELICS.map(r=>`<div class="relic"><b>${meta.relics.includes(r.id)?`${r.icon} ${r.name}`:"???"}</b><span>${meta.relics.includes(r.id)?r.desc:"아직 발견하지 못했습니다."}</span></div>`).join("")}</div><h3>적 도감</h3>${Object.entries(ENEMIES).map(([id,e])=>`<div class="sheet-item"><strong>${meta.enemies.includes(id)?`${e.art} ${e.name}`:"???"}</strong><span>${meta.enemies.includes(id)?`HP ${e.hp}`:"아직 마주치지 못했습니다."}</span></div>`).join("")}`;
+ const render=()=>{const q=$("codexSearch").value.trim(),f=$("codexFilter").value;const list=CARDS.filter(c=>(!q||c.name.includes(q))&&(f==="all"||c.class===f||c.rarity===f||c.type===f));const max=Math.max(0,Math.ceil(list.length/30)-1);codexPage=Math.min(codexPage,max);const part=list.slice(codexPage*30,codexPage*30+30);$("codexList").innerHTML=part.map(c=>{const found=meta.cards.includes(c.id);return `<button class="codex-card ${found?"":"unknown"}" data-codex="${c.id}"><strong>${found?c.name:"???"} ${found?`· ${c.rarity}`:""}</strong><span>${found?`${c.class==="common"?"공용":CLASSES[c.class].name} · ${c.type==="attack"?"공격":c.type==="skill"?"스킬":"파워"}`:"발견하지 못한 카드"}</span></button>`}).join("");$("pageLabel").textContent=`${codexPage*30+1}~${Math.min((codexPage+1)*30,list.length)} / ${list.length}`;document.querySelectorAll("[data-codex]").forEach(b=>b.onclick=()=>showCardDetail(b.dataset.codex))};$("codexSearch").oninput=()=>{codexPage=0;render()};$("codexFilter").onchange=()=>{codexPage=0;render()};$("prevPage").onclick=()=>{codexPage=Math.max(0,codexPage-1);render()};$("nextPage").onclick=()=>{codexPage++;render()};render();
+}
+function showCardDetail(id){const c=cardById(id);if(!meta.cards.includes(id))return; $("sheetTitle").textContent=c.name;$("sheetContent").innerHTML=`<div class="panel" style="padding:15px"><p><b>${CLASSES[c.class]?.name||"공용"} · ${c.rarity} · ${c.type}</b></p><p>비용: ⚡ ${c.cost}</p><p>${effectText(c.effect)}</p><p><b>강화:</b> ${effectText({...c.effect,...Object.fromEntries(Object.entries(c.upgrade).map(([k,v])=>[k,(c.effect[k]||0)+v]))})}</p><p>${c.tags.map(t=>`<span class="tag">${t}</span>`).join("")}</p><p class="muted">발견됨</p></div><button id="backCodex" class="ghost-button" style="width:100%;margin-top:12px" type="button">도감으로 돌아가기</button>`;$("backCodex").onclick=()=>openSheet("codex")}
+function gameOver(){checkAchievements();meta.stats.best=Math.max(meta.stats.best,game.floor);saveMeta();show("result");$("resultIcon").textContent="☠️";$("resultTitle").textContent="GAME OVER";$("resultText").textContent=`${game.floor}층에서 탑의 어둠에 쓰러졌습니다.`;$("restartButton").textContent="다시 시작"}
+function victory(){game.floor=10;meta.stats.best=Math.max(meta.stats.best,10);meta.stats.clears++;checkAchievements();saveMeta();show("result");$("resultIcon").textContent="🎉";$("resultTitle").textContent="탑 정복!";$("resultText").textContent="공허의 왕을 쓰러뜨리고 에테르의 탑을 정복했습니다.";$("restartButton").textContent="새로운 런 시작"}
 
-    const CARD_LIST=Object.values(CARDS);
-
-    const relic=(id,name,icon,description,rarity,effect)=>({id,name,icon,description,rarity,effect});
-    const RELICS=[
-      relic("rusted_sword","녹슨 검","⚔","전투 시작 시 힘 2.", "common",{startStrength:2}),
-      relic("hourglass","시간의 모래","⌛","3번째 턴마다 카드 1장 추가 드로우.","common",{thirdTurnDraw:1}),
-      relic("bloody_ring","피 묻은 반지","💍","HP 30% 이하일 때 공격 피해 +40%.","rare",{lowHpDamage:.4}),
-      relic("iron_heart","철의 심장","♥","최대 HP 10.","common",{maxHp:10}),
-      relic("lucky_coin","행운의 동전","◈","전투 승리 골드 +8.","common",{winGold:8}),
-      relic("void_lens","공허 렌즈","◉","보스전에서 힘 3.","rare",{bossStrength:3}),
-      relic("thorn_crown","가시 왕관","♛","받은 피해의 15%를 반사.","rare",{reflect:.15}),
-      relic("amber","호박","🟠","전투 시작 방어도 6.","common",{startBlock:6}),
-      relic("quill","공허의 깃펜","✒","전투 첫 스킬 비용 -1.","rare",{firstSkillDiscount:1}),
-      relic("serpent_eye","뱀의 눈","👁","매 턴 드로우 +1, 최대 에너지 -1.","rare",{drawBonus:1,energyPenalty:1}),
-      relic("vampire_fang","흡혈 송곳니","🦷","전투 승리 시 HP 3 회복.","common",{winHeal:3}),
-      relic("old_map","낡은 지도","🗺","휴식 회복량 +8.","common",{restHeal:8}),
-      relic("war_drum","전쟁의 북","🥁","전투 첫 턴 에너지 +1.","rare",{firstTurnEnergy:1}),
-      relic("cursed_dice","저주받은 주사위","🎲","전투 시작 적 취약 1.","rare",{startVuln:1}),
-      relic("mirror","검은 거울","◈","첫 공격 피해 +50%.","rare",{firstAttackBonus:.5}),
-      relic("orb","차가운 구체","🔵","적 독 피해 +2.","common",{poisonTickBonus:2}),
-      relic("anvil","별의 모루","⚒","강화 카드의 피해와 방어 +1.","rare",{upgradeBonus:1}),
-      relic("phoenix","불사조 깃털","🪶","런 중 한 번 HP 1로 생존.","legendary",{revive:true}),
-      relic("chain","균열 사슬","⛓","출혈 대상 공격 피해 +2.","common",{bleedTargetDamage:2}),
-      relic("star_chart","별의 도표","✦","이벤트 골드 보상 +15.","common",{eventGold:15}),
-
-      relic("blood_compass","혈의 나침반","🧭","출혈을 부여할 때마다 방어도 2.","common",{bleedBlock:2}),
-      relic("red_lantern","붉은 등불","🏮","출혈 대상에게 첫 공격 피해 +4.","rare",{bleedFirstHit:4}),
-      relic("coagulation_stone","응고석","🩸","출혈이 감소할 때마다 HP 1 회복.","rare",{bleedDecayHeal:1}),
-      relic("venom_glove","맹독 장갑","🧤","독을 부여할 때마다 독 +1.","common",{poisonBonus:1}),
-      relic("alchemist_flask","연금 플라스크","⚗","독 폭발 피해 +50%.","rare",{poisonBurstBonus:.5}),
-      relic("rotten_censer","부패 향로","🕯","턴 종료 시 적이 독 상태면 독 2 추가.","rare",{endPoison:2}),
-      relic("combo_drums","연타의 북","🪘","한 턴 5회째 공격이 +7 피해.","rare",{fifthHitDamage:7}),
-      relic("razor_thread","면도날 실","🧵","다단 공격의 마지막 타격 +3 피해.","common",{multiLastBonus:3}),
-      relic("discard_satchel","버림 가방","🎒","카드를 버릴 때마다 다음 공격 +2 피해.","rare",{discardAttack:2}),
-      relic("ash_urn","재의 항아리","🏺","카드를 소멸할 때마다 방어도 3.","common",{exhaustBlock:3}),
-      relic("funeral_bell","장송 종","🔔","소멸 카드가 5장째일 때 에너지 1.","rare",{exhaustEnergyEvery:5}),
-      relic("mana_prism","마나 프리즘","🔷","에너지를 얻을 때 카드 1장 드로우. 턴당 1회.","rare",{energyDraw:true}),
-      relic("solar_cell","태양 전지","🔋","턴 시작 에너지 1을 잃으면 방어도 8.","common",{energyLossBlock:8}),
-      relic("iron_lung","철의 폐","🫁","카드 3장 이상 드로우한 턴 방어도 5.","common",{drawThresholdBlock:5}),
-      relic("glass_idol","유리 우상","🗿","방어도 0일 때 공격 피해 +25%.","rare",{noBlockDamage:.25}),
-      relic("last_coin","마지막 동전","🪙","골드 100 이상이면 전투 시작 카드 1장 드로우.","rare",{richDraw:1}),
-      relic("hunter_mark","사냥꾼의 표식","🎯","엘리트에게 가하는 피해 +20%.","rare",{eliteDamage:.2}),
-      relic("boss_trophy","보스 트로피","🏆","보스 처치 뒤 최대 HP +8.","legendary",{bossMaxHp:8}),
-      relic("shield_emblem","방벽 문장","🛡","방어도 25 이상일 때 받는 피해 -3.","rare",{highBlockReduction:3}),
-      relic("counterweight","평형추","⚖","반격 피해 +4.","common",{retaliateBonus:4}),
-      relic("rift_key","균열 열쇠","🗝","이벤트에서 카드 보상 1장 추가.","rare",{eventCardBonus:1}),
-      relic("merchant_seal","상인의 인장","📜","상점 카드 가격 -15%.","common",{shopDiscount:.15}),
-      relic("smoke_orchid","연막 난초","🌫","전투 첫 턴 적 약화 1.","common",{startWeak:1}),
-      relic("emergency_ration","비상 식량","🥫","HP 40% 이하로 전투 승리 시 HP 8 회복.","rare",{lowHpWinHeal:8}),
-      relic("void_anchor","공허 닻","⚓","공허술사: 전투 시작 공허 2. 다른 직업: 카드 1장 드로우.","legendary",{casterVoid:2,otherDraw:1}),
-      relic("guardian_medal","수호 훈장","🎖","수호자: 전투 시작 수호 2. 다른 직업: 방어도 5.","legendary",{guardianGuard:2,otherBlock:5}),
-      relic("plague_mask","역병 가면","🎭","역병 의사: 독 +3. 다른 직업: 전투 시작 적 독 3.","legendary",{plaguePoison:3,otherPoison:3})
-    ];
-    const RELIC=Object.fromEntries(RELICS.map(x=>[x.id,x]));
-
-    const START_RELICS=[
-      relic("none","없음","○","시작 유물 없이 런을 시작합니다.","common",{}),
-      relic("void_core","낡은 공허의 핵","◉","전투 첫 턴 에너지 +1.","common",{firstTurnEnergy:1}),
-      relic("blood_seal","핏빛 인장","🩸","전투 시작 시 적에게 출혈 2.","common",{startBleed:2}),
-      relic("guardian_shard","수호자의 파편","🛡","전투 시작 시 방어도 5.","common",{startBlock:5}),
-      relic("burned_notes","소각된 문서","📜","전투 첫 턴 카드 1장 추가 드로우.","common",{firstTurnDraw:1}),
-      relic("hunter_eye","사냥꾼의 눈","🎯","엘리트 전투 시작 시 힘 1.","rare",{eliteStrength:1}),
-      relic("void_coin","공허의 주화","◈","런 시작 시 골드 +50.","common",{startGold:50}),
-      relic("serpent_needle","뱀의 침","🪡","전투 시작 시 적에게 독 3.","common",{startPoison:3}),
-      relic("iron_leaf","철의 잎","🍃","전투 시작 시 HP 3 회복.","common",{startHeal:3}),
-      relic("shattered_hour","깨진 시간","⌛","전투 첫 턴 드로우 +2, 다음 턴 에너지 -1.","rare",{firstTurnDraw:2,nextEnergyLoss:1}),
-      relic("ember_vial","불씨 병","🧪","첫 공격이 적에게 취약 1 부여.","rare",{firstAttackVuln:1}),
-      relic("reaper_token","수확자의 표식","☠","전투 승리 시 HP 2 회복.","common",{winHeal:2}),
-      relic("deep_pocket","깊은 주머니","🎒","런 시작 시 무작위 공용 카드 1장 획득.","rare",{startCard:true}),
-      relic("orbital_guard","궤도 수호기","🪐","전투 시작 시 방어도 3과 힘 1.","rare",{startBlock:3,startStrength:1}),
-      relic("ash_seed","재의 씨앗","🌱","첫 소멸 카드 사용 시 에너지 1.","rare",{firstExhaustEnergy:1}),
-      relic("thorn_seed","가시 씨앗","🌵","전투 첫 피해를 받으면 적에게 7 반격.","rare",{firstHitRetaliate:7})
-    ];
-    const START_RELIC=Object.fromEntries(START_RELICS.map(x=>[x.id,x]));
-
-    const CHARACTERS={
-      gladiator:{id:"gladiator",name:"검투사",icon:"⚔️",description:"높은 체력과 안정적인 공격 및 방어를 갖춘 전사.",maxHp:80,baseEnergy:3,startingDeck:["slash","slash","slash","slash","guard","guard","guard","guard","strike","focus"],mechanic:"힘과 방어를 조합하는 균형형 전사.",exclusiveCards:[]},
-      assassin:{id:"assassin",name:"암살자",icon:"🗡️",description:"출혈과 연타를 사용해 적을 무너뜨리는 암살자.",maxHp:65,baseEnergy:3,startingDeck:["jab","jab","jab","jab","guard","guard","guard","bleedcut","bleedcut","flurry"],mechanic:"콤보와 출혈을 통해 빠르게 마무리합니다.",exclusiveCards:[]},
-      caster:{id:"caster",name:"공허술사",icon:"🔮",description:"공허를 축적하고 폭발시키는 균열의 마도사.",maxHp:62,baseEnergy:4,startingDeck:["voidbolt","voidbolt","voidbolt","riftguard","riftguard","riftguard","riftstep","astralcharge","consumevoid","guard"],mechanic:"공허를 모은 뒤 강력한 소비 효과로 전환합니다.",exclusiveCards:["voidbolt","riftguard","consumevoid","astralcharge","singularity","voidward","collapse","riftstep","darkmatter","eclipse"]},
-      guardian:{id:"guardian",name:"수호자",icon:"🛡️",description:"수호와 방어도를 공격으로 바꾸는 불굴의 방패.",maxHp:92,baseEnergy:3,startingDeck:["towerstance","towerstance","shieldline","shieldline","guard","guard","guard","guardianstrike","stoneform","returnfire"],mechanic:"수호를 쌓아 방어와 반격을 강화합니다.",exclusiveCards:["towerstance","shieldline","protectiveoath","bastion","retaliatoryslam","stoneform","citadel","guardianstrike","aegis","returnfire"]},
-      plague:{id:"plague",name:"역병 의사",icon:"🩺",description:"독과 약화를 사용해 적을 서서히 붕괴시키는 의사.",maxHp:68,baseEnergy:3,startingDeck:["diagnosis","diagnosis","scalpel","scalpel","guard","guard","guard","plaguevial","antidote","miasma"],mechanic:"독을 증폭하고 회복 및 폭발 효과로 전환합니다.",exclusiveCards:["diagnosis","scalpel","plaguevial","contagion","antidote","necrosis","pandemic","leechjar","feverdream","miasma"]}
-    };
-
-    const ENEMIES={
-      slime:{name:"공허 슬라임",hp:34,icon:"🫧",patterns:[["attack",7],["block",7],["attack",10]]},
-      goblin:{name:"고블린 약탈자",hp:39,icon:"👺",patterns:[["attack",8],["debuff","weak",1],["attack",12]]},
-      skeleton:{name:"해골 병사",hp:42,icon:"💀",patterns:[["block",8],["attack",10],["attack",13]]},
-      bug:{name:"독충",hp:36,icon:"🪲",patterns:[["debuff","poison",4],["attack",7],["debuff","poison",6]]},
-      wolf:{name:"공허 늑대",hp:38,icon:"🐺",patterns:[["attack",6],["attack",6],["attack",15]]},
-      berserker:{name:"광전사",hp:47,icon:"🪓",patterns:[["attack",11],["buff","str",2],["attack",14]]},
-      mage:{name:"균열 마법사",hp:40,icon:"🔮",patterns:[["debuff","vuln",1],["attack",12],["block",10]]},
-      knight:{name:"암흑 기사",hp:58,icon:"🛡️",patterns:[["block",10],["attack",14],["attack",16]]},
-      thorn:{name:"가시 괴물",hp:52,icon:"🌵",patterns:[["attack",9],["buff","thorn",3],["attack",11]]},
-      minion:{name:"공허의 하수인",hp:46,icon:"👁️",patterns:[["debuff","weak",1],["attack",11],["debuff","poison",3]]},
-      elite_ogre:{name:"균열 오우거",hp:92,icon:"👹",elite:true,patterns:[["attack",15],["block",14],["attack",23]]},
-      elite_hydra:{name:"독의 히드라",hp:84,icon:"🐉",elite:true,patterns:[["debuff","poison",7],["attack",8],["attack",8],["attack",17]]},
-      elite_judge:{name:"공허 심판관",hp:98,icon:"⚖️",elite:true,patterns:[["debuff","vuln",2],["attack",18],["block",18],["attack",25]]},
-      elite_reaper:{name:"영혼 수확자",hp:88,icon:"☠️",elite:true,patterns:[["attack",14],["debuff","weak",2],["attack",22]]},
-      elite_sentinel:{name:"별의 파수꾼",hp:105,icon:"🗿",elite:true,patterns:[["block",20],["attack",18],["buff","str",3],["attack",24]]},
-      iron_guardian:{name:"철의 수호자",hp:155,icon:"🤖",boss:true,patterns:[["block",16],["attack",16],["attack",22],["debuff","weak",2]]},
-      abyss_witch:{name:"심연의 마녀",hp:185,icon:"🧙",boss:true,patterns:[["debuff","poison",8],["debuff","vuln",2],["attack",22],["attack",30]]},
-      void:{name:"VOID",hp:230,icon:"🕳️",boss:true,patterns:[["debuff","weak",2],["attack",24],["block",22],["attack",34],["debuff","poison",9]]}
-    };
-
-    const ACHIEVEMENTS=[
-      ["first_gate","첫 번째 관문","첫 보스를 처치하세요.","bossKills",1,"void_core"],
-      ["blood_trail","피의 흔적","한 런에서 출혈을 50 누적하세요.","bleedApplied",50,"blood_seal"],
-      ["iron_wall","철벽","한 런에서 방어도로 500 피해를 막으세요.","blockAbsorbed",500,"guardian_shard"],
-      ["incinerator","소각","한 런에서 카드 20장을 소멸하세요.","exhausted",20,"burned_notes"],
-      ["hunter","사냥꾼","한 런에서 엘리트 3명을 처치하세요.","eliteKills",3,"hunter_eye"],
-      ["collector","수집가","한 런에서 유물 10개를 획득하세요.","relicsGained",10,"void_coin"],
-      ["poison_master","독의 대가","한 런에서 독 피해 150을 주세요.","poisonDamage",150,"serpent_needle"],
-      ["chain","연쇄","한 턴에 10회 공격하세요.","maxHitsTurn",10,"ember_vial"],
-      ["near_death","빈사 생존","최대 HP 20% 이하에서 전투에서 승리하세요.","lowHpWins",1,"reaper_token"],
-      ["flawless","무결점","피해를 받지 않고 보스를 처치하세요.","flawlessBoss",1,"orbital_guard"],
-      ["wealth","황금의 길","한 런에서 골드 250을 획득하세요.","goldEarned",250,"deep_pocket"],
-      ["strategist","전략가","한 런에서 카드 50장을 사용하세요.","cardsPlayed",50,"shattered_hour"],
-      ["discarder","버림의 기술","한 런에서 카드 25장을 버리세요.","discarded",25,"discard_satchel"],
-      ["void_scholar","공허의 학자","공허술사로 런을 완료하세요.","casterClear",1,"ash_seed"],
-      ["shield_bearer","불굴의 수호자","수호자로 런을 완료하세요.","guardianClear",1,"thorn_seed"],
-      ["plague_lord","역병 군주","역병 의사로 런을 완료하세요.","plagueClear",1,"iron_leaf"],
-      ["bleed_execution","피의 처형인","출혈 폭발로 적 10명을 처치하세요.","bleedBurstKills",10,"red_lantern"],
-      ["toxic_victory","독성 승리","독 피해로 적 20명을 처치하세요.","poisonKills",20,"plague_mask"],
-      ["relic_hunter","유물 사냥꾼","총 35개의 일반 유물을 발견하세요.","relicDiscoveries",35,"void_anchor"],
-      ["deep_runner","심연의 주자","VOID를 처치하고 런을 완료하세요.","wins",1,"guardian_medal"]
-    ].map(([id,name,description,stat,target,reward])=>({id,name,description,stat,target,reward}));
-
-    const EVENTS=[
-      ["수상한 상인","낡은 상인이 빛나는 병을 내민다.","골드 25를 내고 유물 획득",s=>{if(s.gold<25)return false;s.gold-=25;gainRelic(s);return true},"HP 10을 잃고 희귀 카드 획득",s=>{damagePlayerDirect(10);addCard(s,randomCard("rare",s.character));return true},"거절한다",()=>true],
-      ["고대 제단","검은 제단이 심장 박동처럼 울린다.","HP 12를 잃고 최대 HP +8",s=>{damagePlayerDirect(12);s.player.maxHp+=8;return true},"카드 1장 제거",s=>{removeRandomCard(s);return true},"떠난다",()=>true],
-      ["잊힌 도서관","공허의 언어로 쓰인 책들이 떠다닌다.","카드 2장 획득",s=>{addCard(s,randomCard(null,s.character));addCard(s,randomCard(null,s.character));return true},"골드 30 획득",s=>{gainGold(s,30);return true},"책을 덮는다",()=>true],
-      ["부서진 성소","희미한 치유의 빛이 샌다.","HP 18 회복",s=>{heal(s,18);return true},"최대 HP +5, HP 5 손실",s=>{s.player.maxHp+=5;damagePlayerDirect(5);return true},"기도하지 않는다",()=>true],
-      ["피의 우물","우물이 붉은 안개를 뿜는다.","HP 15를 잃고 유물 획득",s=>{damagePlayerDirect(15);gainRelic(s);return true},"HP 10 회복",s=>{heal(s,10);return true},"지나친다",()=>true],
-      ["별 조각","손바닥 크기 별이 어둠 속에서 맥동한다.","전설 카드 획득",s=>{addCard(s,randomCard("legendary",s.character));return true},"골드 40 획득",s=>{gainGold(s,40);return true},"관찰만 한다",()=>true],
-      ["검은 대장간","유령 대장장이가 망치를 든다.","카드 2장 강화",s=>{upgradeRandom(s);upgradeRandom(s);return true},"골드 35 획득",s=>{gainGold(s,35);return true},"떠난다",()=>true],
-      ["균열의 샘","파란 물결이 현실을 찢는다.","무작위 유물 획득",s=>{gainRelic(s);return true},"HP 20 회복",s=>{heal(s,20);return true},"피한다",()=>true],
-      ["공허의 균열","당신의 그림자가 다른 선택을 제안한다.","HP 8을 잃고 카드 3장 획득",s=>{damagePlayerDirect(8);for(let i=0;i<3;i++)addCard(s,randomCard(null,s.character));return true},"골드 55 획득",s=>{gainGold(s,55);return true},"균열을 봉인한다",()=>true]
-    ];
-
-    let state=null,profile=null,codexTab="cards",achievementTab="achievements";
-
-    function defaultProfile(){
-      return {version:VERSION,unlocked:["gladiator"],shards:0,bestRegion:0,plays:0,wins:0,kills:0,achievements:{},unlockedStartRelics:[],equippedStartRelic:null,discovered:{cards:["slash","guard","strike","focus"],relics:[],enemies:[]}};
-    }
-    function normalizeProfile(x){
-      const base=defaultProfile(), p={...base,...(x||{})};
-      p.unlocked=Array.isArray(p.unlocked)?p.unlocked:["gladiator"];
-      if(!p.unlocked.includes("gladiator"))p.unlocked.unshift("gladiator");
-      p.achievements=p.achievements||{};
-      p.unlockedStartRelics=Array.isArray(p.unlockedStartRelics)?p.unlockedStartRelics:[];
-      p.discovered={...base.discovered,...(p.discovered||{})};
-      ["cards","relics","enemies"].forEach(k=>{if(!Array.isArray(p.discovered[k]))p.discovered[k]=[]});
-      return p;
-    }
-    function loadProfile(){
-      try{
-        const raw=localStorage.getItem(SAVE_KEY)||localStorage.getItem(OLD_SAVE_KEY);
-        profile=normalizeProfile(raw?JSON.parse(raw):null);
-      }catch{profile=defaultProfile()}
-      saveProfile();
-    }
-    function saveProfile(){localStorage.setItem(SAVE_KEY,JSON.stringify(profile))}
-    function normalizeRun(run){
-      if(!run)return null;
-      run.version=VERSION;
-      run.runStats={damage:0,blockAbsorbed:0,bleedApplied:0,poisonApplied:0,poisonDamage:0,cardsPlayed:0,exhausted:0,discarded:0,eliteKills:0,bossKills:0,relicsGained:0,goldEarned:0,drawn:0,maxHitsTurn:0,lowHpWins:0,flawlessBoss:0,bleedBurstKills:0,poisonKills:0};
-      if(run.savedStats)run.runStats={...run.runStats,...run.savedStats};
-      run.player.status=run.player.status||{};
-      run.player.resource=run.player.resource||0;
-      run.relics=(run.relics||[]).filter(id=>RELIC[id]);
-      run.deck=(run.deck||[]).filter(x=>CARDS[x.id]);
-      return run;
-    }
-    function saveRun(){if(state&&state.runActive){state.savedStats=state.runStats;localStorage.setItem(RUN_KEY,JSON.stringify(state))}else localStorage.removeItem(RUN_KEY);saveProfile()}
-    function loadRun(){try{return normalizeRun(JSON.parse(localStorage.getItem(RUN_KEY)||localStorage.getItem(OLD_RUN_KEY)||"null"))}catch{return null}}
-    function hasRun(){return !!loadRun()}
-    function toast(text,bad=false,achievement=false){const old=$(".toast");if(old)old.remove();const e=document.createElement("div");e.className="toast"+(bad?" bad":"")+(achievement?" achievement-toast":"");e.innerHTML=text;document.body.appendChild(e);setTimeout(()=>e.remove(),achievement?4200:2200)}
-    function float(text,color="#fff"){const e=document.createElement("div");e.className="float";e.textContent=text;e.style.color=color;e.style.left="50%";e.style.top="43%";document.body.appendChild(e);setTimeout(()=>e.remove(),850)}
-    function discovered(type,id){if(!profile.discovered[type].includes(id)){profile.discovered[type].push(id);saveProfile()}}
-
-    function topbar(){
-      return `<header class="topbar"><button class="btn" style="min-height:auto;padding:7px 9px" onclick="goMenu()" aria-label="메뉴">☰</button><div class="stat hp">♥ ${state.player.hp}/${state.player.maxHp}</div><div class="stat gold">◈ ${state.gold}</div><div class="stat">지역 ${state.region}/3</div></header>`;
-    }
-
-    function renderMenu(){
-      app.innerHTML=`<section class="screen"><p class="logo canva-text" data-template-id="game-logo">VOID DECK</p><div class="hero-rune"><span>◈</span></div><h1 class="title canva-text" data-template-id="menu-title">공허의 덱</h1><p class="sub canva-text" data-template-id="menu-subtitle">매번 달라지는 공허의 길. 살아남아 VOID의 심장에 도달하세요.</p>
-      <div class="menu-actions">
-        <button class="btn primary canva-button" onclick="renderCharacterSelect()" data-template-id="new-game-button">새 게임</button>
-        <button class="btn canva-button" onclick="continueRun()" ${hasRun()?"":"disabled"} data-template-id="continue-button">이어하기</button>
-        <button class="btn canva-button" onclick="renderCodex()" data-template-id="codex-button">도감</button>
-        <button class="btn canva-button" onclick="renderAchievements()" data-template-id="achievements-button">업적 / 전리품</button>
-        <button class="btn canva-button" onclick="renderUnlocks()" data-template-id="unlock-button">해금 · 영혼 조각</button>
-        <button class="btn canva-button" onclick="renderSettings()" data-template-id="settings-button">설정</button>
-      </div><p class="sub" style="margin-top:18px;font-size:.78rem">플레이 ${profile.plays}회 · 승리 ${profile.wins}회 · 최고 지역 ${profile.bestRegion}</p></section>`;
-    }
-    window.goMenu=()=>{state=null;renderMenu()};
-    window.continueRun=()=>{const run=loadRun();if(!run){toast("이어갈 런이 없습니다.",true);renderMenu();return}state=run;renderCurrent()};
-
-    function renderCharacterSelect(){
-      app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">전사를 선택하세요</h1><p class="sub">각 직업은 고유 자원과 전용 카드 풀을 가집니다.</p><div class="character-grid" style="margin-top:18px">${Object.values(CHARACTERS).map(c=>{const ok=profile.unlocked.includes(c.id);return `<button class="panel character ${ok?"":"locked"}" ${ok?`onclick="chooseCharacter('${c.id}')"`:"disabled"}><span class="badge">${ok?"선택 가능":lockText(c.id)}</span><div style="font-size:2rem;margin-top:7px">${c.icon}</div><h2>${c.name}</h2><p class="sub">${c.description}</p><p class="resource">${c.mechanic}</p><p style="margin:9px 0 0;font-size:.83rem">HP ${c.maxHp} · 에너지 ${c.baseEnergy}</p></button>`}).join("")}</div></section>`;
-    }
-    function lockText(id){return({assassin:"첫 보스 처치",caster:"업적: 공허의 학자",guardian:"업적: 철벽",plague:"업적: 독의 대가"})[id]||"잠김"}
-    window.chooseCharacter=id=>{profile.equippedStartRelic=profile.equippedStartRelic||null;saveProfile();renderStartRelicSelect(id)};
-    function renderStartRelicSelect(character){
-      const unlocked=new Set(["none",...profile.unlockedStartRelics]);
-      const c=CHARACTERS[character];
-      if(!c){toast("잘못된 직업 데이터입니다.",true);return renderCharacterSelect()}
-      app.innerHTML=`<section class="screen"><button class="btn" id="back-to-characters">← 직업 선택</button><h1 class="title">시작 유물 선택</h1><p class="sub">${c.name}의 런에 가져갈 시작 유물을 하나 선택하세요.</p><div class="list-grid" style="margin-top:15px">${START_RELICS.map(r=>{const open=unlocked.has(r.id), selected=profile.equippedStartRelic===r.id;const req=r.id==="none"?"언제나 선택 가능":achievementByReward(r.id)?.name||"업적으로 해금";return `<button type="button" class="panel choice start-relic-choice ${selected?"selected":""} ${open?"":"locked"}" data-character="${character}" data-start-relic="${r.id}" ${open?"":"disabled"}><div style="display:flex;gap:10px;align-items:start"><span style="font-size:1.6rem">${r.icon}</span><div><span class="badge ${r.rarity==="rare"?"rare":""}">${open?(selected?"현재 장착":"해금됨"):"잠김"}</span><h3>${r.name}</h3><p>${r.description}</p><p class="resource">해금 조건: ${req}</p></div></div></button>`}).join("")}</div></section>`;
-      document.getElementById("back-to-characters")?.addEventListener("click",()=>renderCharacterSelect());
-      app.querySelectorAll(".start-relic-choice:not(:disabled)").forEach(btn=>btn.addEventListener("click",()=>startRun(btn.dataset.character,btn.dataset.startRelic)));
-    }
-    function achievementByReward(id){return ACHIEVEMENTS.find(a=>a.reward===id)}
-
-    window.startRun=(id,startRelic="none")=>{
-      const c=CHARACTERS[id]; if(!c){toast("잘못된 직업 데이터입니다.",true);return;}
-      profile.plays++;
-      profile.equippedStartRelic=startRelic==="none"?null:startRelic;
-      saveProfile();
-      state={version:VERSION,runActive:true,screen:"map",character:id,startRelic:startRelic==="none"?null:startRelic,player:{hp:c.maxHp,maxHp:c.maxHp,energy:c.baseEnergy,maxEnergy:c.baseEnergy,block:0,str:0,draw:5,status:{},resource:0},deck:c.startingDeck.map(x=>({id:x,up:false})),relics:[],gold:45,region:1,map:generateMap(1),row:0,currentNode:null,kills:0,start:Date.now(),removeCost:45,tempShards:0,runStats:{damage:0,blockAbsorbed:0,bleedApplied:0,poisonApplied:0,poisonDamage:0,cardsPlayed:0,exhausted:0,discarded:0,eliteKills:0,bossKills:0,relicsGained:0,goldEarned:0,drawn:0,maxHitsTurn:0,lowHpWins:0,flawlessBoss:0,bleedBurstKills:0,poisonKills:0}};
-      const sr=START_RELIC[startRelic];
-      if(sr?.effect.startGold)state.gold+=sr.effect.startGold;
-      if(sr?.effect.startCard)addCard(state,randomCard(null,id));
-      saveRun();renderMap();
-    };
-
-    function generateMap(region){
-      const types=region===1?["battle","battle","event","rest","battle","shop","elite"]:region===2?["battle","event","battle","elite","shop","rest","battle"]:["battle","elite","event","battle","rest","shop","elite"];
-      const rows=[];for(let i=0;i<7;i++){const count=(i===0||i===6)?1:(Math.random()<.52?2:1);rows.push(Array.from({length:count},(_,j)=>({id:`${region}-${i}-${j}`,type:types[i],done:false})))}rows.push([{id:`${region}-boss`,type:"boss",done:false}]);return rows;
-    }
-    const NODE={battle:["⚔","전투"],elite:["☠","엘리트"],event:["✧","이벤트"],shop:["◈","상점"],rest:["♨","휴식"],boss:["♛","보스"]};
-    function renderMap(){
-      if(!state)return renderMenu();state.screen="map";saveRun();
-      const sr=state.startRelic?START_RELIC[state.startRelic]:null;
-      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">공허의 길</h1><p class="sub">빛나는 노드 중 하나를 선택하세요.</p><div class="map">${state.map.map((row,i)=>`<div class="map-row">${row.map(n=>{const available=i===state.row,[icon,label]=NODE[n.type];return `<button class="node ${available?"available":""} ${n.done?"done":""}" ${available&&!n.done?`onclick="enterNode('${n.id}')"`:"disabled"}><span class="ico">${icon}</span><span>${label}</span></button>`}).join("")}</div>`).join("")}</div><div class="panel" style="padding:12px;margin-top:10px"><b>유물 ${state.relics.length}</b><p class="sub" style="font-size:.76rem;margin-top:5px">${state.relics.length?state.relics.map(x=>RELIC[x]?.name).join(" · "):"아직 획득한 유물이 없습니다."}</p>${sr?`<p class="resource">시작 유물 ${sr.icon} ${sr.name}</p>`:""}</div></section>`;
-    }
-    window.enterNode=id=>{const node=state.map[state.row]?.find(n=>n.id===id);if(!node){toast("갈 수 없는 길입니다.",true);return}node.done=true;state.currentNode=node;if(["battle","elite","boss"].includes(node.type))startCombat(node.type);else if(node.type==="event")renderEvent();else if(node.type==="shop")renderShop();else renderRest()};
-    function advance(){state.row++;state.currentNode=null;if(state.row>=state.map.length){if(state.region>=3)return victory();state.region++;profile.bestRegion=Math.max(profile.bestRegion,state.region);state.map=generateMap(state.region);state.row=0;toast(`지역 ${state.region}: 더 깊은 공허`)}saveRun();renderMap()}
-
-    function enemyChoices(kind){
-      if(kind==="boss")return[state.region===1?"iron_guardian":state.region===2?"abyss_witch":"void"];
-      const ids=kind==="elite"?["elite_ogre","elite_hydra","elite_judge","elite_reaper","elite_sentinel"]:state.region===1?["slime","goblin","skeleton","bug","wolf"]:state.region===2?["berserker","mage","knight","thorn","minion"]:["knight","thorn","minion","mage","berserker"];
-      return[pick(ids)];
-    }
-    function effectValue(key){
-      let v=0;
-      for(const id of state.relics){v+=RELIC[id]?.effect[key]||0}
-      const sr=state.startRelic?START_RELIC[state.startRelic]?.effect[key]||0:0;
-      return v+sr;
-    }
-    function hasEffect(key){return effectValue(key)!==0}
-    function startCombat(kind){
-      const id=enemyChoices(kind)[0],base=ENEMIES[id],mult=1+(state.region-1)*.16,hp=Math.round(base.hp*mult);
-      state.screen="combat";
-      state.combat={kind,enemy:{id,name:base.name,icon:base.icon,maxHp:hp,hp,block:0,status:{},pattern:0,base},draw:shuffle(state.deck.map(x=>({...x}))),hand:[],discard:[],exhaust:[],turn:0,firstAttack:true,firstSkill:true,powers:{},keepBlock:false,hitsThisTurn:0,discardThisTurn:0,damageTakenThisCombat:0,firstExhaust:false};
-      discovered("enemies",id);
-      const c=state.combat,e=c.enemy;
-      state.player.resource=0;
-      state.player.str=effectValue("startStrength")+(kind==="boss"?effectValue("bossStrength"):0)+(kind==="elite"?effectValue("eliteStrength"):0);
-      state.player.block=effectValue("startBlock")+(state.character==="guardian"?effectValue("otherBlock"):0);
-      if(effectValue("startVuln"))e.status.vuln=effectValue("startVuln");
-      if(effectValue("startWeak"))e.status.weak=effectValue("startWeak");
-      if(effectValue("startBleed"))applyBleed(effectValue("startBleed"));
-      if(effectValue("startPoison"))applyPoison(effectValue("startPoison"));
-      if(state.character==="caster")state.player.resource+=effectValue("casterVoid");
-      if(state.character==="guardian")state.player.resource+=effectValue("guardianGuard");
-      if(state.character==="plague")applyPoison(effectValue("plaguePoison"));
-      if(state.character!=="caster"&&effectValue("otherDraw"))c.bonusStartDraw=(c.bonusStartDraw||0)+effectValue("otherDraw");
-      if(state.character!=="guardian"&&effectValue("otherBlock"))state.player.block+=effectValue("otherBlock");
-      if(state.character!=="plague"&&effectValue("otherPoison"))applyPoison(effectValue("otherPoison"));
-      if(c.powers.immortal)state.player.block+=12;
-      startPlayerTurn();saveRun();
-    }
-
-    function startPlayerTurn(){
-      const c=state.combat;if(!c||state.screen!=="combat")return;
-      c.turn++;c.hitsThisTurn=0;c.discardThisTurn=0;
-      if(!c.powers.keepBlock&&!hasEffect("keepBlock"))state.player.block=0;
-      c.keepBlock=false;
-      state.player.energy=state.player.maxEnergy-effectValue("energyPenalty")-(state.player.status.energyLoss||0);
-      if(c.turn===1)state.player.energy+=effectValue("firstTurnEnergy");
-      if(c.turn===1)state.player.energy+=effectValue("firstTurnEnergy");
-      if(c.turn===1&&state.startRelic==="void_core")state.player.energy++;
-      state.player.status.energyLoss=0;
-      if(state.player.status.poison){damagePlayer(state.player.status.poison,"독",true);state.player.status.poison=Math.max(0,state.player.status.poison-1);if(checkDeath())return}
-      if(c.powers.fortify)state.player.block+=3;
-      if(c.powers.guardOath)state.player.block+=state.player.resource*2;
-      if(c.powers.voidWard)state.player.block+=Math.floor(state.player.resource/2);
-      if(c.powers.citadel){state.player.resource++;c.powers.keepBlock=true}
-      const draw=state.player.draw+effectValue("drawBonus")+(effectValue("thirdTurnDraw")&&c.turn%3===0?effectValue("thirdTurnDraw"):0)+(c.turn===1?(effectValue("firstTurnDraw")+(c.bonusStartDraw||0)):0)+(state.gold>=100?effectValue("richDraw"):0);
-      drawCards(draw);
-      renderCombat();
-    }
-    function drawCards(n){const c=state.combat;let count=0;for(let i=0;i<n&&c.hand.length<10;i++){if(!c.draw.length){if(!c.discard.length)break;c.draw=shuffle(c.discard);c.discard=[]}const x=c.draw.pop();if(x){c.hand.push(x);count++}}state.runStats.drawn+=count;if(count>=3&&effectValue("drawThresholdBlock"))state.player.block+=effectValue("drawThresholdBlock")}
-    function applyBleed(n){const e=state.combat.enemy;e.status.bleed=(e.status.bleed||0)+n;state.runStats.bleedApplied+=n;if(effectValue("bleedBlock"))state.player.block+=effectValue("bleedBlock");checkAchievements()}
-    function applyPoison(n){const plus=effectValue("poisonBonus"),e=state.combat.enemy;e.status.poison=(e.status.poison||0)+n+plus;state.runStats.poisonApplied+=n+plus;checkAchievements()}
-    function damageEnemy(amount,ignoreBlock=false,source="attack"){
-      const c=state.combat,e=c.enemy,p=state.player;
-      let mod=1+(p.str||0)/100;
-      if(e.status.vuln)mod*=1.5;if(p.status.weak)mod*=.75;if(effectValue("lowHpDamage")&&p.hp<=p.maxHp*.3)mod+=effectValue("lowHpDamage");
-      if(effectValue("bleedTargetDamage")&&e.status.bleed)amount+=effectValue("bleedTargetDamage");
-      if(effectValue("eliteDamage")&&c.kind==="elite")mod+=effectValue("eliteDamage");
-      if(effectValue("noBlockDamage")&&p.block===0)mod+=effectValue("noBlockDamage");
-      if(c.powers.momentum&&(p.status.combo||0)>=4)amount+=4;
-      if(c.powers.voidMight&&p.resource>=5)amount+=5;
-      if(c.firstAttack&&effectValue("firstAttackBonus"))mod+=effectValue("firstAttackBonus");
-      if(c.firstAttack&&effectValue("bleedFirstHit")&&e.status.bleed)amount+=effectValue("bleedFirstHit");
-      if(c.firstAttack&&state.startRelic==="ember_vial")e.status.vuln=(e.status.vuln||0)+1;
-      c.firstAttack=false;c.hitsThisTurn++;
-      if(c.hitsThisTurn===5&&effectValue("fifthHitDamage"))amount+=effectValue("fifthHitDamage");
-      if(c.powers.thirdStrike&&c.hitsThisTurn%3===0)amount+=4;
-      amount=Math.max(0,Math.round(amount*mod));
-      if(!ignoreBlock){const absorbed=Math.min(e.block,amount);e.block-=absorbed;amount-=absorbed}
-      e.hp-=amount;state.runStats.damage+=amount;
-      if(source==="poison")state.runStats.poisonDamage+=amount;
-      state.runStats.maxHitsTurn=Math.max(state.runStats.maxHitsTurn,c.hitsThisTurn);
-      float(`-${amount}`,"#ff8797");
-      const enemyEl=$(".enemy");if(enemyEl){enemyEl.classList.remove("hit");void enemyEl.offsetWidth;enemyEl.classList.add("hit")}
-      if(e.hp<=0){if(source==="poison")state.runStats.poisonKills++;if(source==="bleedBurst")state.runStats.bleedBurstKills++;checkAchievements();winCombat();return amount}
-      checkAchievements();return amount;
-    }
-    function damagePlayer(amount,source="피해",ignoreBlock=false){
-      let val=amount;if(state.player.status.vuln)val=Math.round(val*1.5);
-      if(state.player.block>=25&&effectValue("highBlockReduction"))val=Math.max(0,val-effectValue("highBlockReduction"));
-      if(state.combat?.powers.damageReduction)val=Math.max(0,val-state.combat.powers.damageReduction);
-      const absorbed=ignoreBlock?0:Math.min(state.player.block,val);if(!ignoreBlock)state.player.block-=absorbed;val-=absorbed;
-      state.runStats.blockAbsorbed+=absorbed;state.player.hp-=val;
-      if(state.combat)state.combat.damageTakenThisCombat+=val;
-      if(val)float(`-${val}`,"#ff7188");
-      const retaliation=(state.combat?.powers.retaliate||0)+(state.combat?.powers.counterUsed?0:(state.combat?.powers.counter?6:0))+effectValue("retaliateBonus");
-      if(val&&effectValue("reflect"))damageEnemy(Math.ceil(val*effectValue("reflect")),false,"reflect");
-      if(val&&retaliation){damageEnemy(retaliation,false,"retaliate");state.combat.powers.counterUsed=true}
-      if(val&&state.startRelic==="thorn_seed"&&!state.combat.startRelicHit){state.combat.startRelicHit=true;damageEnemy(7,false,"retaliate")}
-      if(state.combat?.powers.rage&&val)state.player.str++;
-      checkAchievements();return val;
-    }
-    function damagePlayerDirect(n){state.player.hp-=n;float(`-${n}`,"#ff7188")}
-    function heal(s,n){const actual=Math.max(0,Math.min(n,s.player.maxHp-s.player.hp));s.player.hp+=actual;if(actual)float(`+${actual}`,"#60e7a8")}
-    function checkDeath(){if(state.player.hp>0)return false;if(state.relics.includes("phoenix")&&!state.phoenixUsed){state.phoenixUsed=true;state.player.hp=1;toast("불사조 깃털이 당신을 살렸습니다!");return false}fail();return true}
-    function statusHtml(obj){return Object.entries(obj).filter(([,v])=>v>0).map(([k,v])=>`<span class="status">${({poison:"☠ 독",bleed:"🩸 출혈",weak:"⇣ 약화",vuln:"✹ 취약",combo:"✦ 콤보",energyLoss:"⚡ 기력"})[k]||k} ${v}</span>`).join("")}
-    function intent(){const e=state.combat.enemy,p=e.base.patterns[e.pattern%e.base.patterns.length],map={attack:"⚔ 공격",block:"🛡 방어",debuff:p[1]==="poison"?"☠ 독":p[1]==="weak"?"⇣ 약화":"✹ 취약",buff:"✦ 강화"};return `${map[p[0]]||"?"} ${p[2]??p[1]}`}
-    function resourceText(){if(state.character==="caster")return `◉ 공허 ${state.player.resource}`;if(state.character==="guardian")return `🛡 수호 ${state.player.resource}`;return ""}
-
-    function renderCombat(){
-      const c=state.combat;if(!c)return;const e=c.enemy;
-      app.innerHTML=`<section class="screen">${topbar()}<div class="combat-area"><div class="panel enemy"><div class="avatar">${e.icon}</div><h1 style="font-size:1.2rem;margin:2px">${e.name}</h1><div class="bar"><div class="enemybar" style="width:${clamp(e.hp/e.maxHp*100,0,100)}%"></div></div><small>${Math.max(0,e.hp)} / ${e.maxHp}${e.block?` · 🛡${e.block}`:""}</small><div class="intent">${intent()}</div><div class="status-row">${statusHtml(e.status)}</div></div>
-      <div class="panel" style="padding:10px"><div style="display:flex;justify-content:space-between;font-size:.85rem"><b class="hp">♥ ${state.player.hp}/${state.player.maxHp}</b><b class="block">🛡 ${state.player.block}</b><b class="energy">⚡ ${state.player.energy}/${state.player.maxEnergy}</b></div><div class="resource">${resourceText()}</div><div class="status-row">${statusHtml(state.player.status)}</div></div></div>
-      <div class="battle-bottom"><div class="hand">${c.hand.map((x,i)=>cardHtml(x,i)).join("")||`<p class="sub" style="padding:20px">손패가 없습니다.</p>`}</div><div class="end-row"><span class="pile">덱 ${c.draw.length} · 버림 ${c.discard.length} · 소멸 ${c.exhaust.length}</span><button class="btn danger" onclick="endTurn()">턴 종료 →</button></div></div></section>`;
-    }
-    function cardHtml(inst,i){const d=CARDS[inst.id];if(!d)return"";const cost=cardCost(d);return `<button class="card ${d.type} ${d.rarity}" onclick="playCard(${i})" ${state.player.energy<cost?"disabled":""}><span class="cost">${cost}</span><h3>${d.name}${inst.up?" +":""}</h3><p>${cardDesc(d,inst.up)}</p><small>${d.type} · ${d.rarity}${d.owner?" · 전용":""}</small></button>`}
-    function cardCost(d){return Math.max(0,d.cost-(state.combat?.firstSkill&&d.type==="skill"?effectValue("firstSkillDiscount"):0))}
-    function cardDesc(d,up){if(!up)return d.description;return d.description+" <b>(강화)</b>"}
-
-    window.playCard=i=>{
-      const c=state.combat,inst=c?.hand[i],d=inst&&CARDS[inst.id];if(!d||!c||state.screen!=="combat")return;
-      const cost=cardCost(d);if(state.player.energy<cost){toast("에너지가 부족합니다.",true);return}
-      state.player.energy-=cost;c.firstSkill=false;
-      const ef=d.effect,up=inst.up?1:0,e=c.enemy;
-      state.runStats.cardsPlayed++;
-      let damage=(ef.damage||0)+(up?3+effectValue("upgradeBonus"):0);
-      if(ef.allEnergyDamage){damage=state.player.energy*ef.allEnergyDamage;state.player.energy=0}
-      if(ef.lowHpDamage&&state.player.hp<=state.player.maxHp*.35)damage=ef.lowHpDamage;
-      if(ef.bonusIfBleed&&e.status.bleed)damage+=ef.bonusIfBleed;
-      if(ef.bonusIfVuln&&e.status.vuln)damage+=ef.bonusIfVuln;
-      if(ef.bonusIfStatus&&(e.status.bleed||e.status.poison))damage+=ef.bonusIfStatus;
-      if(ef.execute&&e.hp<=e.maxHp/2)damage+=ef.execute;
-      if(ef.bonusPoison)damage+=e.status.poison||0;
-      if(ef.bonusPoisonDamage&&e.status.poison)damage+=ef.bonusPoisonDamage;
-      if(ef.bonusPoisonHalf)damage+=Math.floor((e.status.poison||0)/2);
-      if(ef.bonusExhaust)damage+=c.exhaust.length*ef.bonusExhaust;
-      if(ef.bonusDiscard)damage+=c.discardThisTurn*ef.bonusDiscard;
-      if(ef.bonusVoid)damage+=state.player.resource*ef.bonusVoid;
-      if(ef.bonusGuard)damage+=state.player.resource*ef.bonusGuard;
-      if(ef.bonusIfHighBlock&&state.player.block>=20)damage+=ef.bonusIfHighBlock;
-      if(ef.bonusIfNoBlock&&state.player.block===0)damage+=ef.bonusIfNoBlock;
-      if(ef.blockDamage)damage=Math.floor(state.player.block*ef.blockDamage)+(up?3:0);
-      if(ef.voidDamage){damage=state.player.resource*ef.voidDamage;state.player.resource=0}
-      if(damage){const hits=ef.hits||1;for(let hit=0;hit<hits&&e.hp>0;hit++){let hitDamage=damage;if(ef.multiLastBonus&&hit===hits-1)hitDamage+=ef.multiLastBonus;if(effectValue("multiLastBonus")&&hits>1&&hit===hits-1)hitDamage+=effectValue("multiLastBonus");damageEnemy(hitDamage,!!ef.pierce,"attack");if(ef.bleedPerHit)applyBleed(ef.bleedPerHit);if(ef.poisonPerHit)applyPoison(ef.poisonPerHit)}}
-      if(ef.extraHitIfPoison&&e.status.poison)damageEnemy(damage,false,"attack");
-      if(ef.doubleIfVoid&&state.player.resource>=ef.doubleIfVoid)damageEnemy(damage,false,"attack");
-      if(ef.block){state.player.block+=ef.block+(up?4+effectValue("upgradeBonus"):0)}
-      if(ef.energy){state.player.energy+=ef.energy;if(effectValue("energyDraw")&&!c.energyDrawUsed){drawCards(1);c.energyDrawUsed=true}}
-      if(ef.draw)drawCards(ef.draw);
-      if(ef.heal)heal(state,ef.heal);
-      if(ef.strength)state.player.str+=ef.strength;
-      if(ef.void)state.player.resource+=ef.void;
-      if(ef.guard)state.player.resource+=ef.guard;
-      if(ef.bleed)applyBleed(ef.bleed);
-      if(ef.poison)applyPoison(ef.poison);
-      if(ef.weak)e.status.weak=(e.status.weak||0)+ef.weak;
-      if(ef.vuln)e.status.vuln=(e.status.vuln||0)+ef.vuln;
-      if(ef.selfWeak)state.player.status.weak=(state.player.status.weak||0)+ef.selfWeak;
-      if(ef.combo)state.player.status.combo=(state.player.status.combo||0)+ef.combo;
-      if(ef.keepBlock)c.keepBlock=true;
-      if(ef.power)c.powers[ef.power]=true;
-      if(ef.retaliate)c.powers.retaliate=(c.powers.retaliate||0)+ef.retaliate;
-      if(ef.damageReduction)c.powers.damageReduction=ef.damageReduction;
-      if(ef.nextEnergy)state.player.status.nextEnergy=(state.player.status.nextEnergy||0)+ef.nextEnergy;
-      if(ef.energyLoss)state.player.status.energyLoss=(state.player.status.energyLoss||0)+ef.energyLoss;
-      if(ef.selfDamage)damagePlayerDirect(ef.selfDamage);
-      if(ef.cleanseWeak)state.player.status.weak=0;
-      if(ef.cleansePoison)state.player.status.poison=0;
-      if(ef.enemyStrength)e.status.str=Math.max(0,(e.status.str||0)+ef.enemyStrength);
-      if(ef.energyIfAttack&&c.hand.some(z=>CARDS[z.id]?.type==="attack"))state.player.energy++;
-      if(ef.poisonBurst){const poison=e.status.poison||0;damageEnemy(Math.round(poison*ef.poisonBurst*(1+effectValue("poisonBurstBonus"))),false,"poison");e.status.poison=0}
-      if(ef.bleedBurst){const bleed=e.status.bleed||0;damageEnemy(bleed*ef.bleedBurst,false,"bleedBurst");e.status.bleed=0}
-      if(ef.bleedToBlock){const bleed=e.status.bleed||0;state.player.block+=Math.floor(bleed*ef.bleedToBlock);e.status.bleed=0}
-      if(ef.poisonToBlock){state.player.block+=Math.floor((e.status.poison||0)*ef.poisonToBlock)}
-      if(ef.poisonToHeal){const remove=Math.min(e.status.poison||0,ef.poisonRemove||e.status.poison||0);e.status.poison-=remove;heal(state,Math.floor(remove*ef.poisonToHeal))}
-      if(ef.doubleBleed)e.status.bleed=(e.status.bleed||0)*2;
-      if(ef.voidBlock){const v=state.player.resource;state.player.block+=v*ef.voidBlock;if(ef.weakIfVoid&&v)e.status.weak=(e.status.weak||0)+1;state.player.resource=0}
-      if(ef.recoverDiscard&&c.discard.length)c.hand.push(c.discard.pop());
-      if(ef.discard){for(let dsc=0;dsc<ef.discard&&c.hand.length;dsc++)discardRandom(c)}
-      if(ef.exhaustHand){for(let ex=0;ex<ef.exhaustHand&&c.hand.length;ex++)exhaustRandom(c)}
-      if(ef.spendBlock)state.player.block=Math.floor(state.player.block/2);
-      if(ef.spendAllBlock||ef.loseBlock)state.player.block=0;
-      if(ef.endDiscard)c.endDiscard=(c.endDiscard||0)+ef.endDiscard;
-      if(ef.exhaust||d.id==="finale"){exhaustCard(inst)}else c.discard.push(inst);
-      c.hand.splice(i,1);
-      discovered("cards",d.id);
-      if(c.powers.echo&&d.type==="attack"&&damage)damageEnemy(Math.max(1,Math.floor(damage/2)),false,"echo");
-      if(c.powers.contagion)e.status.poison=(e.status.poison||0)+2;
-      if(checkDeath()||e.hp<=0)return;
-      checkAchievements();saveRun();renderCombat();
-    };
-    function discardRandom(c){const idx=rng(0,c.hand.length-1),x=c.hand.splice(idx,1)[0];if(x){c.discard.push(x);c.discardThisTurn++;state.runStats.discarded++}}
-    function exhaustRandom(c){const idx=rng(0,c.hand.length-1),x=c.hand.splice(idx,1)[0];if(x)exhaustCard(x)}
-    function exhaustCard(x){const c=state.combat;c.exhaust.push(x);state.runStats.exhausted++;if(effectValue("exhaustBlock"))state.player.block+=effectValue("exhaustBlock");if(effectValue("exhaustEnergyEvery")&&state.runStats.exhausted%5===0)state.player.energy++;if(state.startRelic==="ash_seed"&&!c.firstExhaust){state.player.energy++;c.firstExhaust=true}checkAchievements()}
-
-    window.endTurn=()=>{
-      const c=state.combat;if(!c||state.screen!=="combat")return;
-      c.discard.push(...c.hand);state.runStats.discarded+=c.hand.length;c.discardThisTurn+=c.hand.length;c.hand=[];
-      const e=c.enemy;
-      if(e.status.bleed){const b=e.status.bleed;e.hp-=b;float(`출혈 -${b}`,"#ff8190");e.status.bleed=Math.max(0,b-1);if(effectValue("bleedDecayHeal"))heal(state,effectValue("bleedDecayHeal"))}
-      if(e.status.poison){const p=e.status.poison+effectValue("poisonTickBonus");damageEnemy(p,false,"poison");e.status.poison=Math.max(0,e.status.poison-1)}
-      if(effectValue("endPoison")&&e.status.poison)applyPoison(effectValue("endPoison"));
-      if(e.hp<=0)return winCombat();
-      const a=e.base.patterns[e.pattern%e.base.patterns.length];
-      if(a[0]==="attack")damagePlayer(a[1]+(e.status.str||0));
-      if(a[0]==="block")e.block+=a[1];
-      if(a[0]==="buff")e.status[a[1]]=(e.status[a[1]]||0)+a[2];
-      if(a[0]==="debuff"){const k=a[1],v=a[2];state.player.status[k]=(state.player.status[k]||0)+v;toast(`${e.name}: ${k==="poison"?"독":k==="weak"?"약화":"취약"} ${v}`)}
-      e.pattern++;
-      if(state.player.status.nextEnergy){state.player.energy+=state.player.status.nextEnergy;state.player.status.nextEnergy=0}
-      if(checkDeath())return;
-      checkAchievements();setTimeout(startPlayerTurn,220);
-    };
-
-    function gainGold(s,n){const actual=n+effectValue("eventGold");s.gold+=actual;s.runStats.goldEarned+=actual;checkAchievements()}
-    function winCombat(){
-      if(!state.combat||state.screen!=="combat")return;
-      const kind=state.combat.kind,c=state.combat;
-      state.kills++;profile.kills++;
-      const gold=(kind==="boss"?55:kind==="elite"?42:22)+effectValue("winGold");state.gold+=gold;state.runStats.goldEarned+=gold;
-      if(effectValue("winHeal"))heal(state,effectValue("winHeal"));
-      if(effectValue("lowHpWinHeal")&&state.player.hp<=state.player.maxHp*.4)heal(state,effectValue("lowHpWinHeal"));
-      if(state.player.hp<=state.player.maxHp*.2)state.runStats.lowHpWins++;
-      if(kind==="elite")state.runStats.eliteKills++;
-      if(kind==="boss"){state.runStats.bossKills++;if(c.damageTakenThisCombat===0)state.runStats.flawlessBoss++;if(effectValue("bossMaxHp")){state.player.maxHp+=effectValue("bossMaxHp");state.player.hp+=effectValue("bossMaxHp")}}
-      checkAchievements();
-      if(kind==="boss"){
-        if(state.region===1&&!profile.unlocked.includes("assassin")){profile.unlocked.push("assassin");toast("암살자가 영구 해금되었습니다!")}
-        if(state.region===1&&!profile.unlocked.includes("guardian"))profile.unlocked.push("guardian");
-        if(state.region===2&&!profile.unlocked.includes("plague"))profile.unlocked.push("plague");
-        if(state.region===3&&!profile.unlocked.includes("caster"))profile.unlocked.push("caster");
-        state.combat=null;saveProfile();advance();return;
-      }
-      const elite=kind==="elite";state.combat=null;renderReward(elite);
-    }
-
-    function randomCard(force,character){
-      const r=force||(Math.random()<.08?"legendary":Math.random()<.32?"rare":"common");
-      let arr=CARD_LIST.filter(c=>c.rarity===r&&(!c.owner||c.owner===character));
-      if(!arr.length)arr=CARD_LIST.filter(c=>c.rarity===r&&!c.owner);
-      return pick(arr).id;
-    }
-    function addCard(s,id){if(CARDS[id]){s.deck.push({id,up:false});discovered("cards",id)}}
-    function gainRelic(s){
-      const avail=RELICS.map(x=>x.id).filter(x=>!s.relics.includes(x));
-      if(!avail.length){s.gold+=25;return}
-      const id=pick(avail);s.relics.push(id);s.runStats.relicsGained++;discovered("relics",id);toast(`유물 획득: ${RELIC[id].icon} ${RELIC[id].name}`);checkAchievements();
-      if(RELIC[id].effect.maxHp){s.player.maxHp+=RELIC[id].effect.maxHp;s.player.hp+=RELIC[id].effect.maxHp}
-    }
-    function renderReward(elite){
-      state.screen="reward";const opts=[randomCard(null,state.character),randomCard(null,state.character),randomCard(null,state.character)];
-      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">${elite?"엘리트 격파":"전투 승리"}</h1><p class="sub">골드 획득! 덱에 추가할 카드 하나를 선택하세요.</p>${elite?`<button class="panel choice" onclick="claimEliteRelic()"><h3>✦ 유물 획득</h3><p>강한 적이 남긴 공허의 유물입니다.</p></button>`:""}<div class="reward-grid" style="margin-top:13px">${opts.map(id=>{const d=CARDS[id];return `<button class="card ${d.type} ${d.rarity}" style="width:100%;flex:auto" onclick="chooseReward('${id}')"><span class="cost">${d.cost}</span><h3>${d.name}</h3><p>${d.description}</p><small>${d.rarity}</small></button>`}).join("")}</div><button class="btn" style="width:100%;margin-top:14px" onclick="skipReward()">건너뛰기</button></section>`;
-    }
-    window.claimEliteRelic=()=>{gainRelic(state);saveRun();renderReward(false)};
-    window.chooseReward=id=>{addCard(state,id);saveRun();advance()};
-    window.skipReward=()=>{saveRun();advance()};
-
-    function renderEvent(){state.screen="event";state.event=pick(EVENTS);const ev=state.event;app.innerHTML=`<section class="screen">${topbar()}<div class="panel" style="padding:19px;margin-top:25px"><div style="font-size:2.5rem">✧</div><h1 class="title">${ev[0]}</h1><p class="sub">${ev[1]}</p></div><div style="margin-top:18px">${[2,4,6].map(i=>`<button class="panel choice" onclick="eventChoice(${i})"><h3>${ev[i]}</h3></button>`).join("")}</div></section>`}
-    window.eventChoice=i=>{const ok=state.event[i+1](state);if(!ok){toast("골드가 부족합니다.",true);return}if(checkDeath())return;saveRun();advance()};
-
-    function renderShop(){
-      state.screen="shop";state.shopCards=[randomCard(null,state.character),randomCard("rare",state.character),randomCard(null,state.character)];
-      const shopRelics=RELICS.filter(r=>!state.relics.includes(r.id)).map(r=>r.id);
-      state.shopRelic=shopRelics.length?pick(shopRelics):null;
-      const item=(title,desc,cost,fn)=>`<div class="panel shop-item"><div><h3>${title}</h3><p>${desc}</p></div><button class="btn gold-btn" onclick="${fn}" ${state.gold<cost?"disabled":""}>${cost} ◈</button></div>`;
-      const discount=1-effectValue("shopDiscount");
-      app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">공허 상점</h1><p class="sub" style="margin-bottom:14px">당신의 골드는 여기서만 빛납니다.</p>${state.shopCards.map((id,i)=>{const d=CARDS[id],cost=Math.floor((d.rarity==="legendary"?105:d.rarity==="rare"?62:38)*discount);return item(d.name,d.description,cost,`buyCard(${i},${cost})`)}).join("")}${state.shopRelic?item(RELIC[state.shopRelic].name,RELIC[state.shopRelic].description,Math.floor(115*discount),`buyRelic(${Math.floor(115*discount)})`):""}${item("치유의 병","HP를 18 회복합니다.",28,"buyHeal(28)")}${item("카드 제거","무작위 기본 카드를 덱에서 제거합니다.",state.removeCost,`removeShopCard(${state.removeCost})`)}<button class="btn" style="width:100%;margin-top:10px" onclick="advance()">상점 나가기</button></section>`;
-    }
-    window.buyCard=(i,c)=>{if(state.gold<c)return;state.gold-=c;addCard(state,state.shopCards[i]);state.shopCards.splice(i,1);toast("카드를 구입했습니다.");saveRun();renderShop()};
-    window.buyRelic=c=>{if(state.gold<c||!state.shopRelic)return;state.gold-=c;gainRelic(state);state.shopRelic=null;saveRun();renderShop()};
-    window.buyHeal=c=>{if(state.gold<c)return;state.gold-=c;heal(state,18);saveRun();renderShop()};
-    function removeRandomCard(s){const idx=s.deck.findIndex(x=>["slash","guard","jab"].includes(x.id));if(idx>=0)s.deck.splice(idx,1);else if(s.deck.length)s.deck.splice(rng(0,s.deck.length-1),1)}
-    window.removeShopCard=c=>{if(state.gold<c)return;state.gold-=c;removeRandomCard(state);state.removeCost+=20;toast("카드가 제거되었습니다.");saveRun();renderShop()};
-
-    function renderRest(){state.screen="rest";app.innerHTML=`<section class="screen">${topbar()}<div class="panel" style="padding:20px;margin-top:28px"><div style="font-size:2.8rem">♨</div><h1 class="title">잿빛 휴식처</h1><p class="sub">불꽃이 잠시 공허를 밀어냅니다.</p></div><button class="panel choice" style="margin-top:15px" onclick="restHeal()"><h3>♥ 회복</h3><p>HP를 ${22+effectValue("restHeal")} 회복합니다.</p></button><button class="panel choice" onclick="renderUpgrade()"><h3>✦ 카드 강화</h3><p>덱의 카드 하나를 강화합니다.</p></button></section>`}
-    window.restHeal=()=>{heal(state,22+effectValue("restHeal"));saveRun();advance()};
-    function upgradeRandom(s){const x=pick(s.deck.filter(x=>!x.up));if(x)x.up=true}
-    function renderUpgrade(){app.innerHTML=`<section class="screen">${topbar()}<h1 class="title">강화할 카드</h1><p class="sub">강화된 카드는 피해 또는 방어도가 증가합니다.</p><div class="reward-grid" style="margin-top:15px">${state.deck.map((x,i)=>{const d=CARDS[x.id];return `<button class="card ${d.type}" ${x.up?"disabled":""} onclick="upgradeCard(${i})"><span class="cost">${d.cost}</span><h3>${d.name}${x.up?" +":""}</h3><p>${cardDesc(d,true)}</p></button>`}).join("")}</div></section>`}
-    window.upgradeCard=i=>{if(!state.deck[i]||state.deck[i].up)return;state.deck[i].up=true;toast("카드가 강화되었습니다!");saveRun();advance()};
-
-    function renderCodex(){
-      const data=codexTab==="cards"?CARD_LIST:codexTab==="relics"?RELICS:Object.entries(ENEMIES).map(([id,x])=>({id,name:x.name,description:x.boss?"보스":"공허의 적"}));
-      const key=codexTab==="cards"?"cards":codexTab==="relics"?"relics":"enemies";
-      app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">도감</h1><div class="tabs">${["cards","relics","enemies"].map(x=>`<button class="btn ${x===codexTab?"primary":""}" onclick="setCodex('${x}')">${({cards:"카드",relics:"유물",enemies:"적"})[x]}</button>`).join("")}</div><div class="list-grid">${data.map(x=>{const known=profile.discovered[key].includes(x.id);return `<div class="codex-entry ${known?"":"unknown"}"><div><b>${known?x.name:"???"}</b><p>${known?(x.description||"발견한 기록"):"아직 발견하지 못했습니다."}</p></div><span>${known?"✓":"?"}</span></div>`}).join("")}</div></section>`;
-    }
-    window.setCodex=x=>{codexTab=x;renderCodex()};
-
-    function achievementProgress(a){
-      if(profile.achievements[a.id])return a.target;
-      if(!state)return 0;
-      if(a.stat==="wins")return profile.wins;
-      if(a.stat==="casterClear")return state.character==="caster"&&state.completed?1:0;
-      if(a.stat==="guardianClear")return state.character==="guardian"&&state.completed?1:0;
-      if(a.stat==="plagueClear")return state.character==="plague"&&state.completed?1:0;
-      if(a.stat==="relicDiscoveries")return profile.discovered.relics.length;
-      return state.runStats?.[a.stat]||0;
-    }
-    function checkAchievements(){
-      if(!state)return;
-      ACHIEVEMENTS.forEach(a=>{
-        if(profile.achievements[a.id])return;
-        let value=achievementProgress(a);
-        if(value>=a.target){
-          profile.achievements[a.id]=true;
-          if(!profile.unlockedStartRelics.includes(a.reward))profile.unlockedStartRelics.push(a.reward);
-          if(a.id==="iron_wall"&&!profile.unlocked.includes("guardian"))profile.unlocked.push("guardian");
-          if(a.id==="poison_master"&&!profile.unlocked.includes("plague"))profile.unlocked.push("plague");
-          if(a.id==="void_scholar"&&!profile.unlocked.includes("caster"))profile.unlocked.push("caster");
-          saveProfile();
-          const reward=START_RELIC[a.reward];
-          toast(`<b>★ 업적 달성!</b><br>${a.name}<br><small>${a.description}</small><br><b>보상 획득: ${reward?.icon||"◈"} ${reward?.name||a.reward}</b>`,false,true);
-        }
-      });
-    }
-    function renderAchievements(){
-      const done=ACHIEVEMENTS.filter(a=>profile.achievements[a.id]).length;
-      const unlocked=profile.unlockedStartRelics.length;
-      app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">업적 / 전리품</h1><div class="panel" style="padding:14px;margin:12px 0"><b>${done} / ${ACHIEVEMENTS.length} 업적 달성</b><div class="progress"><i style="width:${done/ACHIEVEMENTS.length*100}%"></i></div><p class="sub" style="font-size:.78rem;margin-top:7px">해금된 시작 유물 ${unlocked} / ${START_RELICS.length-1}</p></div><div class="tabs"><button class="btn ${achievementTab==="achievements"?"primary":""}" onclick="setAchievementTab('achievements')">업적</button><button class="btn ${achievementTab==="relics"?"primary":""}" onclick="setAchievementTab('relics')">시작 유물</button></div>${achievementTab==="achievements"?`<div class="list-grid">${ACHIEVEMENTS.map(a=>{const v=Math.min(achievementProgress(a),a.target),done=!!profile.achievements[a.id],r=START_RELIC[a.reward];return `<div class="panel achievement"><div><span class="badge ${done?"":"rare"}">${done?"해금 완료":"진행 중"}</span><h3>${a.name}</h3><p>${a.description}</p><div class="progress"><i style="width:${v/a.target*100}%"></i></div><p>${v} / ${a.target} · 보상: ${r?.icon||"◈"} ${r?.name||a.reward}</p></div><b>${done?"✓":"○"}</b></div>`}).join("")}</div>`:`<div class="list-grid">${START_RELICS.filter(r=>r.id!=="none").map(r=>{const open=profile.unlockedStartRelics.includes(r.id),a=achievementByReward(r.id);return `<div class="panel achievement ${open?"":"unknown"}"><div><h3>${r.icon} ${open?r.name:"???"}</h3><p>${open?r.description:`해금 조건: ${a?.name||"알 수 없음"}`}</p></div><b>${open?"✓":"🔒"}</b></div>`}).join("")}</div>`}</section>`;
-    }
-    window.setAchievementTab=x=>{achievementTab=x;renderAchievements()};
-
-    function renderUnlocks(){app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">영혼 해금</h1><div class="panel" style="padding:18px;margin:14px 0"><span class="logo" style="color:#f6c85f">SOUL SHARDS</span><div style="font-size:2.3rem;font-weight:800;color:var(--gold)">${profile.shards}</div><p class="sub">런의 실패와 승리에서 얻은 조각입니다.</p></div><div class="list-grid">${Object.values(CHARACTERS).filter(c=>c.id!=="gladiator").map(c=>`<div class="panel choice"><h3>${c.icon} ${c.name}</h3><p>${c.mechanic}</p><span class="badge">${profile.unlocked.includes(c.id)?"해금 완료":lockText(c.id)}</span></div>`).join("")}</div></section>`}
-    function renderSettings(){app.innerHTML=`<section class="screen"><button class="btn" onclick="renderMenu()">← 메뉴</button><h1 class="title">설정</h1><div class="panel" style="padding:17px;margin-top:15px"><h2 style="margin-top:0">저장 관리</h2><p class="sub">현재 런과 영구 진행도는 브라우저에 자동 저장됩니다. 기존 저장 데이터는 새 필드와 병합됩니다.</p><button class="btn danger" style="margin-top:15px;width:100%" onclick="clearAll()">모든 저장 데이터 초기화</button></div></section>`}
-    window.clearAll=()=>{[SAVE_KEY,OLD_SAVE_KEY,RUN_KEY,OLD_RUN_KEY].forEach(k=>localStorage.removeItem(k));loadProfile();toast("저장 데이터를 초기화했습니다.");renderMenu()};
-
-    function fail(){
-      if(!state)return;
-      const seconds=Math.floor((Date.now()-state.start)/1000),shards=3+state.region+(state.tempShards||0);
-      profile.shards+=shards;profile.bestRegion=Math.max(profile.bestRegion,state.region);saveProfile();localStorage.removeItem(RUN_KEY);
-      const summary={region:state.region,kills:state.kills,gold:state.gold,relics:state.relics.length,time:formatTime(seconds),shards};state.runActive=false;
-      app.innerHTML=`<section class="screen result fail"><p class="logo">VOID DECK</p><h1>RUN FAILED</h1><p class="sub">공허가 당신의 발자국을 삼켰습니다.</p><div class="panel summary">도달 지역 <b>${summary.region}</b><br>처치한 적 <b>${summary.kills}</b><br>획득 골드 <b>${summary.gold}</b><br>유물 <b>${summary.relics}</b><br>플레이 시간 <b>${summary.time}</b><br>영혼 조각 <b class="gold">+${summary.shards}</b></div><div class="menu-actions"><button class="btn primary" onclick="renderCharacterSelect()">다시 시작</button><button class="btn" onclick="renderMenu()">메인 메뉴</button></div></section>`;
-    }
-    function victory(){
-      const seconds=Math.floor((Date.now()-state.start)/1000),shards=15+(state.tempShards||0);state.completed=true;
-      profile.shards+=shards;profile.wins++;profile.bestRegion=3;
-      if(!profile.unlocked.includes("assassin"))profile.unlocked.push("assassin");
-      ["caster","guardian","plague"].forEach(id=>{if(!profile.unlocked.includes(id))profile.unlocked.push(id)});
-      checkAchievements();saveProfile();localStorage.removeItem(RUN_KEY);
-      const deck=state.deck.map(x=>CARDS[x.id]?.name+(x.up?"+":"")).join(" · ");state.runActive=false;
-      app.innerHTML=`<section class="screen result win"><p class="logo">VOID DECK</p><h1>VICTORY</h1><p class="sub">VOID의 심장이 마침내 침묵합니다.</p><div class="panel summary">클리어 시간 <b>${formatTime(seconds)}</b><br>사용 캐릭터 <b>${CHARACTERS[state.character].name}</b><br>처치한 적 <b>${state.kills}</b><br>유물 <b>${state.relics.map(x=>RELIC[x]?.name).join(" · ")||"없음"}</b><br>영혼 조각 <b class="gold">+${shards}</b><hr style="border-color:#34415f">덱<br><small>${esc(deck)}</small></div><div class="menu-actions"><button class="btn primary" onclick="renderCharacterSelect()">새 런 시작</button><button class="btn" onclick="renderMenu()">메인 메뉴</button></div></section>`;
-    }
-    const formatTime=s=>`${Math.floor(s/60)}분 ${s%60}초`;
-    function renderCurrent(){if(!state)return renderMenu();if(state.screen==="combat")renderCombat();else if(state.screen==="map")renderMap();else renderMap()}
-
-    window.renderMenu=renderMenu;
-    window.renderCharacterSelect=renderCharacterSelect;
-    window.advance=advance;
-    window.renderMap=renderMap;
-    window.renderUpgrade=renderUpgrade;
-    window.renderCodex=renderCodex;
-    window.renderAchievements=renderAchievements;
-    window.renderUnlocks=renderUnlocks;
-    window.renderSettings=renderSettings;
-    window.renderStartRelicSelect=renderStartRelicSelect;
-    window.renderCodex=renderCodex;
-    window.renderAchievements=renderAchievements;
-    window.renderUnlocks=renderUnlocks;
-    window.renderSettings=renderSettings;
-
-    loadProfile();renderMenu();
-  })();
-  </script>
+$("enterButton").onclick=startGame;$("endTurn").onclick=endTurn;$("deckButton").onclick=()=>openSheet("deck");$("relicButton").onclick=()=>openSheet("relic");$("combatDeckButton").onclick=()=>openSheet("deck");$("combatRelicButton").onclick=()=>openSheet("relic");$("achievementButton").onclick=()=>openSheet("achievements");$("codexButton").onclick=()=>openSheet("codex");$("closeSheet").onclick=()=>$("overlay").classList.remove("show");$("overlay").onclick=e=>{if(e.target===$("overlay"))$("overlay").classList.remove("show")};$("restartButton").onclick=()=>{show("start");renderStart()};renderStart();lucide.createIcons();
+</script>
  </body>
 </html>
